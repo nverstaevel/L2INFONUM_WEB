@@ -58,7 +58,7 @@ for row in rows:
 
 A **terminal** is a window where you type commands. A **virtual environment** is a private set of Python packages (code written by other people) for one project.
 
-1. On the [course repository](https://github.com/nverstaevel/L2INFONUM_WEB), click **Code → Download ZIP**, then unzip the file.
+1. Use the button **Download the starter files (ZIP)** at the top of this page, then unzip the file in your course folder.
 2. In VS Code: **File → Open Folder**, choose the folder `td1` (not the whole course folder).
 3. **Terminal → New Terminal**.
 4. Type these commands one by one, pressing Enter after each.

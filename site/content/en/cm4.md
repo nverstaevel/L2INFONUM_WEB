@@ -37,7 +37,7 @@ TD4: chart your TD1 results.
 ## Check yourself
 
 <details><summary>const or let for a value that changes?</summary><p>let.</p></details>
-<details><summary>What does fetch return first?</summary><p>A promise of a response; use then.</p></details>
+<details><summary>What does fetch return first?</summary><p>A promise (a value that arrives later) of the response; use then to read it.</p></details>
 <details><summary>Why serve the page with a server?</summary><p>The browser blocks file reads from a double-clicked page.</p></details>
 <details><summary>Which chart for a change over time?</summary><p>A line chart.</p></details>
 

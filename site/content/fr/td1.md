@@ -58,7 +58,7 @@ for row in rows:
 
 Un **terminal** est une fenêtre où l'on tape des commandes. Un **environnement virtuel** est un ensemble de paquets Python (du code écrit par d'autres) réservé à un projet.
 
-1. Sur le [dépôt du cours](https://github.com/nverstaevel/L2INFONUM_WEB), cliquez sur **Code → Download ZIP**, puis décompressez le fichier.
+1. Cliquez sur **Télécharger les fichiers de départ (ZIP)** en haut de cette page, puis décompressez le fichier dans votre dossier de cours.
 2. Dans VS Code : **File → Open Folder** (Fichier → Ouvrir le dossier), choisissez le dossier `td1` (pas tout le dossier du cours).
 3. **Terminal → New Terminal**.
 4. Tapez ces commandes une par une, en validant par Entrée.

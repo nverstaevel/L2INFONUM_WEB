@@ -7,13 +7,19 @@ Cumulative English–French glossary. Allowed at the written exam.
 | API | API (interface de programmation) | A way for a program to ask another program for data or actions. |
 | Attribute | Attribut | Extra information inside a tag. |
 | Box model | Modèle de boîte | Content, padding, border and margin of an element. |
+| Browser | Navigateur | The program that displays web pages. |
+| CDN | CDN (réseau de diffusion) | A public server that delivers libraries such as Chart.js. |
 | Client | Client | The program that sends requests, often a browser. |
 | Console | Console | Developer tool showing messages and errors. |
 | Cookie | Cookie | A small text kept by the browser and sent back to the server. |
 | CSS | CSS (feuilles de style) | The language that describes the look of a page. |
 | CSV | CSV | A text file holding a table, values separated by commas. |
 | Dataset | Jeu de données | A collection of related data. |
+| Debugging | Débogage | Finding and fixing a mistake. |
+| Decorator | Décorateur | A line starting with @ that applies to the function below. |
+| Developer tools | Outils de développement | Browser panels to inspect a page (F12). |
 | Dictionary | Dictionnaire | Values found by their key, written between `{ }`. |
+| Element | Élément | An opening tag, its content and a closing tag. |
 | Error message (traceback) | Message d'erreur (traceback) | Text saying what failed and where; read the last line first. |
 | Escaping | Échappement | Showing characters as text so they are not run as code. |
 | Flexbox | Flexbox | CSS layout in rows or columns. |
@@ -24,6 +30,7 @@ Cumulative English–French glossary. Allowed at the written exam.
 | HTTP | HTTP | The rules used by clients and servers to talk. |
 | JavaScript | JavaScript | The programming language of the browser. |
 | JSON | JSON | A text format made of lists and objects. |
+| Library | Bibliothèque | Ready-made code that your program uses. |
 | Licence | Licence | The text saying what you may do with a work. |
 | List | Liste | An ordered series of values, written between `[ ]`. |
 | Local server | Serveur local | A server running on your own computer (`localhost`). |
@@ -33,9 +40,11 @@ Cumulative English–French glossary. Allowed at the written exam.
 | Open data | Données ouvertes | Data anyone can use, change and share. |
 | Package | Paquet | Code written by others that you install with `pip`. |
 | Parameter | Paramètre | A value given to a function or sent in an address. |
+| Promise | Promesse | A JavaScript value that will arrive later; read it with then. |
 | Query string | Chaîne de requête | The part of a URL after the question mark. |
 | Request | Requête | A message asking a server for something. |
 | Response | Réponse | The message the server sends back. |
+| Responsive design | Mise en page adaptative | A page that adapts to the width of the screen. |
 | Route | Route | A link between an address and a function. |
 | Selector | Sélecteur | The part of a CSS rule choosing elements. |
 | Server | Serveur | A computer that waits for requests and answers. |

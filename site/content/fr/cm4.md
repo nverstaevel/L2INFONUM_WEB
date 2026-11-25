@@ -37,7 +37,7 @@ TD4 : tracer vos résultats du TD1.
 ## Vérifiez vos acquis
 
 <details><summary>const ou let pour une valeur qui change ?</summary><p>let.</p></details>
-<details><summary>Que renvoie d’abord fetch ?</summary><p>La promesse d’une réponse ; on utilise then.</p></details>
+<details><summary>Que renvoie d’abord fetch ?</summary><p>Une promesse (une valeur qui arrivera plus tard) de réponse ; on la lit avec then.</p></details>
 <details><summary>Pourquoi servir la page avec un serveur ?</summary><p>Le navigateur bloque la lecture de fichiers depuis une page ouverte en double-clic.</p></details>
 <details><summary>Quel graphique pour une évolution ?</summary><p>Une courbe.</p></details>
 
