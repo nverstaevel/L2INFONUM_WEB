@@ -1,1 +1,34 @@
-{"order": ["en-cover", "en-obj", "en-rule", "en-selectors", "en-spec", "en-look", "en-box", "en-flex", "en-media", "en-check", "en-next", "fr-cover", "fr-obj", "fr-rule", "fr-selectors", "fr-spec", "fr-look", "fr-box", "fr-flex", "fr-media", "fr-check", "fr-next"]}
+{
+ "order": [
+  "en-cover",
+  "en-obj",
+  "en-plan",
+  "en-rule",
+  "en-selectors",
+  "en-spec",
+  "en-inspect",
+  "en-look",
+  "en-box",
+  "en-center",
+  "en-flex",
+  "en-media",
+  "en-navdemo",
+  "en-check",
+  "en-next",
+  "fr-cover",
+  "fr-obj",
+  "fr-plan",
+  "fr-rule",
+  "fr-selectors",
+  "fr-spec",
+  "fr-inspect",
+  "fr-look",
+  "fr-box",
+  "fr-center",
+  "fr-flex",
+  "fr-media",
+  "fr-navdemo",
+  "fr-check",
+  "fr-next"
+ ]
+}

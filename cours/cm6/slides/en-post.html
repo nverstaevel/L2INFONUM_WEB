@@ -1,5 +1,5 @@
 <section id="en-post">
-<p class="eyebrow">FORMS</p>
+<p class="eyebrow">2 · FORMS</p>
 <h2>Handling POST</h2>
 <p class="code">@app.route("/favourites", methods=["GET", "POST"])<br>def favourites():<br>&nbsp; &nbsp; if request.method == "POST":<br>&nbsp; &nbsp; &nbsp; &nbsp; code = request.form.get("country", "").upper()<br>&nbsp; &nbsp; &nbsp; &nbsp; ...<br>&nbsp; &nbsp; return render_template("favourites.html",<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  favourites=text)</p>
 <p>request.args for GET · request.form for POST</p>

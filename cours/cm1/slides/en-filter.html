@@ -1,0 +1,6 @@
+<section id="en-filter">
+<p class="eyebrow">3 · PYTHON</p>
+<h2>Filter rows and write a new CSV</h2>
+<p class="code">kept = []<br>for row in rows:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  # rows: list of dictionaries<br>&nbsp; &nbsp; if row["pages"] == "":&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  # missing value<br>&nbsp; &nbsp; &nbsp; &nbsp; continue<br>&nbsp; &nbsp; kept.append({"title": row["title"], "pages": int(row["pages"])})<br><br>with open("clean.csv", "w", newline="", encoding="utf-8") as f:<br>&nbsp; &nbsp; writer = csv.DictWriter(f, fieldnames=["title", "pages"])<br>&nbsp; &nbsp; writer.writeheader()<br>&nbsp; &nbsp; writer.writerows(kept)</p>
+<p>Never change the original file: write a new one.</p>
+</section>

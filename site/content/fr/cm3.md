@@ -9,11 +9,30 @@ title: CM3 · CSS : apparence et mise en page
 3. disposer des éléments avec Flexbox
 4. adapter une page avec une media query
 
+<!--plan-->
+## La question
+
+**Comment la rendre lisible, aussi sur téléphone ?**
+
+1. Les règles
+2. Les boîtes
+3. La disposition
+<!--/plan-->
+
 ## Diapositives
 
 [PDF](cm3-fr.pdf)
 
 {{slides:cm3:fr}}
+
+<!--lab-->
+## Pour vendredi
+
+TD3 : mettre en forme votre page et l'adapter au téléphone.
+
+- Notions : [Règles et sélecteurs CSS](notion-css-rules.html), [Modèle de boîte](notion-css-box.html), [Flexbox](notion-css-flexbox.html), [Mise en page adaptative et media queries](notion-css-media.html), [Outils de développement](notion-devtools.html)
+- Recettes : [Page et tableaux lisibles](recipe-clean-style.html), [Barre de navigation adaptative](recipe-nav-bar.html)
+<!--/lab-->
 
 ## Vérifiez vos acquis
 

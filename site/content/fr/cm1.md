@@ -11,11 +11,30 @@ Après ce cours, vous savez :
 3. distinguer CSV, JSON et API ;
 4. lire un fichier CSV et écrire un fichier JSON en Python.
 
+<!--plan-->
+## La question
+
+**Comment obtenir et exploiter des données du web ?**
+
+1. Le fonctionnement du web
+2. Les données ouvertes
+3. Python sur un fichier de données
+<!--/plan-->
+
 ## Diapositives
 
 [PDF](cm1-fr.pdf)
 
 {{slides:cm1:fr}}
+
+<!--lab-->
+## Pour vendredi
+
+TD1 : préparer Python, télécharger et nettoyer le fichier Eurostat, calculer des chiffres.
+
+- Notions : [Terminal et environnement virtuel](notion-terminal-venv.html), [HTTP : requêtes, réponses, codes d'état](notion-http.html), [Lire et écrire des fichiers](notion-python-files.html), [Fichiers CSV](notion-csv.html), [Données ouvertes et licences](notion-open-data.html), [Listes de dictionnaires](notion-lists-dicts.html), [Compréhensions, min, max, sorted](notion-list-tools.html), [JSON](notion-json.html)
+- Recettes : [Installer un projet](recipe-venv.html), [Télécharger un fichier](recipe-download.html), [Filtrer un fichier CSV](recipe-clean-csv.html), [Calculer des chiffres et les enregistrer en JSON](recipe-stats-json.html)
+<!--/lab-->
 
 ## Vérifiez vos acquis
 

@@ -1,1 +1,30 @@
-{"order": ["en-cover", "en-obj", "en-why", "en-first", "en-route", "en-responses", "en-methods", "en-demo", "en-check", "en-next", "fr-cover", "fr-obj", "fr-why", "fr-first", "fr-route", "fr-responses", "fr-methods", "fr-demo", "fr-check", "fr-next"]}
+{
+ "order": [
+  "en-cover",
+  "en-obj",
+  "en-plan",
+  "en-why",
+  "en-install",
+  "en-first",
+  "en-route",
+  "en-template",
+  "en-responses",
+  "en-methods",
+  "en-demo",
+  "en-check",
+  "en-next",
+  "fr-cover",
+  "fr-obj",
+  "fr-plan",
+  "fr-why",
+  "fr-install",
+  "fr-first",
+  "fr-route",
+  "fr-template",
+  "fr-responses",
+  "fr-methods",
+  "fr-demo",
+  "fr-check",
+  "fr-next"
+ ]
+}

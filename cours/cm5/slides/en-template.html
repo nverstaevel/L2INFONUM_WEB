@@ -1,0 +1,6 @@
+<section id="en-template">
+<p class="eyebrow">2 · TEMPLATES</p>
+<h2>A page with holes</h2>
+<p class="code"># app.py<br>@app.route("/")<br>def home():<br>&nbsp; &nbsp; return render_template("home.html", city="Toulouse")<br><br>&lt;!-- templates/home.html --&gt;<br>&lt;h1&gt;Library of {{ city }}&lt;/h1&gt;</p>
+<p>{{ city }} is replaced by the value given in Python.</p>
+</section>

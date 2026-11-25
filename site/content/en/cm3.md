@@ -9,11 +9,30 @@ title: CM3 · CSS: look and layout
 3. arrange elements with Flexbox
 4. adapt a page with a media query
 
+<!--plan-->
+## The question
+
+**How do we make it readable, on a phone too?**
+
+1. Rules
+2. Boxes
+3. Layout
+<!--/plan-->
+
 ## Slides
 
 [PDF](cm3-en.pdf)
 
 {{slides:cm3:en}}
+
+<!--lab-->
+## For Friday
+
+TD3: style your page and make it fit a phone.
+
+- Notions: [CSS rules and selectors](notion-css-rules.html), [Box model](notion-css-box.html), [Flexbox](notion-css-flexbox.html), [Responsive design and media queries](notion-css-media.html), [Developer tools](notion-devtools.html)
+- Recipes: [Readable page and tables](recipe-clean-style.html), [Responsive navigation bar](recipe-nav-bar.html)
+<!--/lab-->
 
 ## Check yourself
 

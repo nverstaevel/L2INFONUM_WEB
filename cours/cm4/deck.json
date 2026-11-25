@@ -1,1 +1,32 @@
-{"order": ["en-cover", "en-obj", "en-role", "en-vars", "en-map", "en-fetch", "en-chart", "en-choose", "en-honest", "en-check", "en-next", "fr-cover", "fr-obj", "fr-role", "fr-vars", "fr-map", "fr-fetch", "fr-chart", "fr-choose", "fr-honest", "fr-check", "fr-next"]}
+{
+ "order": [
+  "en-cover",
+  "en-obj",
+  "en-plan",
+  "en-role",
+  "en-vars",
+  "en-map",
+  "en-dom",
+  "en-fetch",
+  "en-chart",
+  "en-chartdemo",
+  "en-choose",
+  "en-honest",
+  "en-check",
+  "en-next",
+  "fr-cover",
+  "fr-obj",
+  "fr-plan",
+  "fr-role",
+  "fr-vars",
+  "fr-map",
+  "fr-dom",
+  "fr-fetch",
+  "fr-chart",
+  "fr-chartdemo",
+  "fr-choose",
+  "fr-honest",
+  "fr-check",
+  "fr-next"
+ ]
+}

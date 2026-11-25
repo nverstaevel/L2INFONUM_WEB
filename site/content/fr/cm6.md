@@ -9,11 +9,30 @@ title: CM6 · Flask 2 : paramètres, formulaires, sessions
 3. conserver un état simple en session
 4. afficher sans risque avec {{ variable }}
 
+<!--plan-->
+## La question
+
+**Comment répondre à la demande d'un visiteur ?**
+
+1. Lire la demande et les données
+2. Formulaires et mémoire
+3. La sécurité
+<!--/plan-->
+
 ## Diapositives
 
 [PDF](cm6-fr.pdf)
 
 {{slides:cm6:fr}}
+
+<!--lab-->
+## Pour vendredi
+
+TD6 : recherche, filtre et favoris.
+
+- Notions : [Listes de dictionnaires](notion-lists-dicts.html), [Gabarits et fichiers statiques](notion-templates.html), [Paramètres d'URL et chaîne de requête](notion-url-parameters.html), [Formulaires](notion-html-forms.html), [GET et POST](notion-get-post.html), [Sessions et cookies](notion-sessions.html), [Contrôle des saisies et échappement](notion-safety.html)
+- Recettes : [Installer un projet](recipe-venv.html), [Un formulaire de recherche](recipe-search-form.html), [Mémoriser une liste avec une session](recipe-session-list.html)
+<!--/lab-->
 
 ## Vérifiez vos acquis
 

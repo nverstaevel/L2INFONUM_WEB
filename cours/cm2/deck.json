@@ -1,1 +1,36 @@
-{"order": ["en-cover", "en-obj", "en-tags", "en-doc", "en-semantic", "en-lists", "en-table", "en-form", "en-methods", "en-access", "en-check", "en-next", "fr-cover", "fr-obj", "fr-tags", "fr-doc", "fr-semantic", "fr-lists", "fr-table", "fr-form", "fr-methods", "fr-access", "fr-check", "fr-next"]}
+{
+ "order": [
+  "en-cover",
+  "en-obj",
+  "en-plan",
+  "en-tags",
+  "en-doc",
+  "en-semantic",
+  "en-skeleton",
+  "en-lists",
+  "en-table",
+  "en-form",
+  "en-methods",
+  "en-formdemo",
+  "en-access",
+  "en-validate",
+  "en-check",
+  "en-next",
+  "fr-cover",
+  "fr-obj",
+  "fr-plan",
+  "fr-tags",
+  "fr-doc",
+  "fr-semantic",
+  "fr-skeleton",
+  "fr-lists",
+  "fr-table",
+  "fr-form",
+  "fr-methods",
+  "fr-formdemo",
+  "fr-access",
+  "fr-validate",
+  "fr-check",
+  "fr-next"
+ ]
+}

@@ -1,5 +1,5 @@
 <section id="en-fetch">
-<p class="eyebrow">FETCH</p>
+<p class="eyebrow">2 · FETCH</p>
 <h2>Ask, then draw</h2>
 <p class="code">fetch("/api/data?country=" + encodeURIComponent(code))<br>&nbsp; .then(response =&gt; response.json())<br>&nbsp; .then(rows =&gt; {<br>&nbsp; &nbsp; if (rows.error) { return; }<br>&nbsp; &nbsp; const labels = rows.map(r =&gt; r.year);<br>&nbsp; &nbsp; const values = rows.map(r =&gt; r.value);<br>&nbsp; &nbsp; // chart.destroy(), then new Chart(...)<br>&nbsp; });</p>
 <p>encodeURIComponent protects the address from odd characters.</p>

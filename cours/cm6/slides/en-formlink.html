@@ -1,0 +1,6 @@
+<section id="en-formlink">
+<p class="eyebrow">2 · FORMS</p>
+<h2>From the form to the route</h2>
+<p class="code">&lt;form action="/" method="get"&gt;<br>&nbsp; &lt;input id="author" name="author" value="{{ author }}"&gt;<br>&nbsp; &lt;button type="submit"&gt;Search&lt;/button&gt;<br>&lt;/form&gt;<br><br># app.py<br>author = request.args.get("author", "").strip().upper()<br>return render_template("search.html", author=author)</p>
+<p>name="author" ↔ args.get("author") · value="{{ author }}" keeps the input</p>
+</section>

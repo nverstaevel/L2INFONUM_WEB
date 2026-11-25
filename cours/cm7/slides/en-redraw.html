@@ -1,0 +1,6 @@
+<section id="en-redraw">
+<p class="eyebrow">2 · FRONT-END</p>
+<h2>A button, a message, a new chart</h2>
+<p class="code">let chart = null;<br>function draw(rows) {<br>&nbsp; if (rows.error) {<br>&nbsp; &nbsp; document.getElementById("message").textContent = rows.error;<br>&nbsp; &nbsp; return;<br>&nbsp; }<br>&nbsp; if (chart) { chart.destroy(); }<br>&nbsp; chart = new Chart(canvas, settings(rows));<br>}<br>button.addEventListener("click", load);&nbsp;  // load: fetch, then draw</p>
+<p>Excerpt: canvas, settings, button and load are defined in the full recipe.</p>
+</section>

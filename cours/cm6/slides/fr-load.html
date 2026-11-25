@@ -1,0 +1,6 @@
+<section id="fr-load">
+<p class="eyebrow">1 · DONNÉES</p>
+<h2>Charger le fichier nettoyé une fois</h2>
+<p class="code">def load_data():<br>&nbsp; &nbsp; with open("data/internet_use_clean.csv", newline="",<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; encoding="utf-8") as f:<br>&nbsp; &nbsp; &nbsp; &nbsp; return [{"country": r["country"], "year": int(r["year"]),<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  "value": float(r["value"])}<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for r in csv.DictReader(f)]<br><br>DATA = load_data()&nbsp; &nbsp; &nbsp; # when the application starts</p>
+<p>Les routes filtrent ensuite DATA. Le fichier n'est pas relu à chaque requête.</p>
+</section>

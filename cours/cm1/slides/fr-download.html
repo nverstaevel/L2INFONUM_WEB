@@ -1,0 +1,6 @@
+<section id="fr-download">
+<p class="eyebrow">3 · PYTHON</p>
+<h2>Télécharger un fichier</h2>
+<p class="code">import requests<br>from pathlib import Path<br><br>response = requests.get(URL, timeout=60)<br>if response.status_code != 200:<br>&nbsp; &nbsp; raise SystemExit("Download failed")<br>Path("data").mkdir(exist_ok=True)<br>Path("data/file.csv").write_bytes(response.content)</p>
+<p>Le script est aussi un client : même requête, même code d'état.</p>
+</section>

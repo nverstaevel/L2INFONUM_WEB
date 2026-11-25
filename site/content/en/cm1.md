@@ -11,11 +11,30 @@ After this lecture you can:
 3. tell CSV, JSON and an API apart;
 4. read a CSV file and write a JSON file in Python.
 
+<!--plan-->
+## The question
+
+**How do we get data from the web and use it?**
+
+1. How the web works
+2. Open data
+3. Python on a data file
+<!--/plan-->
+
 ## Slides
 
 [PDF](cm1-en.pdf)
 
 {{slides:cm1:en}}
+
+<!--lab-->
+## For Friday
+
+TD1: set up Python, download and clean the Eurostat file, compute figures.
+
+- Notions: [Terminal and virtual environment](notion-terminal-venv.html), [HTTP: requests, responses, status codes](notion-http.html), [Reading and writing files](notion-python-files.html), [CSV files](notion-csv.html), [Open data and licences](notion-open-data.html), [Lists of dictionaries](notion-lists-dicts.html), [Comprehensions, min, max, sorted](notion-list-tools.html), [JSON](notion-json.html)
+- Recipes: [Set up a project](recipe-venv.html), [Download a file](recipe-download.html), [Filter a CSV file](recipe-clean-csv.html), [Compute figures and save them as JSON](recipe-stats-json.html)
+<!--/lab-->
 
 ## Check yourself
 

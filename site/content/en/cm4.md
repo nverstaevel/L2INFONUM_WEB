@@ -9,11 +9,30 @@ title: CM4 · JavaScript and Chart.js
 3. read and adapt a Chart.js chart
 4. judge whether a chart is honest
 
+<!--plan-->
+## The question
+
+**How do we make a chart from our data?**
+
+1. Just enough JavaScript
+2. Loading data
+3. Drawing and reading charts
+<!--/plan-->
+
 ## Slides
 
 [PDF](cm4-en.pdf)
 
 {{slides:cm4:en}}
+
+<!--lab-->
+## For Friday
+
+TD4: chart your TD1 results.
+
+- Notions: [Local server](notion-local-server.html), [JavaScript basics](notion-javascript.html), [Developer tools](notion-devtools.html), [fetch: asking for data](notion-fetch.html), [JSON](notion-json.html), [Charts with Chart.js](notion-chartjs.html), [Changing the page from JavaScript](notion-dom.html), [Choosing and reading a chart](notion-honest-charts.html)
+- Recipes: [A chart from a JSON file](recipe-chart-from-json.html)
+<!--/lab-->
 
 ## Check yourself
 

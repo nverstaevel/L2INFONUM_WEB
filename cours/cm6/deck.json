@@ -1,1 +1,32 @@
-{"order": ["en-cover", "en-obj", "en-params", "en-post", "en-session", "en-list", "en-safe", "en-check", "en-next", "fr-cover", "fr-obj", "fr-params", "fr-post", "fr-session", "fr-list", "fr-safe", "fr-check", "fr-next"]}
+{
+ "order": [
+  "en-cover",
+  "en-obj",
+  "en-plan",
+  "en-params",
+  "en-load",
+  "en-list",
+  "en-formlink",
+  "en-searchdemo",
+  "en-post",
+  "en-session",
+  "en-sessiondemo",
+  "en-safe",
+  "en-check",
+  "en-next",
+  "fr-cover",
+  "fr-obj",
+  "fr-plan",
+  "fr-params",
+  "fr-load",
+  "fr-list",
+  "fr-formlink",
+  "fr-searchdemo",
+  "fr-post",
+  "fr-session",
+  "fr-sessiondemo",
+  "fr-safe",
+  "fr-check",
+  "fr-next"
+ ]
+}
