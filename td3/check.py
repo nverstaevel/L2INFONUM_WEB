@@ -45,12 +45,16 @@ check("2B header: background and padding", lambda: has("header", "background|bac
 check("3A main: max-width, centred, padding",
       lambda: has("main", "max-width", "padding") and "auto" in R["main"].get("margin", "") + R["main"].get("margin-inline", ""))
 check("3B img: max-width", lambda: has("img", "max-width"))
+check("3C class, id and three colour rules",
+      lambda: all(has(sel, "color") for sel in ("p", ".note", "#source"))
+      and all(t in Path("index.html").read_text(encoding="utf-8") for t in ('class="note"', 'id="source"')))
+check("3D box of .note: width, padding, border, box-sizing, and your result",
+      lambda: has(".note", "width", "padding", "border", "box-sizing") and "340" in CSS)
 check("4A nav ul: flex, gap, no bullets",
       lambda: R["nav ul"]["display"] == "flex" and has("nav ul", "gap") and "none" in R["nav ul"].get("list-style", ""))
 check("4B nav a: color", lambda: has("nav a", "color"))
 check("5A table: border-collapse", lambda: R["table"]["border-collapse"] == "collapse")
 check("5B th and td: border, padding; th: background",
       lambda: has("th", "border", "padding", "background|background-color") and has("td", "border", "padding"))
-check("5C form: flex with gap", lambda: R["form"]["display"] == "flex" and has("form", "gap"))
 check("6A media query: column on narrow screens",
-      lambda: N["nav ul"]["flex-direction"] == "column" and N["form"]["flex-direction"] == "column")
+      lambda: N["nav ul"]["flex-direction"] == "column")

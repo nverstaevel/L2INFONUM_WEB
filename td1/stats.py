@@ -15,14 +15,19 @@ def load_clean(path):
 
 def summarise(rows):
     """Return the latest year, and the average, lowest and highest value that year."""
-    # TODO 5B (then delete the line "return {}")
+    if not rows:                                           # nothing to do before 5A
+        return {}
+    latest = max(r["year"] for r in rows)                 # given: read these two lines
+    current = [r for r in rows if r["year"] == latest]
+    # TODO 5B: lowest, highest, average, then the dictionary (delete the line "return {}")
     return {}
 
 
 def history(rows, country):
     """Return the list of {"year", "value"} for one country, oldest first."""
-    # TODO 5C (then delete the line "return []")
-    return []
+    # Already written: read it (step 5C).
+    points = [{"year": r["year"], "value": r["value"]} for r in rows if r["country"] == country]
+    return sorted(points, key=lambda p: p["year"])
 
 
 if __name__ == "__main__":

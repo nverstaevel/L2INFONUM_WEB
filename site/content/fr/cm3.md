@@ -30,7 +30,7 @@ title: CM3 · CSS : apparence et mise en page
 
 TD3 : mettre en forme votre page et l'adapter au téléphone.
 
-- Notions : [Règles et sélecteurs CSS](notion-css-rules.html), [Modèle de boîte](notion-css-box.html), [Flexbox](notion-css-flexbox.html), [Mise en page adaptative et media queries](notion-css-media.html), [Outils de développement](notion-devtools.html)
+- Notions : [Règles et sélecteurs CSS](notion-css-rules.html), [Modèle de boîte](notion-css-box.html), [Outils de développement](notion-devtools.html), [Flexbox](notion-css-flexbox.html), [Mise en page adaptative et media queries](notion-css-media.html)
 - Recettes : [Page et tableaux lisibles](recipe-clean-style.html), [Barre de navigation adaptative](recipe-nav-bar.html)
 <!--/lab-->
 

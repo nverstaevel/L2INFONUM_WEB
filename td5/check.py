@@ -44,4 +44,3 @@ check("4B / uses the template", home_page)
 check("5A templates/country.html with {{ code }}",
       lambda: "{{code}}" in Path("templates/country.html").read_text(encoding="utf-8").replace(" ", ""))
 check("5B /country/fr shows FR", country_page)
-check("6A /teapot has the status code 418", lambda: client.get("/teapot").status_code == 418)

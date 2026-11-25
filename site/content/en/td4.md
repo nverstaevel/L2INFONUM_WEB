@@ -14,7 +14,7 @@ Turn your TD1 results into a chart, with a few lines of JavaScript (the programm
 | 2 | Try JavaScript | 35 min |
 | 3 | Use your data | 25 min |
 | 4 | Adapt the chart | 55 min |
-| 5 | Read it critically | 30 min |
+| 5 | Read it critically | 20 min |
 
 ## Notions used in this lab
 
@@ -167,7 +167,7 @@ Blank page after 4C? The console says `Unexpected identifier` when a comma is mi
 
 </details>
 
-## Step 5 · Read the chart critically (30 min)
+## Step 5 · Read the chart critically (20 min)
 
 <p class="refs" markdown="1">**Notion:** [Choosing and reading a chart](notion-honest-charts.html)</p>
 

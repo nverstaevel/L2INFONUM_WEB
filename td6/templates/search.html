@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/search">Search</a>
+    <a href="/favourites">Favourites</a>
+  </nav>
+  <main>
+    <h1>Search</h1>
+    <form action="/search" method="get">
+      <label for="country">Country code</label>
+      <input id="country" name="country" value="{{ country }}" maxlength="2">
+      <label for="minimum">Minimum value</label>
+      <input id="minimum" name="minimum" type="number" step="any" value="{{ minimum }}">
+      <button type="submit">Search</button>
+    </form>
+    <pre>{{ results }}</pre>
+  </main>
+</body>
+</html>

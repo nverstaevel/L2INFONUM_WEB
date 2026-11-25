@@ -29,7 +29,6 @@ def home():
 # TODO 4B: the route /favourites (GET and POST)
 #   TODO 4C: keep the list in session["favourites"]
 #   TODO 5A: accept only known country codes
-#   TODO 5B: empty the list
 
 
 if __name__ == "__main__":   # keep this block at the END of the file

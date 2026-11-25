@@ -10,9 +10,9 @@ Vous allez télécharger de vraies données d'Eurostat (l'office statistique de 
 |---|---|---|---|
 | 1 | aucun : installation | un environnement qui marche | 25 min |
 | 2 | `download.py` | `data/internet_use.csv` | 25 min |
-| 3 | aucun : lire les données | `notes.txt` | 20 min |
+| 3 | aucun : lire les données | `notes.txt` | 15 min |
 | 4 | `clean.py` | `data/internet_use_clean.csv` | 55 min |
-| 5 | `stats.py` | `data/summary.json` | 45 min |
+| 5 | `stats.py` | `data/summary.json` | 30 min |
 
 ## Notions mobilisées dans ce TD
 
@@ -78,7 +78,7 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-**Vérification.** La ligne de saisie commence par `(.venv)`, et `python check.py` affiche huit lignes `[  ]`.
+**Vérification.** La ligne de saisie commence par `(.venv)`, et `python check.py` affiche sept lignes `[  ]`.
 <details markdown="1"><summary>Bloqué ?</summary>
 
 Voir le tableau des problèmes fréquents du [guide d'installation](setup.html).
@@ -144,17 +144,17 @@ python check.py
 
 </details>
 
-## Étape 3 · Lire les données (20 min)
+## Étape 3 · Lire les données (15 min)
 
 <p class="refs" markdown="1">**Notion :** [Fichiers CSV](notion-csv.html), [Données ouvertes et licences](notion-open-data.html)</p>
 
 Un fichier **CSV** est un tableau écrit en texte : une ligne du tableau par ligne, les colonnes séparées par des virgules. La première ligne donne les noms des colonnes. Ouvrez `data/internet_use.csv` dans VS Code, créez un fichier `notes.txt` et répondez :
 
-1. Recopiez la première ligne. Combien y a-t-il de colonnes ?
-2. Trouvez une ligne de la France (`FR`). Quelle colonne contient l'année ? Laquelle contient le chiffre ?
-3. Cherchez (`Ctrl+F`) `EU27`. Est-ce un pays ?
-4. Regardez la colonne `indic_is`. Voyez-vous plusieurs valeurs différentes ? Nous ne gardons que `I_IU3` : les personnes ayant utilisé Internet dans les 3 derniers mois.
-5. Lisez la [notice de réutilisation d'Eurostat](https://ec.europa.eu/eurostat/fr/help/copyright-notice). Que faut-il écrire quand on réutilise les données ?
+1. Trouvez une ligne de la France (`FR`). Quelle colonne contient l'année ? Laquelle contient le chiffre ?
+2. Cherchez (`Ctrl+F`) `EU27`. Est-ce un pays ?
+3. Lisez la [notice de réutilisation d'Eurostat](https://ec.europa.eu/eurostat/fr/help/copyright-notice). Que faut-il écrire quand on réutilise les données ?
+
+La colonne `indic_is` dit ce qui est mesuré. Nous ne gardons que `I_IU3` : les personnes ayant utilisé Internet dans les 3 derniers mois.
 
 ## Étape 4 · Nettoyer (55 min)
 
@@ -245,7 +245,7 @@ python check.py
 
 </details>
 
-## Étape 5 · Statistiques (45 min)
+## Étape 5 · Statistiques (30 min)
 
 Ouvrez `stats.py`.
 
@@ -276,13 +276,11 @@ average = sum(c["people"] for c in cities) / len(cities)  # 20.0
 round(3.14159, 2)                                         # 3.14
 ```
 
-**À vous**, dans cet ordre. Affichez chaque variable pour la vérifier avant de continuer.
+**À vous.** Les deux premières lignes sont déjà écrites dans `stats.py` : `latest` (la plus grande année) et `current` (les lignes de cette année). Lisez-les, puis continuez dans cet ordre. Affichez chaque variable pour la vérifier.
 
-1. `latest` : la plus grande année de `rows`.
-2. `current` : seulement les lignes de cette année.
-3. `lowest` et `highest` : les lignes de `current` ayant la plus petite et la plus grande `value`.
-4. `average` : la moyenne des `value` de `current`.
-5. Renvoyez un dictionnaire avec les clés `year`, `countries` (nombre de lignes de `current`), `average` (2 décimales), `lowest`, `highest`.
+1. `lowest` et `highest` : les lignes de `current` ayant la plus petite et la plus grande `value`.
+2. `average` : la moyenne des `value` de `current`.
+3. Renvoyez un dictionnaire avec les clés `year`, `countries` (nombre de lignes de `current`), `average` (2 décimales), `lowest`, `highest`.
 <details markdown="1"><summary>Bloqué ?</summary>
 
 Remplacez `c` par `r`, `cities` par `rows` ou `current`, et `"people"` par `"year"` ou `"value"`. Pour `highest`, `max` s'utilise comme `min`. La dernière ligne commence par `return {"year": latest, "countries": len(current),`.
@@ -293,19 +291,12 @@ Remplacez `c` par `r`, `cities` par `rows` ou `current`, et `"people"` par `"yea
 
 ### 5C · Un pays au fil du temps · `history`
 
-**Exemple** (sur un autre sujet : ne le recopiez pas tel quel).
+Cette fonction est **déjà écrite**. Lisez-la et comparez-la à l'exemple : elle garde un pays, puis trie par année. Rien à écrire. En haut du fichier, vous pouvez changer `MY_COUNTRY` (France `FR`, Espagne `ES`, Italie `IT`, Allemagne `DE`).
 ```python
 points = [{"year": c["year"], "people": c["people"]}
           for c in rows if c["name"] == "A"]
 points = sorted(points, key=lambda p: p["year"])   # oldest first
 ```
-
-**À vous.** Renvoyez la liste des `{"year", "value"}` des lignes dont `country` vaut `country`, de la plus ancienne à la plus récente. En haut du fichier, vous pouvez changer `MY_COUNTRY` (France `FR`, Espagne `ES`, Italie `IT`, Allemagne `DE`).
-<details markdown="1"><summary>Bloqué ?</summary>
-
-`if r["country"] == country`, puis `return sorted(points, key=...)`.
-
-</details>
 
 ### 5D · Enregistrer en JSON
 
@@ -327,13 +318,14 @@ python stats.py
 python check.py
 ```
 
-**Vérification.** Huit `[OK]`. Comparez la dernière valeur de votre pays avec le [tableau Eurostat](https://ec.europa.eu/eurostat/databrowser/view/tin00028/default/table?lang=fr).
+**Vérification.** Sept `[OK]`. Comparez la dernière valeur de votre pays avec le [tableau Eurostat](https://ec.europa.eu/eurostat/databrowser/view/tin00028/default/table?lang=fr).
 
 ## Si vous avez fini (facultatif)
 
 1. Affichez les 5 pays ayant la plus forte valeur la dernière année. Partez de `sorted(current, key=..., reverse=True)`, puis gardez `[:5]`.
 2. Demandez le code pays avec `input()` à la place de `MY_COUNTRY`.
 3. Ajoutez un dictionnaire des noms de pays (`{"FR": "France"}`) et affichez le nom. La Grèce est codée `EL`.
+4. Réécrivez `history` avec une boucle `for`.
 
 ## Source
 

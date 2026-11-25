@@ -6,7 +6,7 @@ title: TD5 · Flask : routes et réponses
 
 Faire tourner votre première application avec Flask, un paquet Python qui répond aux requêtes web.
 
-**Vous avez réussi si** : `python check.py` affiche sept `[OK]`.
+**Vous avez réussi si** : `python check.py` affiche six `[OK]`.
 
 | Étape | Vous faites | Durée |
 |---|---|---|
@@ -15,7 +15,7 @@ Faire tourner votre première application avec Flask, un paquet Python qui répo
 | 3 | Renvoyer du JSON | 25 min |
 | 4 | Un gabarit | 45 min |
 | 5 | Une valeur dans l'adresse | 35 min |
-| 6 | Codes d'état | 20 min |
+| 6 | Codes d'état | 10 min |
 
 ## Notions mobilisées dans ce TD
 
@@ -81,7 +81,7 @@ python app.py
 
 Ouvrez `http://127.0.0.1:5000/` (`127.0.0.1` signifie « cet ordinateur »). Laissez ce terminal tourner : `Ctrl+C` l'arrête. Lancez `check.py` dans un **second** terminal, après y avoir aussi activé l'environnement. L'application redémarre toute seule quand vous enregistrez un fichier `.py`.
 
-**Vérification.** Le navigateur dit `Hello, web!` et `check.py` montre sept `[  ]`.
+**Vérification.** Le navigateur dit `Hello, web!` et `check.py` montre six `[  ]`.
 
 ## Étape 2 · Une première route (25 min)
 
@@ -184,23 +184,15 @@ def book(title):
 
 Pourquoi un gabarit et pas `return code` ? `{{ }}` affiche ce qu'a saisi le visiteur comme du simple texte : personne ne peut glisser de code dans votre page.
 
-## Étape 6 · Codes d'état (20 min)
+## Étape 6 · Codes d'état (10 min)
 
 <p class="refs" markdown="1">**Notion :** [HTTP : requêtes, réponses, codes d'état](notion-http.html), [Outils de développement](notion-devtools.html)</p>
 
-Toute réponse a un numéro : 200 succès, 404 introuvable, 500 erreur dans votre code. On peut le choisir en renvoyant deux valeurs.
+Toute réponse a un numéro : 200 succès, 404 introuvable, 405 méthode non autorisée, 500 erreur dans votre code.
 
-**Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
+**À vous.** Ouvrez l'onglet **Réseau** (`F12`). Rechargez `/about`, puis visitez `/nothing`. Quel code lisez-vous à chaque fois ?
 
-```python
-return "This book is gone", 410
-```
-
-### 6A · /teapot
-
-**À vous.** Écrivez `/teapot`, qui renvoie un message avec le code 418.
-
-**Vérification.** Dans l'onglet **Réseau** (`F12`), rechargez `/teapot` : vous lisez 418. Visitez `/nothing` : 404. Sept `[OK]`.
+**Vérification.** Vous lisez 200, puis 404. `check.py` affiche six `[OK]`.
 
 ## Quand ça ne marche pas
 
@@ -215,3 +207,4 @@ return "This book is gone", 410
 
 1. Ajoutez `/count` : le nombre de lignes de votre fichier nettoyé (copiez-le dans `td5/data`).
 2. Personnalisez la page 404 avec `@app.errorhandler(404)`.
+3. Choisissez vous-même un code : une route `/teapot` qui renvoie `"No coffee here", 418`.

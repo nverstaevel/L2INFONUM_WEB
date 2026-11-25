@@ -6,15 +6,15 @@ title: TD2 · A static page presenting a dataset
 
 Write a web page that presents your Eurostat data, with a form. **Keep this page:** TD3 makes it beautiful.
 
-**You have succeeded if**: `python check.py` shows fifteen `[OK]` and the validator reports no error.
+**You have succeeded if**: `python check.py` shows fourteen `[OK]` and the validator reports no error.
 
 | Step | You do | Time |
 |---|---|---|
-| 1 | Open the files | 15 min |
+| 1 | Open the files | 10 min |
 | 2 | Build the structure | 30 min |
-| 3 | Add text, link and image | 35 min |
-| 4 | Make a table | 40 min |
-| 5 | Make a form | 35 min |
+| 3 | Add text, link and image | 25 min |
+| 4 | Make a table | 30 min |
+| 5 | Make a form | 30 min |
 | 6 | Footer and validation | 25 min |
 
 ## Notions used in this lab
@@ -55,7 +55,7 @@ HTML describes a page with **elements**. An element has an opening **tag**, some
 <!-- p = paragraph · a = link · href = attribute · this line is a comment -->
 ```
 
-## Step 1 · Open the files (15 min)
+## Step 1 · Open the files (10 min)
 
 <p class="refs" markdown="1">**Notion:** [HTML elements and attributes](notion-html-elements.html)</p>
 
@@ -108,9 +108,9 @@ From now on: edit in VS Code, **save**, then **reload** the browser (`F5`).
 
 **Your turn.** **Inside** your `header`, add three links to `#about`, `#figures` and `#search`.
 
-**Check.** `2A`, `2B`, `2C` are `[OK]`. The links do nothing yet: their targets do not exist.
+**Check.** `2A`, `2B`, `2C` are `[OK]`. The links jump to the three sections of the file, which are still empty.
 
-## Step 3 · Text, link and image (35 min)
+## Step 3 · Text, link and image (25 min)
 
 <p class="refs" markdown="1">**Notion:** [Lists, links, images, accessibility](notion-html-links-images.html) · **Recipe:** [A complete HTML page](recipe-page-skeleton.html)</p>
 
@@ -125,13 +125,9 @@ From now on: edit in VS Code, **save**, then **reload** the browser (`F5`).
 </section>
 ```
 
-**Your turn.** Under `TODO 3A`, make a section with `id="about"`, an `h2` and one paragraph that says what your data measures. **Write 3B, 3C and 3D inside this section**, before `</section>`.
+**Your turn.** The section with `id="about"` is already in your file. Under `TODO 3A`, add an `h2` and one paragraph that says what your data measures. **Write 3B and 3C in the same section**, before `</section>`.
 
-### 3B · A list
-
-**Your turn.** Add a list (`ul` and `li`, as in 2C without links) with three items: the producer, the unit, how often the data is published.
-
-### 3C · A link to another site
+### 3B · A link to another site
 
 **Example** (another subject: adapt it, do not copy it as it is).
 
@@ -145,7 +141,7 @@ From now on: edit in VS Code, **save**, then **reload** the browser (`F5`).
 https://ec.europa.eu/eurostat/databrowser/view/tin00028/default/table
 ```
 
-### 3D · An image
+### 3C · An image
 
 `img` has no closing tag. `alt` describes the image for people who cannot see it.
 
@@ -157,15 +153,15 @@ https://ec.europa.eu/eurostat/databrowser/view/tin00028/default/table
 
 **Your turn.** Show `images/network.svg` with your own `alt` text.
 
-**Check.** `3A` to `3D` are `[OK]`, the link opens Eurostat and you see the picture.
+**Check.** `3A` to `3C` are `[OK]`, the link opens Eurostat and you see the picture.
 
 <details markdown="1"><summary>Stuck?</summary>
 
-No picture? The path must be exactly `images/network.svg`. `[  ] 3B`? Your list must be before `</section>`.
+No picture? The path must be exactly `images/network.svg`. `[  ]` on 3B or 3C? They must be inside the section `about`, before its `</section>`.
 
 </details>
 
-## Step 4 · A table (40 min)
+## Step 4 · A table (30 min)
 
 <p class="refs" markdown="1">**Notion:** [Tables](notion-html-tables.html) · **Recipe:** [A table and a form](recipe-table-form.html)</p>
 
@@ -197,7 +193,7 @@ No picture? The path must be exactly `images/network.svg`. `[  ] 3B`? Your list 
 
 ### 4A · Section, table, caption
 
-**Your turn.** Make a section with `id="figures"`, an `h2`, and a `table` with a `caption` naming the country and the years.
+**Your turn.** In the section `figures` (already there), add an `h2` and a `table` with a `caption` naming the country and the years.
 
 ### 4B · Header row
 
@@ -205,11 +201,11 @@ No picture? The path must be exactly `images/network.svg`. `[  ] 3B`? Your list 
 
 ### 4C · Data rows
 
-**Your turn.** Add a `tbody` with **at least 5 rows**. Take the figures of your country in `internet_use_clean.csv`. Write one row, check it in the browser, then copy it.
+**Your turn.** Add a `tbody` with **at least 3 rows**. Take the figures of your country in `internet_use_clean.csv`. Write one row, check it in the browser, then copy it.
 
 **Check.** `4A` to `4C` are `[OK]`. The table has no borders: CSS adds them in TD3.
 
-## Step 5 · A form (35 min)
+## Step 5 · A form (30 min)
 
 <p class="refs" markdown="1">**Notion:** [Forms](notion-html-forms.html) · **Recipe:** [A table and a form](recipe-table-form.html)</p>
 
@@ -234,7 +230,7 @@ A **form** collects what the visitor types. `name` is the name under which the v
 
 ### 5A · Section and form
 
-**Your turn.** Section with `id="search"`, an `h2`, and an empty `form` with `action="#search"` and `method="get"`. Write 5B to 5D inside the form.
+**Your turn.** In the section `search` (already there), add an `h2` and an empty `form` with `action="#search"` and `method="get"`. Write 5B to 5D inside the form.
 
 ### 5B · Countries
 
@@ -268,10 +264,11 @@ A **form** collects what the visitor types. `name` is the name under which the v
 
 A **validator** looks for mistakes in your HTML. Open the [W3C validator](https://validator.w3.org/#validate_by_input), paste your whole file, click **Check**. Fix the **first** error, check again.
 
-**Check.** Fifteen `[OK]` and no error in the validator.
+**Check.** Fourteen `[OK]` and no error in the validator.
 
 ## If you finish early (optional)
 
 1. Add a second table for another country.
 2. Add radio buttons and a checkbox to the form.
 3. Add a second page and link the two.
+4. In the section `about`, add a list (`ul` and `li`): producer, unit, how often the data is published.

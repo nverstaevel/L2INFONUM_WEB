@@ -6,29 +6,29 @@ title: TD9 · Mini-project 2: pages, filters, charts
 
 Build the pages, the filter and the first chart.
 
-**You have succeeded if**: the main path works, from the home page to the chart.
+**You have succeeded if**: the chart works, then the whole path from the home page to the chart.
 
 | Step | You do | Time |
 |---|---|---|
-| 1 | Pages | 45 min |
-| 2 | Form or filter | 45 min |
-| 3 | JSON route and chart | 60 min |
+| 1 | JSON route and chart | 60 min |
+| 2 | Pages | 45 min |
+| 3 | Form or filter | 45 min |
 | 4 | Review | 30 min |
 
 ## Notions used in this lab
 
 Open them when you need them: each one is a short page. The links are repeated at the step where you need them.
 
-- [Templates and static files](notion-templates.html)
-- [Flexbox](notion-css-flexbox.html)
-- [URL parameters and query strings](notion-url-parameters.html)
-- [Forms](notion-html-forms.html)
 - [JSON API](notion-api.html)
 - [fetch: asking for data](notion-fetch.html)
 - [Charts with Chart.js](notion-chartjs.html)
 - [Debugging](notion-debugging.html)
+- [Templates and static files](notion-templates.html)
+- [Flexbox](notion-css-flexbox.html)
+- [URL parameters and query strings](notion-url-parameters.html)
+- [Forms](notion-html-forms.html)
 
-**Ready-made examples:** [A Flask app with a template](recipe-flask-app.html) · [Responsive navigation bar](recipe-nav-bar.html) · [A search form](recipe-search-form.html) · [A JSON API and its chart](recipe-api-chart.html)
+**Ready-made examples:** [A JSON API and its chart](recipe-api-chart.html) · [A Flask app with a template](recipe-flask-app.html) · [Responsive navigation bar](recipe-nav-bar.html) · [A search form](recipe-search-form.html)
 
 ## Before the session
 
@@ -38,7 +38,22 @@ Open them when you need them: each one is a short page. The links are repeated a
 
 Tick each box when it is done (your browser remembers it). Do not start the next part before reaching the **milestone**. Make a copy of your folder after each milestone.
 
-## Step 1 · Pages (45 min)
+## Step 1 · JSON route and chart (60 min)
+
+<p class="refs" markdown="1">**Notion:** [JSON API](notion-api.html), [fetch: asking for data](notion-fetch.html), [Charts with Chart.js](notion-chartjs.html), [Debugging](notion-debugging.html) · **Recipe:** [A JSON API and its chart](recipe-api-chart.html)</p>
+
+Start with the riskiest part. Reuse your TD7 code; the data comes from `load_data` (TD8).
+
+- [ ] Copy `api_data` from TD7.
+- [ ] Add `jsonify` to the line `from flask import ...`.
+- [ ] Test the JSON address **alone** in the browser.
+- [ ] Copy `chart.html` to `templates` and `chart.js` to `static`; add the route of the page.
+- [ ] Change the title, the label and the type of chart.
+- [ ] Check the console: no red message.
+
+**Milestone.** The chart changes when the parameter changes.
+
+## Step 2 · Pages (45 min)
 
 <p class="refs" markdown="1">**Notion:** [Templates and static files](notion-templates.html), [Flexbox](notion-css-flexbox.html) · **Recipe:** [A Flask app with a template](recipe-flask-app.html), [Responsive navigation bar](recipe-nav-bar.html)</p>
 
@@ -49,7 +64,7 @@ Tick each box when it is done (your browser remembers it). Do not start the next
 
 **Milestone.** Every link of the menu works.
 
-## Step 2 · Form or filter (45 min)
+## Step 3 · Form or filter (45 min)
 
 <p class="refs" markdown="1">**Notion:** [URL parameters and query strings](notion-url-parameters.html), [Forms](notion-html-forms.html) · **Recipe:** [A search form](recipe-search-form.html)</p>
 
@@ -59,19 +74,6 @@ Tick each box when it is done (your browser remembers it). Do not start the next
 - [ ] Test a normal value, an unknown value and an empty field.
 
 **Milestone.** The display changes with the input and nothing crashes.
-
-## Step 3 · JSON route and chart (60 min)
-
-<p class="refs" markdown="1">**Notion:** [JSON API](notion-api.html), [fetch: asking for data](notion-fetch.html), [Charts with Chart.js](notion-chartjs.html), [Debugging](notion-debugging.html) · **Recipe:** [A JSON API and its chart](recipe-api-chart.html)</p>
-
-- [ ] Copy `api_data` from TD7.
-- [ ] Add `jsonify` to the line `from flask import ...`.
-- [ ] Test the JSON address **alone** in the browser.
-- [ ] Copy `chart.html` to `templates` and `chart.js` to `static`; add the route of the page.
-- [ ] Change the title, the label and the type of chart.
-- [ ] Check the console: no red message.
-
-**Milestone.** The chart changes when the parameter changes.
 
 ## Step 4 · Review (30 min)
 

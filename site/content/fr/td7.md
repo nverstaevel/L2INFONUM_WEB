@@ -10,11 +10,11 @@ Votre application envoie des données filtrées en JSON, et la page les trace sa
 
 | Étape | Vous faites | Durée |
 |---|---|---|
-| 1 | Installer et observer | 35 min |
+| 1 | Installer et observer | 25 min |
 | 2 | Filtrer par pays | 30 min |
 | 3 | Filtrer par année | 30 min |
 | 4 | Gérer les erreurs | 45 min |
-| 5 | Déboguer | 40 min |
+| 5 | Déboguer | 30 min |
 
 ## Notions mobilisées dans ce TD
 
@@ -48,9 +48,11 @@ python check.py
 
 Sur macOS ou Linux, hors environnement virtuel, tapez `python3`. `[OK]` : la partie fonctionne ; `[  ]` : pas encore. Le vérificateur ne remplace pas un coup d'œil à votre page dans le navigateur.
 
-## Étape 1 · Installer et observer (35 min)
+## Étape 1 · Installer et observer (25 min)
 
 <p class="refs" markdown="1">**Notion :** [API JSON](notion-api.html), [fetch : demander des données](notion-fetch.html), [Outils de développement](notion-devtools.html) · **Recette :** [Une API JSON et son graphique](recipe-api-chart.html)</p>
+
+**Raccourci :** vous pouvez réutiliser l'environnement du TD6 au lieu d'en créer un : `..\td6\.venv\Scripts\Activate.ps1` (Windows) ou `source ../td6/.venv/bin/activate` (macOS, Linux). En cas d'échec, créez-en un nouveau comme ci-dessous.
 
 1. Ouvrez le dossier `td7` dans VS Code et un terminal.
 2. Créez l'environnement (voir le [guide d'installation](setup.html) en cas d'échec).
@@ -160,7 +162,7 @@ Le navigateur peut garder l'ancien JavaScript : rechargez avec `Ctrl+F5` (`Cmd+S
 
 </details>
 
-## Étape 5 · Déboguer (40 min)
+## Étape 5 · Déboguer (30 min)
 
 <p class="refs" markdown="1">**Notion :** [Déboguer](notion-debugging.html), [Outils de développement](notion-devtools.html)</p>
 
@@ -170,8 +172,7 @@ Le navigateur peut garder l'ancien JavaScript : rechargez avec `Ctrl+F5` (`Cmd+S
 2. Ouvrez la **Console** : quel est le message ?
 3. Ouvrez **Réseau** : quelle adresse a échoué, avec quel code ?
 4. Réparez.
-5. Écrivez maintenant `row.values` au lieu de `row.value`. Que se passe-t-il, y a-t-il un message ? Réparez.
-6. Notez dans `notes.txt` (dossier `td7`) où vous avez regardé et ce que vous avez vu, en 20 mots au moins.
+5. Notez dans `notes.txt` (dossier `td7`) où vous avez regardé et ce que vous avez vu, en 20 mots au moins.
 
 **Vérification.** Le graphique fonctionne à nouveau et cinq `[OK]`.
 
@@ -189,3 +190,4 @@ Le navigateur peut garder l'ancien JavaScript : rechargez avec `Ctrl+F5` (`Cmd+S
 1. Comparez avec un second pays.
 2. Remplacez le champ par une liste `select`.
 3. Choisissez le type de graphique dans la page.
+4. Une erreur silencieuse : écrivez `row.values` au lieu de `row.value`. Que se passe-t-il, y a-t-il un message ? Réparez.

@@ -1,5 +1,5 @@
 <section id="en-download">
-<p class="eyebrow">3 · PYTHON</p>
+<p class="eyebrow">3 · PYTHON · IF TIME</p>
 <h2>Download a file</h2>
 <p class="code">import requests<br>from pathlib import Path<br><br>response = requests.get(URL, timeout=60)<br>if response.status_code != 200:<br>&nbsp; &nbsp; raise SystemExit("Download failed")<br>Path("data").mkdir(exist_ok=True)<br>Path("data/file.csv").write_bytes(response.content)</p>
 <p>The script is a client too: same request, same status code.</p>

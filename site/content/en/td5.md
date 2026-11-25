@@ -6,7 +6,7 @@ title: TD5 · Flask: routes and responses
 
 Run your first application with Flask, a Python package that answers web requests.
 
-**You have succeeded if**: `python check.py` shows seven `[OK]`.
+**You have succeeded if**: `python check.py` shows six `[OK]`.
 
 | Step | You do | Time |
 |---|---|---|
@@ -15,7 +15,7 @@ Run your first application with Flask, a Python package that answers web request
 | 3 | Return JSON | 25 min |
 | 4 | A template | 45 min |
 | 5 | A value in the address | 35 min |
-| 6 | Status codes | 20 min |
+| 6 | Status codes | 10 min |
 
 ## Notions used in this lab
 
@@ -81,7 +81,7 @@ python app.py
 
 Open `http://127.0.0.1:5000/` (`127.0.0.1` means "this computer"). Leave this terminal running: `Ctrl+C` stops it. Run `check.py` in a **second** terminal, after activating the environment there too. The application restarts by itself when you save a `.py` file.
 
-**Check.** The browser says `Hello, web!` and `check.py` shows seven `[  ]`.
+**Check.** The browser says `Hello, web!` and `check.py` shows six `[  ]`.
 
 ## Step 2 · A first route (25 min)
 
@@ -184,23 +184,15 @@ def book(title):
 
 Why a template and not `return code`? `{{ }}` shows what the visitor typed as plain text, so nobody can slip code into your page.
 
-## Step 6 · Status codes (20 min)
+## Step 6 · Status codes (10 min)
 
 <p class="refs" markdown="1">**Notion:** [HTTP: requests, responses, status codes](notion-http.html), [Developer tools](notion-devtools.html)</p>
 
-Every answer has a number: 200 success, 404 not found, 500 error in your code. You can choose it by returning two values.
+Every answer has a number: 200 success, 404 not found, 405 method not allowed, 500 error in your code.
 
-**Example** (another subject: adapt it, do not copy it as it is).
+**Your turn.** Open the **Network** tab (`F12`). Reload `/about`, then visit `/nothing`. Which code do you read each time?
 
-```python
-return "This book is gone", 410
-```
-
-### 6A · /teapot
-
-**Your turn.** Write `/teapot`, which returns a message with the code 418.
-
-**Check.** In the **Network** tab (`F12`), reload `/teapot`: you read 418. Visit `/nothing`: 404. Seven `[OK]`.
+**Check.** You read 200, then 404. `check.py` shows six `[OK]`.
 
 ## When something fails
 
@@ -215,3 +207,4 @@ return "This book is gone", 410
 
 1. Add `/count`: the number of lines of your clean file (copy it into `td5/data`).
 2. Customise the 404 page with `@app.errorhandler(404)`.
+3. Choose a code yourself: a route `/teapot` that returns `"No coffee here", 418`.

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Favourites</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/search">Search</a>
+    <a href="/favourites">Favourites</a>
+  </nav>
+  <main>
+    <h1>Favourites</h1>
+    <p>Your countries: {{ favourites }}</p>
+    <form action="/favourites" method="post">
+      <label for="country">Country code</label>
+      <input id="country" name="country" maxlength="2" required>
+      <button type="submit">Add</button>
+    </form>
+  </main>
+</body>
+</html>

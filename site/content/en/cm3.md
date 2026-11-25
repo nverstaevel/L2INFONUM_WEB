@@ -30,7 +30,7 @@ title: CM3 · CSS: look and layout
 
 TD3: style your page and make it fit a phone.
 
-- Notions: [CSS rules and selectors](notion-css-rules.html), [Box model](notion-css-box.html), [Flexbox](notion-css-flexbox.html), [Responsive design and media queries](notion-css-media.html), [Developer tools](notion-devtools.html)
+- Notions: [CSS rules and selectors](notion-css-rules.html), [Box model](notion-css-box.html), [Developer tools](notion-devtools.html), [Flexbox](notion-css-flexbox.html), [Responsive design and media queries](notion-css-media.html)
 - Recipes: [Readable page and tables](recipe-clean-style.html), [Responsive navigation bar](recipe-nav-bar.html)
 <!--/lab-->
 

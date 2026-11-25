@@ -32,6 +32,7 @@ Open them when you need them: each one is a short page. The links are repeated a
 ## Before the session
 
 - [ ] I have thought of two possible topics.
+- [ ] I have looked at the slide on the project folder and the README in [CM8](cm8.html).
 
 ## How to work
 
@@ -84,6 +85,8 @@ if row["age"] != "Y15-74":   # keep one value of a column
 Print the different values of a column: `print(set(row["age"] for row in rows))`.
 
 </details>
+
+**Stuck after 60 minutes?** Take the backup file `project/backup/co2_per_capita.csv` (CO₂ emissions per person, already clean), copy it into `data` and go on. Cite it as written in `project/backup/README.md`.
 
 **Milestone.** A clean CSV file `country,year,value` in the folder `data`.
 

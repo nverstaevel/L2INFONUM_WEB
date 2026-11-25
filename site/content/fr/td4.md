@@ -14,7 +14,7 @@ Transformer les résultats du TD1 en graphique avec quelques lignes de JavaScrip
 | 2 | Essayer JavaScript | 35 min |
 | 3 | Utiliser vos données | 25 min |
 | 4 | Adapter le graphique | 55 min |
-| 5 | Le lire avec esprit critique | 30 min |
+| 5 | Le lire avec esprit critique | 20 min |
 
 ## Notions mobilisées dans ce TD
 
@@ -167,7 +167,7 @@ Page vide après 4C ? La console dit `Unexpected identifier` quand il manque une
 
 </details>
 
-## Étape 5 · Lire le graphique avec esprit critique (30 min)
+## Étape 5 · Lire le graphique avec esprit critique (20 min)
 
 <p class="refs" markdown="1">**Notion :** [Choisir et lire un graphique](notion-honest-charts.html)</p>
 

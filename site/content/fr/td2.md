@@ -6,15 +6,15 @@ title: TD2 · Une page statique présentant un jeu de données
 
 Écrire une page web qui présente vos données Eurostat, avec un formulaire. **Gardez cette page :** le TD3 l'embellit.
 
-**Vous avez réussi si** : `python check.py` affiche quinze `[OK]` et le validateur ne signale aucune erreur.
+**Vous avez réussi si** : `python check.py` affiche quatorze `[OK]` et le validateur ne signale aucune erreur.
 
 | Étape | Vous faites | Durée |
 |---|---|---|
-| 1 | Ouvrir les fichiers | 15 min |
+| 1 | Ouvrir les fichiers | 10 min |
 | 2 | Construire la structure | 30 min |
-| 3 | Ajouter texte, lien et image | 35 min |
-| 4 | Faire un tableau | 40 min |
-| 5 | Faire un formulaire | 35 min |
+| 3 | Ajouter texte, lien et image | 25 min |
+| 4 | Faire un tableau | 30 min |
+| 5 | Faire un formulaire | 30 min |
 | 6 | Pied de page et validation | 25 min |
 
 ## Notions mobilisées dans ce TD
@@ -55,7 +55,7 @@ HTML décrit une page avec des **éléments**. Un élément a une **balise** ouv
 <!-- p = paragraph · a = link · href = attribute · this line is a comment -->
 ```
 
-## Étape 1 · Ouvrir les fichiers (15 min)
+## Étape 1 · Ouvrir les fichiers (10 min)
 
 <p class="refs" markdown="1">**Notion :** [Éléments et attributs HTML](notion-html-elements.html)</p>
 
@@ -108,9 +108,9 @@ Ensuite : modifiez dans VS Code, **enregistrez**, puis **rechargez** le navigate
 
 **À vous.** **Dans** votre `header`, ajoutez trois liens vers `#about`, `#figures` et `#search`.
 
-**Vérification.** `2A`, `2B`, `2C` sont `[OK]`. Les liens ne font rien encore : leurs cibles n'existent pas.
+**Vérification.** `2A`, `2B`, `2C` sont `[OK]`. Les liens mènent aux trois sections du fichier, encore vides.
 
-## Étape 3 · Texte, lien et image (35 min)
+## Étape 3 · Texte, lien et image (25 min)
 
 <p class="refs" markdown="1">**Notion :** [Listes, liens, images, accessibilité](notion-html-links-images.html) · **Recette :** [Une page HTML complète](recipe-page-skeleton.html)</p>
 
@@ -125,13 +125,9 @@ Ensuite : modifiez dans VS Code, **enregistrez**, puis **rechargez** le navigate
 </section>
 ```
 
-**À vous.** Sous `TODO 3A`, faites une section avec `id="about"`, un `h2` et un paragraphe qui dit ce que mesurent vos données. **Écrivez 3B, 3C et 3D dans cette section**, avant `</section>`.
+**À vous.** La section `id="about"` est déjà dans votre fichier. Sous `TODO 3A`, ajoutez un `h2` et un paragraphe qui dit ce que mesurent vos données. **Écrivez 3B et 3C dans la même section**, avant `</section>`.
 
-### 3B · Une liste
-
-**À vous.** Ajoutez une liste (`ul` et `li`, comme en 2C sans les liens) avec trois éléments : le producteur, l'unité, la fréquence de publication.
-
-### 3C · Un lien vers un autre site
+### 3B · Un lien vers un autre site
 
 **Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
 
@@ -145,7 +141,7 @@ Ensuite : modifiez dans VS Code, **enregistrez**, puis **rechargez** le navigate
 https://ec.europa.eu/eurostat/databrowser/view/tin00028/default/table
 ```
 
-### 3D · Une image
+### 3C · Une image
 
 `img` n'a pas de balise fermante. `alt` décrit l'image pour les personnes qui ne la voient pas.
 
@@ -157,15 +153,15 @@ https://ec.europa.eu/eurostat/databrowser/view/tin00028/default/table
 
 **À vous.** Affichez `images/network.svg` avec votre propre texte `alt`.
 
-**Vérification.** `3A` à `3D` sont `[OK]`, le lien ouvre Eurostat et vous voyez l'image.
+**Vérification.** `3A` à `3C` sont `[OK]`, le lien ouvre Eurostat et vous voyez l'image.
 
 <details markdown="1"><summary>Bloqué ?</summary>
 
-Pas d'image ? Le chemin doit être exactement `images/network.svg`. `[  ] 3B` ? Votre liste doit être avant `</section>`.
+Pas d'image ? Le chemin doit être exactement `images/network.svg`. `[  ]` en 3B ou 3C ? Ils doivent être dans la section `about`, avant son `</section>`.
 
 </details>
 
-## Étape 4 · Un tableau (40 min)
+## Étape 4 · Un tableau (30 min)
 
 <p class="refs" markdown="1">**Notion :** [Tableaux](notion-html-tables.html) · **Recette :** [Un tableau et un formulaire](recipe-table-form.html)</p>
 
@@ -197,7 +193,7 @@ Pas d'image ? Le chemin doit être exactement `images/network.svg`. `[  ] 3B` ? 
 
 ### 4A · Section, tableau, légende
 
-**À vous.** Faites une section avec `id="figures"`, un `h2` et une `table` avec une `caption` nommant le pays et les années.
+**À vous.** Dans la section `figures` (déjà présente), ajoutez un `h2` et une `table` avec une `caption` nommant le pays et les années.
 
 ### 4B · Ligne d'en-tête
 
@@ -205,11 +201,11 @@ Pas d'image ? Le chemin doit être exactement `images/network.svg`. `[  ] 3B` ? 
 
 ### 4C · Lignes de données
 
-**À vous.** Ajoutez un `tbody` avec **au moins 5 lignes**. Prenez les chiffres de votre pays dans `internet_use_clean.csv`. Écrivez une ligne, vérifiez dans le navigateur, puis recopiez-la.
+**À vous.** Ajoutez un `tbody` avec **au moins 3 lignes**. Prenez les chiffres de votre pays dans `internet_use_clean.csv`. Écrivez une ligne, vérifiez dans le navigateur, puis recopiez-la.
 
 **Vérification.** `4A` à `4C` sont `[OK]`. Le tableau n'a pas de bordures : le CSS les ajoutera au TD3.
 
-## Étape 5 · Un formulaire (35 min)
+## Étape 5 · Un formulaire (30 min)
 
 <p class="refs" markdown="1">**Notion :** [Formulaires](notion-html-forms.html) · **Recette :** [Un tableau et un formulaire](recipe-table-form.html)</p>
 
@@ -234,7 +230,7 @@ Un **formulaire** recueille ce que saisit le visiteur. `name` est le nom sous le
 
 ### 5A · Section et formulaire
 
-**À vous.** Section avec `id="search"`, un `h2` et un `form` vide avec `action="#search"` et `method="get"`. Écrivez 5B à 5D dans le formulaire.
+**À vous.** Dans la section `search` (déjà présente), ajoutez un `h2` et un `form` vide avec `action="#search"` et `method="get"`. Écrivez 5B à 5D dans le formulaire.
 
 ### 5B · Les pays
 
@@ -268,10 +264,11 @@ Un **formulaire** recueille ce que saisit le visiteur. `name` est le nom sous le
 
 Un **validateur** cherche les erreurs dans votre HTML. Ouvrez le [validateur du W3C](https://validator.w3.org/#validate_by_input), collez tout votre fichier, cliquez sur **Check**. Corrigez la **première** erreur, relancez.
 
-**Vérification.** Quinze `[OK]` et aucune erreur dans le validateur.
+**Vérification.** Quatorze `[OK]` et aucune erreur dans le validateur.
 
 ## Si vous avez fini (facultatif)
 
 1. Ajoutez un second tableau pour un autre pays.
 2. Ajoutez des boutons radio et une case à cocher au formulaire.
 3. Ajoutez une seconde page et liez les deux.
+4. Dans la section `about`, ajoutez une liste (`ul` et `li`) : producteur, unité, fréquence de publication.

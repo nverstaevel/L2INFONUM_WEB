@@ -6,16 +6,16 @@ title: TD3 · Styling and responsive layout
 
 Style your TD2 page so that it is comfortable on a phone and on a computer.
 
-**You have succeeded if**: `python check.py` shows eleven `[OK]` and, on a phone width, nothing overflows.
+**You have succeeded if**: `python check.py` shows twelve `[OK]` and, on a phone width, nothing overflows.
 
 | Step | You do | Time |
 |---|---|---|
-| 1 | Link the stylesheet | 20 min |
-| 2 | Colours and fonts | 30 min |
-| 3 | Boxes and spacing | 30 min |
+| 1 | Link the stylesheet | 15 min |
+| 2 | Colours and fonts | 25 min |
+| 3 | Boxes, spacing and priority | 45 min |
 | 4 | Navigation with Flexbox | 30 min |
-| 5 | Table and form | 40 min |
-| 6 | Phone screens | 30 min |
+| 5 | Table | 25 min |
+| 6 | Phone screens | 25 min |
 
 ## Notions used in this lab
 
@@ -23,9 +23,9 @@ Open them when you need them: each one is a short page. The links are repeated a
 
 - [CSS rules and selectors](notion-css-rules.html)
 - [Box model](notion-css-box.html)
+- [Developer tools](notion-devtools.html)
 - [Flexbox](notion-css-flexbox.html)
 - [Responsive design and media queries](notion-css-media.html)
-- [Developer tools](notion-devtools.html)
 
 **Ready-made examples:** [Readable page and tables](recipe-clean-style.html) · [Responsive navigation bar](recipe-nav-bar.html)
 
@@ -58,7 +58,7 @@ nav a { }         /* the links that are inside nav */
 th, td { }        /* th and td together */
 ```
 
-## Step 1 · Link the stylesheet (20 min)
+## Step 1 · Link the stylesheet (15 min)
 
 <p class="refs" markdown="1">**Notion:** [CSS rules and selectors](notion-css-rules.html) · **Recipe:** [Readable page and tables](recipe-clean-style.html)</p>
 
@@ -72,7 +72,7 @@ th, td { }        /* th and td together */
 
 **Check.** `1` is `[OK]`.
 
-## Step 2 · Colours and fonts (30 min)
+## Step 2 · Colours and fonts (25 min)
 
 ### 2A · The whole page
 
@@ -100,7 +100,7 @@ Nothing changes in the browser? Check that you saved both files and that the `li
 
 </details>
 
-## Step 3 · Boxes and spacing (30 min)
+## Step 3 · Boxes, spacing and priority (45 min)
 
 <p class="refs" markdown="1">**Notion:** [Box model](notion-css-box.html) · **Recipe:** [Readable page and tables](recipe-clean-style.html)</p>
 
@@ -125,6 +125,49 @@ Every element is a box: the content, then **padding** (space inside), the **bord
 **Your turn.** For `img`: `max-width: 100%;` and `height: auto;`.
 
 **Check.** `3A`, `3B` `[OK]`. On a wide window, the content stays in the middle. Right-click → **Inspect** to see the box drawing.
+
+### 3C · Which rule wins?
+
+<p class="refs" markdown="1">**Notion:** [CSS rules and selectors](notion-css-rules.html), [Developer tools](notion-devtools.html)</p>
+
+A **class** (`class="note"`, selector `.note`) names a group of elements. An **id** (`id="source"`, selector `#source`) names one element. When several rules give a colour to the same element, the most precise selector wins: id, then class, then element. This is **specificity**.
+
+In `index.html`, replace what is inside the `footer` by these two paragraphs:
+
+```html
+<p class="note" id="source">Source: Eurostat, tin00028.</p>
+<p class="note">Figures are rounded.</p>
+```
+
+Under `TODO 3C` in `style.css`, copy these three rules **in this order**:
+
+```css
+#source { color: orange; }
+.note   { color: lightgreen; }
+p       { color: pink; }
+```
+
+**Your turn.** **Before** reloading, write in a CSS comment the colour you expect for each footer paragraph. Then reload, right-click a paragraph → **Inspect**: the rules that lost are crossed out. The rule `p` is last: why does it not win?
+
+### 3D · How wide is the box?
+
+<p class="refs" markdown="1">**Notion:** [Box model](notion-css-box.html)</p>
+
+Under `TODO 3D`, add:
+
+```css
+.note { width: 300px; padding: 15px; border: 5px solid; }
+```
+
+**Your turn.** Compute on paper the **visible width**: width, plus padding on both sides, plus border on both sides. Write the result in a CSS comment, then check it with **Inspect** (tab **Computed**). Finally add `box-sizing: border-box;` to the rule and look again.
+
+**Check.** `3C` and `3D` `[OK]`. You can say why the first paragraph is orange, and why the width changed.
+
+<details markdown="1"><summary>Stuck?</summary>
+
+Width without `box-sizing`: 300 + 15 + 15 + 5 + 5. With `border-box`, padding and border are inside the 300px.
+
+</details>
 
 ## Step 4 · Navigation with Flexbox (30 min)
 
@@ -151,7 +194,7 @@ Every element is a box: the content, then **padding** (space inside), the **bord
 
 **Check.** The three links are on one line, without bullets.
 
-## Step 5 · Table and form (40 min)
+## Step 5 · A table (25 min)
 
 <p class="refs" markdown="1">**Notion:** [Box model](notion-css-box.html), [CSS rules and selectors](notion-css-rules.html) · **Recipe:** [Readable page and tables](recipe-clean-style.html)</p>
 
@@ -173,13 +216,9 @@ Every element is a box: the content, then **padding** (space inside), the **bord
 
 **Your turn.** Give `th, td` a border, a padding and `text-align: left;`. Then, in a separate rule, give `th` a `background`.
 
-### 5C · The form
+**Check.** `5A` and `5B` `[OK]`: simple borders and a visible header row.
 
-**Your turn.** Make `form` a flex box with `gap: 0.75rem;`, `flex-wrap: wrap;` (go to the next line if needed) and `align-items: center;`.
-
-**Check.** `5A` to `5C` `[OK]`: simple borders, a visible header row, spaced fields.
-
-## Step 6 · Phone screens (30 min)
+## Step 6 · Phone screens (25 min)
 
 <p class="refs" markdown="1">**Notion:** [Responsive design and media queries](notion-css-media.html), [Developer tools](notion-devtools.html) · **Recipe:** [Responsive navigation bar](recipe-nav-bar.html)</p>
 
@@ -195,13 +234,13 @@ A **media query** applies rules only if a condition is true, here a narrow scree
 }
 ```
 
-**Your turn.** At the **end** of the file, put `nav ul` and `form` in a column on screens up to 600px. Add `align-items: stretch;` so that the fields take the whole width.
+**Your turn.** At the **end** of the file, put `nav ul` in a column on screens up to 600px.
 
-**Check.** Press `F12`, then the **phone and tablet** icon, and choose a width of 375px: menu and form are vertical, nothing overflows. Eleven `[OK]`.
+**Check.** Press `F12`, then the **phone and tablet** icon, and choose a width of 375px: the menu is vertical, nothing overflows. Twelve `[OK]`.
 
 <details markdown="1"><summary>Stuck?</summary>
 
-Two selectors can share one rule: `nav ul, form { … }`. There are two `}` at the end: one for the rule, one for `@media`.
+There are two `}` at the end: one for the rule, one for `@media`.
 
 </details>
 
@@ -210,3 +249,4 @@ Two selectors can share one rule: `nav ul, form { … }`. There are two `}` at t
 1. Add `:hover` and `:focus` styles to links and buttons.
 2. Highlight one table row with a class.
 3. Check the contrast of your colours with the developer tools.
+4. Style the form: `display: flex`, `gap: 0.75rem`, `flex-wrap: wrap`, `align-items: center`; in the media query, put it in a column.

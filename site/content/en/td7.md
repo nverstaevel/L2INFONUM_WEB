@@ -10,11 +10,11 @@ Your application sends filtered data as JSON, and the page draws it without relo
 
 | Step | You do | Time |
 |---|---|---|
-| 1 | Install and observe | 35 min |
+| 1 | Install and observe | 25 min |
 | 2 | Filter by country | 30 min |
 | 3 | Filter by year | 30 min |
 | 4 | Handle errors | 45 min |
-| 5 | Debug | 40 min |
+| 5 | Debug | 30 min |
 
 ## Notions used in this lab
 
@@ -48,9 +48,11 @@ python check.py
 
 On macOS or Linux, outside a virtual environment, type `python3`. `[OK]` means the part works, `[  ]` means not yet. The checker does not replace looking at your page in the browser.
 
-## Step 1 · Install and observe (35 min)
+## Step 1 · Install and observe (25 min)
 
 <p class="refs" markdown="1">**Notion:** [JSON API](notion-api.html), [fetch: asking for data](notion-fetch.html), [Developer tools](notion-devtools.html) · **Recipe:** [A JSON API and its chart](recipe-api-chart.html)</p>
+
+**Shortcut:** you may reuse the environment of TD6 instead of creating one: `..\td6\.venv\Scripts\Activate.ps1` (Windows) or `source ../td6/.venv/bin/activate` (macOS, Linux). If it fails, create a new one as below.
 
 1. Open the folder `td7` in VS Code and a terminal.
 2. Create the environment (see the [setup guide](setup.html) if it fails).
@@ -160,7 +162,7 @@ The old JavaScript may be kept by the browser: reload with `Ctrl+F5` (`Cmd+Shift
 
 </details>
 
-## Step 5 · Debug (40 min)
+## Step 5 · Debug (30 min)
 
 <p class="refs" markdown="1">**Notion:** [Debugging](notion-debugging.html), [Developer tools](notion-devtools.html)</p>
 
@@ -170,8 +172,7 @@ The old JavaScript may be kept by the browser: reload with `Ctrl+F5` (`Cmd+Shift
 2. Open the **Console**: what is the message?
 3. Open **Network**: which address failed, with which code?
 4. Repair it.
-5. Now write `row.values` instead of `row.value`. What happens, and is there a message? Repair it.
-6. Write in `notes.txt` (folder `td7`) where you looked and what you saw, in at least 20 words.
+5. Write in `notes.txt` (folder `td7`) where you looked and what you saw, in at least 20 words.
 
 **Check.** The chart works again and five `[OK]`.
 
@@ -189,3 +190,4 @@ The old JavaScript may be kept by the browser: reload with `Ctrl+F5` (`Cmd+Shift
 1. Compare with a second country.
 2. Replace the field by a `select` list.
 3. Choose the type of chart in the page.
+4. A silent bug: write `row.values` instead of `row.value`. What happens, and is there a message? Repair it.

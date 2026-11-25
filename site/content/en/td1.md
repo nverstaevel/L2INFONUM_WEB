@@ -10,9 +10,9 @@ You will download real data from Eurostat (the statistics office of the European
 |---|---|---|---|
 | 1 | none: set up | a working environment | 25 min |
 | 2 | `download.py` | `data/internet_use.csv` | 25 min |
-| 3 | none: read the data | `notes.txt` | 20 min |
+| 3 | none: read the data | `notes.txt` | 15 min |
 | 4 | `clean.py` | `data/internet_use_clean.csv` | 55 min |
-| 5 | `stats.py` | `data/summary.json` | 45 min |
+| 5 | `stats.py` | `data/summary.json` | 30 min |
 
 ## Notions used in this lab
 
@@ -78,7 +78,7 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-**Check.** The line where you type starts with `(.venv)`, and `python check.py` shows eight lines with `[  ]`.
+**Check.** The line where you type starts with `(.venv)`, and `python check.py` shows seven lines with `[  ]`.
 <details markdown="1"><summary>Stuck?</summary>
 
 See the table of common problems in the [setup guide](setup.html#common-problems).
@@ -144,17 +144,17 @@ python check.py
 
 </details>
 
-## Step 3 · Read the data (20 min)
+## Step 3 · Read the data (15 min)
 
 <p class="refs" markdown="1">**Notion:** [CSV files](notion-csv.html), [Open data and licences](notion-open-data.html)</p>
 
 A **CSV** file is a table written as text: one row per line, columns separated by commas. The first line gives the column names. Open `data/internet_use.csv` in VS Code, create a file `notes.txt` and answer:
 
-1. Copy the first line. How many columns are there?
-2. Find a line for France (`FR`). Which column holds the year? Which one holds the figure?
-3. Search (`Ctrl+F`) for `EU27`. Is it a country?
-4. Look at the column `indic_is`. Do you see several different values? We keep only `I_IU3`: people who used the Internet in the last 3 months.
-5. Read the [Eurostat copyright notice](https://ec.europa.eu/eurostat/help/copyright-notice). What must you write when you reuse the data?
+1. Find a line for France (`FR`). Which column holds the year? Which one holds the figure?
+2. Search (`Ctrl+F`) for `EU27`. Is it a country?
+3. Read the [Eurostat copyright notice](https://ec.europa.eu/eurostat/help/copyright-notice). What must you write when you reuse the data?
+
+The column `indic_is` says what is measured. We keep only `I_IU3`: people who used the Internet in the last 3 months.
 
 ## Step 4 · Clean (55 min)
 
@@ -245,7 +245,7 @@ python check.py
 
 </details>
 
-## Step 5 · Statistics (45 min)
+## Step 5 · Statistics (30 min)
 
 Open `stats.py`.
 
@@ -276,13 +276,11 @@ average = sum(c["people"] for c in cities) / len(cities)  # 20.0
 round(3.14159, 2)                                         # 3.14
 ```
 
-**Your turn**, in this order. Print each variable to check it before going on.
+**Your turn.** The first two lines are already written in `stats.py`: `latest` (the biggest year) and `current` (the rows of that year). Read them, then continue in this order. Print each variable to check it.
 
-1. `latest`: the biggest year in `rows`.
-2. `current`: only the rows of that year.
-3. `lowest` and `highest`: the rows of `current` with the smallest and the biggest `value`.
-4. `average`: the average `value` of `current`.
-5. Return a dictionary with the keys `year`, `countries` (how many rows in `current`), `average` (2 decimals), `lowest`, `highest`.
+1. `lowest` and `highest`: the rows of `current` with the smallest and the biggest `value`.
+2. `average`: the average `value` of `current`.
+3. Return a dictionary with the keys `year`, `countries` (how many rows in `current`), `average` (2 decimals), `lowest`, `highest`.
 <details markdown="1"><summary>Stuck?</summary>
 
 Replace `c` by `r`, `cities` by `rows` or `current`, and `"people"` by `"year"` or `"value"`. For `highest`, `max` works like `min`. The last line starts with `return {"year": latest, "countries": len(current),`.
@@ -293,19 +291,12 @@ Replace `c` by `r`, `cities` by `rows` or `current`, and `"people"` by `"year"` 
 
 ### 5C · One country over time · `history`
 
-**Example** (another subject: do not copy it as it is).
+This function is **already written**. Read it and compare it with the example: it keeps one country, then sorts by year. Nothing to write. At the top of the file, you may change `MY_COUNTRY` (France is `FR`, Spain `ES`, Italy `IT`, Germany `DE`).
 ```python
 points = [{"year": c["year"], "people": c["people"]}
           for c in rows if c["name"] == "A"]
 points = sorted(points, key=lambda p: p["year"])   # oldest first
 ```
-
-**Your turn.** Return the list of `{"year", "value"}` of the rows whose `country` is `country`, oldest first. At the top of the file, you may change `MY_COUNTRY` (France is `FR`, Spain `ES`, Italy `IT`, Germany `DE`).
-<details markdown="1"><summary>Stuck?</summary>
-
-`if r["country"] == country`, then `return sorted(points, key=...)`.
-
-</details>
 
 ### 5D · Save as JSON
 
@@ -327,13 +318,14 @@ python stats.py
 python check.py
 ```
 
-**Check.** Eight `[OK]`. Compare the last value of your country with the [Eurostat table](https://ec.europa.eu/eurostat/databrowser/view/tin00028/default/table?lang=en).
+**Check.** Seven `[OK]`. Compare the last value of your country with the [Eurostat table](https://ec.europa.eu/eurostat/databrowser/view/tin00028/default/table?lang=en).
 
 ## If you finish early (optional)
 
 1. Print the 5 countries with the highest value in the latest year. Start with `sorted(current, key=..., reverse=True)`, then keep `[:5]`.
 2. Ask for the country code with `input()` instead of `MY_COUNTRY`.
 3. Add a dictionary of country names (`{"FR": "France"}`) and print the name. Greece is `EL`.
+4. Rewrite `history` with a `for` loop.
 
 ## Source
 

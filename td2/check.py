@@ -71,14 +71,13 @@ check("2B header with one h1", lambda: len(page.all("h1")) == 1 and len(page.all
 check("2C nav with a list of 3 internal links", lambda: {"#about", "#figures", "#search"} <= {
     a.attrs.get("href") for li in page.all("nav")[0].all("li") for a in li.all("a")})
 check("3A section about: h2 and paragraph", lambda: bool(section("about").all("h2") and section("about").all("p")))
-check("3B list of at least 3 items", lambda: len(section("about").all("li")) >= 3)
-check("3C link to Eurostat", lambda: any("europa.eu" in a.attrs.get("href", "") for a in section("about").all("a")))
-check("3D image with alt text", lambda: any(i.attrs.get("src") == "images/network.svg" and i.attrs.get("alt")
+check("3B link to Eurostat", lambda: any("europa.eu" in a.attrs.get("href", "") for a in section("about").all("a")))
+check("3C image with alt text", lambda: any(i.attrs.get("src") == "images/network.svg" and i.attrs.get("alt")
                                            for i in section("about").all("img")))
 check("4A table with a caption", lambda: section("figures").all("table")[0].all("caption")[0].words() != "")
 check("4B header row in thead with th", lambda: len(section("figures").all("thead")[0].all("th")) >= 2)
-check("4C at least 5 data rows in tbody", lambda: len([r for r in section("figures").all("tbody")[0].all("tr")
-                                                      if len(r.all("td")) >= 2]) >= 5)
+check("4C at least 3 data rows in tbody", lambda: len([r for r in section("figures").all("tbody")[0].all("tr")
+                                                      if len(r.all("td")) >= 2]) >= 3)
 check("5A form with method get", lambda: section("search").all("form")[0].attrs.get("method", "get").lower() == "get")
 check("5B select named country, with label", lambda: any(
     s.attrs.get("name") == "country" and len(s.all("option")) >= 3 and labelled(s) for s in page.all("select")))

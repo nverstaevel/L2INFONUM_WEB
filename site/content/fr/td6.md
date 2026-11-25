@@ -6,15 +6,15 @@ title: TD6 · Paramètres, formulaires et sessions
 
 Construire des pages qui réagissent à la saisie : une recherche, un filtre et une liste de favoris.
 
-**Vous avez réussi si** : `python check.py` affiche dix `[OK]`.
+**Vous avez réussi si** : `python check.py` affiche six `[OK]`.
 
 | Étape | Vous faites | Durée |
 |---|---|---|
-| 1 | Installer et observer | 20 min |
-| 2 | Chercher par pays | 45 min |
-| 3 | Formulaire et filtre | 40 min |
-| 4 | Favoris | 50 min |
-| 5 | Vérifier la saisie | 25 min |
+| 1 | Installer et observer | 15 min |
+| 2 | Chercher par pays | 40 min |
+| 3 | Formulaire et filtre | 25 min |
+| 4 | Favoris | 40 min |
+| 5 | Vérifier la saisie | 15 min |
 
 ## Notions mobilisées dans ce TD
 
@@ -51,7 +51,7 @@ Sur macOS ou Linux, hors environnement virtuel, tapez `python3`. `[OK]` : la par
 
 `DATA` est une liste de dictionnaires avec les clés `country`, `year`, `value`. Dans ce cours, un gabarit ne contient que des `{{ nom }}` : pas de boucle. C'est donc **Python qui construit le texte**, et le gabarit l'affiche.
 
-## Étape 1 · Installer et observer (20 min)
+## Étape 1 · Installer et observer (15 min)
 
 <p class="refs" markdown="1">**Notion :** [Listes de dictionnaires](notion-lists-dicts.html), [Gabarits et fichiers statiques](notion-templates.html) · **Recette :** [Installer un projet](recipe-venv.html)</p>
 
@@ -86,19 +86,15 @@ Ouvrez `http://127.0.0.1:5000/` (`127.0.0.1` signifie « cet ordinateur »). Lai
 
 **Vérification.** La page d'accueil indique le nombre de lignes chargées.
 
-## Étape 2 · Chercher par pays (45 min)
+## Étape 2 · Chercher par pays (40 min)
 
 <p class="refs" markdown="1">**Notion :** [Paramètres d'URL et chaîne de requête](notion-url-parameters.html) · **Recette :** [Un formulaire de recherche](recipe-search-form.html)</p>
 
-### 2A · Le gabarit
+### 2A · Lire le gabarit
 
-**À vous.** Copiez `templates/base.html` en `templates/search.html`. Changez les titres et ajoutez, dans `main` :
+Les pages sont **déjà écrites** : vous n'écrivez que du Python. Ouvrez `templates/search.html`.
 
-```html
-<pre>{{ results }}</pre>
-```
-
-`pre` conserve les retours à la ligne.
+**À vous.** Trouvez les trois trous `{{ ... }}` et notez leurs noms sur papier : votre route doit donner une valeur à chacun. `<pre>` conserve les retours à la ligne.
 
 ### 2B · Lire l'adresse
 
@@ -129,7 +125,7 @@ results = "\n".join(lines)      # one line under the other
 
 **À vous.** Construisez `results` à partir de `DATA` : gardez les lignes du pays (toutes si `country` est vide), une ligne avec pays, année et valeur.
 
-**Vérification.** `/search?country=FR` liste les années de la France. `2A`, `2B-2C` `[OK]`.
+**Vérification.** `/search?country=FR` liste les années de la France. `2B-2C` `[OK]`.
 
 <details markdown="1"><summary>Bloqué ?</summary>
 
@@ -137,23 +133,13 @@ Dans un texte `f"..."`, utilisez des apostrophes : `{row['year']}`. Le `return` 
 
 </details>
 
-## Étape 3 · Formulaire et filtre (40 min)
+## Étape 3 · Formulaire et filtre (25 min)
 
 <p class="refs" markdown="1">**Notion :** [Formulaires](notion-html-forms.html), [Paramètres d'URL et chaîne de requête](notion-url-parameters.html) · **Recette :** [Un formulaire de recherche](recipe-search-form.html)</p>
 
-### 3A · Le formulaire
+### 3A · Lire le formulaire
 
-**Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
-
-```html
-<form action="/books" method="get">
-  <label for="author">Author</label>
-  <input id="author" name="author" value="{{ author }}">
-  <button type="submit">Search</button>
-</form>
-```
-
-**À vous.** Ajoutez un formulaire à `search.html`, au-dessus de `pre`, avec deux champs nommés `country` et `minimum` (`type="number" step="any"`).
+**À vous.** Dans `search.html`, lisez le `form`. Quelle adresse appelle-t-il (`action`) ? Quels sont les `name` des deux champs ? Remplissez, cliquez, et comparez avec la barre d'adresse.
 
 ### 3B · La valeur minimale
 
@@ -168,9 +154,9 @@ maximum = request.args.get("pages", 1000, type=int)   # converted to a number
 
 ### 3C · Aucun résultat, et conserver la saisie
 
-**À vous.** Si `lines` est vide, `results` doit être exactement `No result.`. Puis transmettez `country` et `minimum` à `render_template`, et ajoutez `value="{{ country }}"` et `value="{{ minimum }}"` aux champs.
+**À vous.** Si `lines` est vide, `results` doit être exactement `No result.`. Puis transmettez `country` et `minimum` à `render_template` : le gabarit les affiche déjà dans les champs.
 
-**Vérification.** Cherchez avec plusieurs valeurs : la liste change et les champs gardent votre saisie. `3A` à `3C` `[OK]`.
+**Vérification.** Cherchez avec plusieurs valeurs : la liste change et les champs gardent votre saisie. `3B`, `3C` `[OK]`.
 
 <details markdown="1"><summary>Bloqué ?</summary>
 
@@ -178,15 +164,15 @@ maximum = request.args.get("pages", 1000, type=int)   # converted to a number
 
 </details>
 
-## Étape 4 · Favoris (50 min)
+## Étape 4 · Favoris (40 min)
 
 <p class="refs" markdown="1">**Notion :** [GET et POST](notion-get-post.html), [Sessions et cookies](notion-sessions.html) · **Recette :** [Mémoriser une liste avec une session](recipe-session-list.html)</p>
 
 **GET** demande une page. **POST** envoie des données qui modifient quelque chose. Une **session** mémorise des données pour un visiteur d'une page à l'autre, dans un **cookie** (petit texte conservé par le navigateur).
 
-### 4A · Le gabarit
+### 4A · Lire le gabarit
 
-**À vous.** Créez `templates/favourites.html` à partir de `base.html` : un paragraphe avec `{{ favourites }}`, et un formulaire avec `action="/favourites"`, `method="post"`, un champ nommé `country` et un bouton.
+**À vous.** Ouvrez `templates/favourites.html`. Notez la `method` du formulaire, le `name` du champ et le nom du trou `{{ ... }}`.
 
 ### 4B · La route
 
@@ -219,9 +205,9 @@ text = ", ".join(items) if items else "none"
 
 **À vous.** Faites de même avec `session["favourites"]` et transmettez le texte au gabarit sous le nom `favourites`.
 
-**Vérification.** Ajoutez `FR`, allez sur une autre page, revenez : il est toujours là. `4A` à `4C` `[OK]`.
+**Vérification.** Ajoutez `FR`, allez sur une autre page, revenez : il est toujours là. `4B`, `4C` `[OK]`.
 
-## Étape 5 · Vérifier la saisie (25 min)
+## Étape 5 · Vérifier la saisie (15 min)
 
 <p class="refs" markdown="1">**Notion :** [Contrôle des saisies et échappement](notion-safety.html) · **Recette :** [Mémoriser une liste avec une session](recipe-session-list.html)</p>
 
@@ -237,25 +223,7 @@ known = any(book["author"] == author for book in BOOKS)   # True if at least one
 
 **À vous.** N'ajoutez le pays que s'il existe dans `DATA`.
 
-### 5B · Vider la liste
-
-Un second formulaire avec un seul bouton. Son `name` et sa `value` sont envoyés quand on clique.
-
-```html
-<form action="/favourites" method="post">
-  <button type="submit" name="action" value="clear">Empty the list</button>
-</form>
-```
-
-**À vous.** Dans la route, si `request.form.get("action")` vaut `"clear"`, la liste devient vide et est enregistrée dans la session.
-
-**Vérification.** `ZZ` n'est pas ajouté, le bouton vide la liste, dix `[OK]`. Dans la recherche, saisissez `<b>` : il s'affiche comme du texte, pas en gras.
-
-<details markdown="1"><summary>Bloqué ?</summary>
-
-Dans `if request.method == "POST":`, testez d'abord `clear`, puis `else:` ajoutez le pays. Enregistrez `session[...]` dans les deux cas.
-
-</details>
+**Vérification.** `ZZ` n'est pas ajouté ; six `[OK]`. Dans la recherche, saisissez `<b>` : il s'affiche comme du texte, pas en gras.
 
 ## Quand ça ne marche pas
 
@@ -266,7 +234,26 @@ Dans `if request.method == "POST":`, testez d'abord `clear`, puis `else:` ajoute
 | `Method Not Allowed` (405) | `methods=[...]` dans la route |
 | `Internal Server Error` (500) | le terminal où tourne `app.py` : lisez la dernière ligne |
 
-## Si vous avez fini (facultatif)
+## Pour aller plus loin (facultatif)
+
+### Vider la liste
+
+Ajoutez ce second formulaire à `favourites.html`. Le `name` et la `value` d'un bouton sont envoyés quand on clique.
+
+```html
+<form action="/favourites" method="post">
+  <button type="submit" name="action" value="clear">Empty the list</button>
+</form>
+```
+
+Dans la route, si `request.form.get("action")` vaut `"clear"`, la liste devient vide et est enregistrée dans la session.
+
+### Travailler les gabarits
+
+1. Ajoutez un champ `year` au formulaire de `search.html`, avec son `{{ year }}`, et filtrez avec.
+2. Reconstruisez vous-même `search.html` à partir de `base.html`.
+
+### Et aussi
 
 1. Affichez la moyenne des résultats.
 2. Après un POST, redirigez avec `redirect`.

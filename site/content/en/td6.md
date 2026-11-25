@@ -6,15 +6,15 @@ title: TD6 · Parameters, forms and sessions
 
 Build pages that react to what the visitor types: a search, a filter and a list of favourites.
 
-**You have succeeded if**: `python check.py` shows ten `[OK]`.
+**You have succeeded if**: `python check.py` shows six `[OK]`.
 
 | Step | You do | Time |
 |---|---|---|
-| 1 | Install and look | 20 min |
-| 2 | Search by country | 45 min |
-| 3 | Form and filter | 40 min |
-| 4 | Favourites | 50 min |
-| 5 | Check the input | 25 min |
+| 1 | Install and look | 15 min |
+| 2 | Search by country | 40 min |
+| 3 | Form and filter | 25 min |
+| 4 | Favourites | 40 min |
+| 5 | Check the input | 15 min |
 
 ## Notions used in this lab
 
@@ -51,7 +51,7 @@ On macOS or Linux, outside a virtual environment, type `python3`. `[OK]` means t
 
 `DATA` is a list of dictionaries with the keys `country`, `year`, `value`. In this course a template only contains `{{ name }}`: no loop. So **Python builds the text**, and the template shows it.
 
-## Step 1 · Install and look (20 min)
+## Step 1 · Install and look (15 min)
 
 <p class="refs" markdown="1">**Notion:** [Lists of dictionaries](notion-lists-dicts.html), [Templates and static files](notion-templates.html) · **Recipe:** [Set up a project](recipe-venv.html)</p>
 
@@ -86,19 +86,15 @@ Open `http://127.0.0.1:5000/` (`127.0.0.1` means "this computer"). Leave this te
 
 **Check.** The home page says how many rows are loaded.
 
-## Step 2 · Search by country (45 min)
+## Step 2 · Search by country (40 min)
 
 <p class="refs" markdown="1">**Notion:** [URL parameters and query strings](notion-url-parameters.html) · **Recipe:** [A search form](recipe-search-form.html)</p>
 
-### 2A · The template
+### 2A · Read the template
 
-**Your turn.** Copy `templates/base.html` to `templates/search.html`. Change the titles and add, inside `main`:
+The pages are **already written**: you only write Python. Open `templates/search.html`.
 
-```html
-<pre>{{ results }}</pre>
-```
-
-`pre` keeps the line breaks.
+**Your turn.** Find the three holes `{{ ... }}` and write their names on paper: your route must give a value to each. `<pre>` keeps the line breaks.
 
 ### 2B · Read the address
 
@@ -129,7 +125,7 @@ results = "\n".join(lines)      # one line under the other
 
 **Your turn.** Build `results` from `DATA`: keep the rows of the country (all rows if `country` is empty), one line with country, year and value.
 
-**Check.** `/search?country=FR` lists the years of France. `2A`, `2B-2C` `[OK]`.
+**Check.** `/search?country=FR` lists the years of France. `2B-2C` `[OK]`.
 
 <details markdown="1"><summary>Stuck?</summary>
 
@@ -137,23 +133,13 @@ Inside an `f"..."` text use single quotes: `{row['year']}`. The `return` must be
 
 </details>
 
-## Step 3 · Form and filter (40 min)
+## Step 3 · Form and filter (25 min)
 
 <p class="refs" markdown="1">**Notion:** [Forms](notion-html-forms.html), [URL parameters and query strings](notion-url-parameters.html) · **Recipe:** [A search form](recipe-search-form.html)</p>
 
-### 3A · The form
+### 3A · Read the form
 
-**Example** (another subject: adapt it, do not copy it as it is).
-
-```html
-<form action="/books" method="get">
-  <label for="author">Author</label>
-  <input id="author" name="author" value="{{ author }}">
-  <button type="submit">Search</button>
-</form>
-```
-
-**Your turn.** Add a form to `search.html`, above `pre`, with two fields named `country` and `minimum` (`type="number" step="any"`).
+**Your turn.** In `search.html`, read the `form`. Which address does it call (`action`)? What are the `name`s of the two fields? Fill the form, click, and compare with the address bar.
 
 ### 3B · The minimum value
 
@@ -168,9 +154,9 @@ maximum = request.args.get("pages", 1000, type=int)   # converted to a number
 
 ### 3C · No result, and keep the values
 
-**Your turn.** If `lines` is empty, `results` must be exactly `No result.`. Then give `country` and `minimum` to `render_template`, and add `value="{{ country }}"` and `value="{{ minimum }}"` to the fields.
+**Your turn.** If `lines` is empty, `results` must be exactly `No result.`. Then give `country` and `minimum` to `render_template`: the template already shows them in the fields.
 
-**Check.** Search with several values: the list changes and the fields keep what you typed. `3A` to `3C` `[OK]`.
+**Check.** Search with several values: the list changes and the fields keep what you typed. `3B`, `3C` `[OK]`.
 
 <details markdown="1"><summary>Stuck?</summary>
 
@@ -178,15 +164,15 @@ maximum = request.args.get("pages", 1000, type=int)   # converted to a number
 
 </details>
 
-## Step 4 · Favourites (50 min)
+## Step 4 · Favourites (40 min)
 
 <p class="refs" markdown="1">**Notion:** [GET and POST](notion-get-post.html), [Sessions and cookies](notion-sessions.html) · **Recipe:** [Remember a list with a session](recipe-session-list.html)</p>
 
 **GET** asks for a page. **POST** sends data that changes something. A **session** remembers data for one visitor between pages, in a **cookie** (a small text kept by the browser).
 
-### 4A · The template
+### 4A · Read the template
 
-**Your turn.** Create `templates/favourites.html` from `base.html`: a paragraph with `{{ favourites }}`, and a form with `action="/favourites"`, `method="post"`, one field named `country` and a button.
+**Your turn.** Open `templates/favourites.html`. Note the `method` of the form, the `name` of the field and the name of the hole `{{ ... }}`.
 
 ### 4B · The route
 
@@ -219,9 +205,9 @@ text = ", ".join(items) if items else "none"
 
 **Your turn.** Do the same with `session["favourites"]` and give the text to the template under the name `favourites`.
 
-**Check.** Add `FR`, go to another page, come back: it is still there. `4A` to `4C` `[OK]`.
+**Check.** Add `FR`, go to another page, come back: it is still there. `4B`, `4C` `[OK]`.
 
-## Step 5 · Check the input (25 min)
+## Step 5 · Check the input (15 min)
 
 <p class="refs" markdown="1">**Notion:** [Input checking and escaping](notion-safety.html) · **Recipe:** [Remember a list with a session](recipe-session-list.html)</p>
 
@@ -237,25 +223,7 @@ known = any(book["author"] == author for book in BOOKS)   # True if at least one
 
 **Your turn.** Add the country only if it exists in `DATA`.
 
-### 5B · Empty the list
-
-A second form with one button. Its `name` and `value` are sent when it is clicked.
-
-```html
-<form action="/favourites" method="post">
-  <button type="submit" name="action" value="clear">Empty the list</button>
-</form>
-```
-
-**Your turn.** In the route, if `request.form.get("action")` is `"clear"`, the list becomes empty and is saved in the session.
-
-**Check.** `ZZ` is not added, the button empties the list, ten `[OK]`. In the search field, type `<b>`: it is shown as text, not as bold.
-
-<details markdown="1"><summary>Stuck?</summary>
-
-Inside `if request.method == "POST":`, first test `clear`, then `else:` add the country. Save `session[...]` in both cases.
-
-</details>
+**Check.** `ZZ` is not added; six `[OK]`. In the search field, type `<b>`: it is shown as text, not as bold.
 
 ## When something fails
 
@@ -266,7 +234,26 @@ Inside `if request.method == "POST":`, first test `clear`, then `else:` add the 
 | `Method Not Allowed` (405) | `methods=[...]` in the route |
 | `Internal Server Error` (500) | the terminal where `app.py` runs: read the last line |
 
-## If you finish early (optional)
+## Going further (optional)
+
+### Empty the list
+
+Add this second form to `favourites.html`. The `name` and `value` of a button are sent when it is clicked.
+
+```html
+<form action="/favourites" method="post">
+  <button type="submit" name="action" value="clear">Empty the list</button>
+</form>
+```
+
+In the route, if `request.form.get("action")` is `"clear"`, the list becomes empty and is saved in the session.
+
+### Work on the templates
+
+1. Add a field `year` to the form of `search.html`, with its `{{ year }}`, and filter with it.
+2. Rebuild `search.html` yourself from `base.html`.
+
+### And also
 
 1. Show the average of the results.
 2. After a POST, redirect with `redirect`.

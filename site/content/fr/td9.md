@@ -6,29 +6,29 @@ title: TD9 · Mini-projet 2 : pages, filtres, graphiques
 
 Construire les pages, le filtre et le premier graphique.
 
-**Vous avez réussi si** : le parcours principal fonctionne, de l'accueil au graphique.
+**Vous avez réussi si** : le graphique fonctionne, puis tout le parcours de l'accueil au graphique.
 
 | Étape | Vous faites | Durée |
 |---|---|---|
-| 1 | Pages | 45 min |
-| 2 | Formulaire ou filtre | 45 min |
-| 3 | Route JSON et graphique | 60 min |
+| 1 | Route JSON et graphique | 60 min |
+| 2 | Pages | 45 min |
+| 3 | Formulaire ou filtre | 45 min |
 | 4 | Revue | 30 min |
 
 ## Notions mobilisées dans ce TD
 
 Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens sont rappelés à l'étape concernée.
 
-- [Gabarits et fichiers statiques](notion-templates.html)
-- [Flexbox](notion-css-flexbox.html)
-- [Paramètres d'URL et chaîne de requête](notion-url-parameters.html)
-- [Formulaires](notion-html-forms.html)
 - [API JSON](notion-api.html)
 - [fetch : demander des données](notion-fetch.html)
 - [Graphiques avec Chart.js](notion-chartjs.html)
 - [Déboguer](notion-debugging.html)
+- [Gabarits et fichiers statiques](notion-templates.html)
+- [Flexbox](notion-css-flexbox.html)
+- [Paramètres d'URL et chaîne de requête](notion-url-parameters.html)
+- [Formulaires](notion-html-forms.html)
 
-**Exemples clés en main :** [Une application Flask avec un gabarit](recipe-flask-app.html) · [Barre de navigation adaptative](recipe-nav-bar.html) · [Un formulaire de recherche](recipe-search-form.html) · [Une API JSON et son graphique](recipe-api-chart.html)
+**Exemples clés en main :** [Une API JSON et son graphique](recipe-api-chart.html) · [Une application Flask avec un gabarit](recipe-flask-app.html) · [Barre de navigation adaptative](recipe-nav-bar.html) · [Un formulaire de recherche](recipe-search-form.html)
 
 ## Avant la séance
 
@@ -38,7 +38,22 @@ Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens so
 
 Cochez chaque case quand c'est fait (le navigateur s'en souvient). Ne commencez pas la partie suivante avant d'avoir atteint le **jalon**. Faites une copie de votre dossier après chaque jalon.
 
-## Étape 1 · Pages (45 min)
+## Étape 1 · Route JSON et graphique (60 min)
+
+<p class="refs" markdown="1">**Notion :** [API JSON](notion-api.html), [fetch : demander des données](notion-fetch.html), [Graphiques avec Chart.js](notion-chartjs.html), [Déboguer](notion-debugging.html) · **Recette :** [Une API JSON et son graphique](recipe-api-chart.html)</p>
+
+Commencez par la partie la plus risquée. Réutilisez votre code du TD7 ; les données viennent de `load_data` (TD8).
+
+- [ ] Reprendre `api_data` du TD7.
+- [ ] Ajouter `jsonify` à la ligne `from flask import ...`.
+- [ ] Tester l'adresse JSON **seule** dans le navigateur.
+- [ ] Copier `chart.html` dans `templates` et `chart.js` dans `static` ; ajouter la route de la page.
+- [ ] Changer le titre, l'étiquette et le type de graphique.
+- [ ] Vérifier la console : aucun message rouge.
+
+**Jalon.** Le graphique change quand le paramètre change.
+
+## Étape 2 · Pages (45 min)
 
 <p class="refs" markdown="1">**Notion :** [Gabarits et fichiers statiques](notion-templates.html), [Flexbox](notion-css-flexbox.html) · **Recette :** [Une application Flask avec un gabarit](recipe-flask-app.html), [Barre de navigation adaptative](recipe-nav-bar.html)</p>
 
@@ -49,7 +64,7 @@ Cochez chaque case quand c'est fait (le navigateur s'en souvient). Ne commencez 
 
 **Jalon.** Tous les liens du menu fonctionnent.
 
-## Étape 2 · Formulaire ou filtre (45 min)
+## Étape 3 · Formulaire ou filtre (45 min)
 
 <p class="refs" markdown="1">**Notion :** [Paramètres d'URL et chaîne de requête](notion-url-parameters.html), [Formulaires](notion-html-forms.html) · **Recette :** [Un formulaire de recherche](recipe-search-form.html)</p>
 
@@ -59,19 +74,6 @@ Cochez chaque case quand c'est fait (le navigateur s'en souvient). Ne commencez 
 - [ ] Tester une valeur normale, une valeur inconnue et un champ vide.
 
 **Jalon.** L'affichage change avec la saisie et rien ne plante.
-
-## Étape 3 · Route JSON et graphique (60 min)
-
-<p class="refs" markdown="1">**Notion :** [API JSON](notion-api.html), [fetch : demander des données](notion-fetch.html), [Graphiques avec Chart.js](notion-chartjs.html), [Déboguer](notion-debugging.html) · **Recette :** [Une API JSON et son graphique](recipe-api-chart.html)</p>
-
-- [ ] Reprendre `api_data` du TD7.
-- [ ] Ajouter `jsonify` à la ligne `from flask import ...`.
-- [ ] Tester l'adresse JSON **seule** dans le navigateur.
-- [ ] Copier `chart.html` dans `templates` et `chart.js` dans `static` ; ajouter la route de la page.
-- [ ] Changer le titre, l'étiquette et le type de graphique.
-- [ ] Vérifier la console : aucun message rouge.
-
-**Jalon.** Le graphique change quand le paramètre change.
 
 ## Étape 4 · Revue (30 min)
 

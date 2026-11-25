@@ -26,10 +26,6 @@ def check(name, test):
     print(f"[OK] {name}" if ok else f"[  ] {name}")
 
 
-def read(name):
-    return Path("templates", name).read_text(encoding="utf-8").replace(" ", "")
-
-
 def page(address):
     r = client.get(address)
     assert r.status_code == 200, f"status {r.status_code} for {address}"
@@ -42,25 +38,14 @@ def add(code):
         return s.get("favourites", [])
 
 
-def form_post():
-    return 'method="post"' in read("favourites.html") and 'name="country"' in read("favourites.html")
-
-
-check("2A search.html shows {{ results }} in <pre>", lambda: "<pre>{{results}}</pre>" in read("search.html"))
 check("2B-2C /search?country=fr lists France only",
       lambda: "90.5" in page("/search?country=fr") and "70.25" not in page("/search?country=fr"))
-check("3A GET form with country and minimum", lambda: all(
-    t in read("search.html") for t in ['method="get"', 'name="country"', 'name="minimum"']))
 check("3B /search?minimum=80 filters all countries",
       lambda: "90.5" in page("/search?minimum=80") and "70.25" not in page("/search?minimum=80")
       and "70.25" in page("/search"))
 check("3C message when there is no result", lambda: "No result" in page("/search?country=ZZ"))
-check("4A favourites.html: POST form and {{ favourites }}", lambda: form_post() and "{{favourites}}" in read("favourites.html"))
 check("4B /favourites accepts GET and POST",
       lambda: client.get("/favourites").status_code == 200 and client.post("/favourites", data={"country": "ES"}).status_code == 200)
 check("4C added once, in capital letters, and remembered",
       lambda: add("fr").count("FR") == 1 and add("FR").count("FR") == 1 and "FR" in page("/favourites"))
 check("5A unknown code refused", lambda: add("fr") != [] and "ZZ" not in add("ZZ"))
-check("5B the list can be emptied",
-      lambda: add("fr") != [] and client.post("/favourites", data={"action": "clear"}).status_code == 200
-      and add("") == [])

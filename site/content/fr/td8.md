@@ -32,6 +32,7 @@ Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens so
 ## Avant la séance
 
 - [ ] J'ai réfléchi à deux sujets possibles.
+- [ ] J'ai regardé la diapositive sur le dossier du projet et le README dans le [CM8](cm8.html).
 
 ## Comment travailler
 
@@ -84,6 +85,8 @@ if row["age"] != "Y15-74":   # keep one value of a column
 Affichez les valeurs différentes d'une colonne : `print(set(row["age"] for row in rows))`.
 
 </details>
+
+**Bloqué après 60 minutes ?** Prenez le fichier de secours `project/backup/co2_per_capita.csv` (émissions de CO₂ par personne, déjà nettoyé), copiez-le dans `data` et continuez. Citez-le comme indiqué dans `project/backup/README.md`.
 
 **Jalon.** Un CSV propre `country,year,value` dans le dossier `data`.
 

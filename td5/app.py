@@ -14,8 +14,5 @@ def home():
 
 # TODO 5B: the route /country/<code>
 
-# TODO 6A: the route /teapot
-
-
 if __name__ == "__main__":   # keep this block at the END of the file
     app.run(debug=True)

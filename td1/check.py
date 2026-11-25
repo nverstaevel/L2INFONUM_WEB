@@ -77,11 +77,6 @@ def summarises():
             and r["lowest"]["country"] == "ES" and r["highest"]["country"] == "FR")
 
 
-def histories():
-    import stats
-    return stats.history(CLEAN, "FR") == [{"year": 2024, "value": 70.0}, {"year": 2025, "value": 90.0}]
-
-
 def summary_file():
     with open("data/summary.json", encoding="utf-8") as f:
         result = json.load(f)
@@ -94,5 +89,4 @@ check("Step 4B clean_rows", cleans)
 check("Step 4C save_rows", saves)
 check("Step 5A load_clean", reads_clean)
 check("Step 5B summarise", summarises)
-check("Step 5C history", histories)
 check("Step 5D data/summary.json written", summary_file)
