@@ -1,0 +1,72 @@
+{
+ "v": 5,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-25T13:18:26Z"
+ },
+ "lists": "css",
+ "format": {
+  "v": 1,
+  "shared": [
+   "project/deck.css"
+  ]
+ },
+ "title": "CM1 · Web & Open Data (EN / FR)",
+ "order": [
+  "en-cover",
+  "en-road",
+  "en-obj",
+  "en-client",
+  "en-url",
+  "en-http",
+  "en-demo",
+  "en-opendata",
+  "en-licences",
+  "en-formats",
+  "en-api",
+  "en-csv",
+  "en-json",
+  "en-check",
+  "en-next",
+  "fr-cover",
+  "fr-road",
+  "fr-obj",
+  "fr-client",
+  "fr-url",
+  "fr-http",
+  "fr-demo",
+  "fr-opendata",
+  "fr-licences",
+  "fr-formats",
+  "fr-api",
+  "fr-csv",
+  "fr-json",
+  "fr-check",
+  "fr-next"
+ ],
+ "sections": {
+  "en": {
+   "description": "English version",
+   "start": "en-cover"
+  },
+  "fr": {
+   "description": "Version française",
+   "start": "fr-cover"
+  }
+ },
+ "faces": {
+  "space-grotesk": {
+   "family": "Space Grotesk",
+   "href": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap"
+  },
+  "inter": {
+   "family": "Inter",
+   "href": "https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+  },
+  "jetbrains-mono": {
+   "family": "JetBrains Mono",
+   "href": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap"
+  }
+ },
+ "designSystems": []
+}

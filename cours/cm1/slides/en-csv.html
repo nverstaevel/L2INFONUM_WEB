@@ -1,0 +1,6 @@
+<section id="en-csv">
+<p class="eyebrow">PYTHON AND FILES</p>
+<h2>Read a CSV file</h2>
+<p class="code">import csv<br><br>with open("data/internet_use.csv", newline="", encoding="utf-8") as f:<br>    rows = list(csv.DictReader(f))   # a list of dictionaries<br><br>print(len(rows))<br>print(rows[0]["geo"], rows[0]["TIME_PERIOD"], rows[0]["OBS_VALUE"])</p>
+<p>Values read from a CSV file are text: convert them with float() or int().</p>
+</section>
