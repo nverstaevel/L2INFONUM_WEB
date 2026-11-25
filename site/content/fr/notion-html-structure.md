@@ -23,4 +23,5 @@ title: Structure, balises sémantiques, validation
 - Cours : [CM2](cm2.html)
 - Recettes : [Une page HTML complète](recipe-page-skeleton.html)
 - TD qui l'utilisent : [TD2](td2.html), [TD10](td10.html)
+- [Toutes les balises HTML et leur résultat](notion-html-tags.html)
 - [Toutes les notions](notions.html)

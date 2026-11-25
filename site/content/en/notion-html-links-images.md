@@ -1,6 +1,6 @@
 title: Lists, links, images, accessibility
 ---
-`ul` / `ol` are lists, `li` an item. `a href` is a link: to another site, another file, or `#id` in the same page. `img src alt` shows an image. **Accessibility** means everyone can use the page: `alt` text, clear link text, language declared.
+`ul` / `ol` are lists, `li` an item. `a href` is a link: to another site, another file, or `#id` in the same page. `img src alt` shows an image; `figure` groups it with its caption, `figcaption`. **Accessibility** means everyone can use the page: `alt` text, clear link text, language declared.
 
 ## Example
 
@@ -10,6 +10,10 @@ title: Lists, links, images, accessibility
   <li><a href="about.html">About us</a></li>
 </ul></nav>
 <img src="images/library.jpg" alt="Shelves full of books" width="320" height="180">
+<figure>
+  <img src="images/library.jpg" alt="Shelves full of books" width="320" height="180">
+  <figcaption>Our shelves. Drawing: course team.</figcaption>
+</figure>
 ```
 
 ## Common mistakes
@@ -22,4 +26,5 @@ title: Lists, links, images, accessibility
 - Lecture: [CM2](cm2.html)
 - Recipes: [A complete HTML page](recipe-page-skeleton.html)
 - Labs using it: [TD2](td2.html)
+- [All HTML tags, with their result](notion-html-tags.html)
 - [All notions](notions.html)

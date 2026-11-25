@@ -22,4 +22,5 @@ Un **formulaire** recueille une saisie et l'envoie. `action` est l'adresse, `met
 - Cours : [CM2](cm2.html)
 - Recettes : [Un tableau et un formulaire](recipe-table-form.html) · [Un formulaire de recherche](recipe-search-form.html)
 - TD qui l'utilisent : [TD2](td2.html), [TD6](td6.html), [TD9](td9.html)
+- [Toutes les balises HTML et leur résultat](notion-html-tags.html)
 - [Toutes les notions](notions.html)

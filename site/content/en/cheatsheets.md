@@ -11,7 +11,8 @@ title: Cheat sheets
   <header><h1>Title</h1><nav><ul><li><a href="#a">Link</a></li></ul></nav></header>
   <main>
     <section id="a"><h2>Part</h2><p>Text</p><ul><li>Item</li></ul>
-      <img src="x.svg" alt="Description">
+      <figure><img src="x.svg" alt="Description"><figcaption>Credit</figcaption></figure>
+      <p><strong>Important</strong> and <em>stressed</em></p>
       <table><caption>Caption</caption>
         <thead><tr><th>Year</th><th>Value</th></tr></thead>
         <tbody><tr><td>2025</td><td>94.98</td></tr></tbody></table>

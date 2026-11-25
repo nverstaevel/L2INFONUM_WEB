@@ -26,6 +26,16 @@ addEventListener("DOMContentLoaded", () => {
     const strip = here.closest(".bar");
     strip.scrollLeft = here.getBoundingClientRect().left - strip.getBoundingClientRect().left - 40;
   }
+  // HTML previews: give each frame the height of its content
+  const sizes = () => document.querySelectorAll(".preview iframe").forEach(f => {
+    const body = f.contentDocument && f.contentDocument.body;
+    if (!body || !body.childNodes.length) return;
+    f.style.height = "0px";
+    f.style.height = f.contentDocument.documentElement.scrollHeight + "px";
+  });
+  document.querySelectorAll(".preview iframe").forEach(f => f.addEventListener("load", sizes));
+  addEventListener("load", sizes);
+  addEventListener("resize", sizes);
   const up = document.querySelector(".to-top");
   const show = () => { up.hidden = scrollY < 600; };
   addEventListener("scroll", show, { passive: true });

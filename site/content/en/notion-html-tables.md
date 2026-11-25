@@ -21,4 +21,5 @@ A table shows data in rows and columns: `table`, `caption` (title), `thead` and 
 - Lecture: [CM2](cm2.html)
 - Recipes: [A table and a form](recipe-table-form.html)
 - Labs using it: [TD2](td2.html)
+- [All HTML tags, with their result](notion-html-tags.html)
 - [All notions](notions.html)

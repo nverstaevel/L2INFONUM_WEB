@@ -272,3 +272,21 @@ Un **validateur** cherche les erreurs dans votre HTML. Ouvrez le [validateur du 
 2. Ajoutez des boutons radio et une case à cocher au formulaire.
 3. Ajoutez une seconde page et liez les deux.
 4. Dans la section `about`, ajoutez une liste (`ul` et `li`) : producteur, unité, fréquence de publication.
+
+### Ajouter votre propre image (facultatif)
+
+Choisissez une image sur votre pays ou votre sujet, et créditez son auteur.
+
+1. Cherchez sur [Wikimedia Commons](https://commons.wikimedia.org/). Ouvrez la page d'un fichier et notez trois choses : l'**auteur**, la **licence** et l'adresse de la page. Chaque fichier a sa propre licence : lisez-la, et voyez [comment réutiliser un fichier](https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia) (en anglais).
+2. Téléchargez une petite version et enregistrez-la dans le dossier `images`, sous un nom simple et sans espaces.
+3. Dans la section `about`, gardez la première image et ajoutez une `figure` (adaptez cet exemple) :
+
+```html
+<figure>
+  <img src="images/library.jpg" alt="Shelves full of books" width="320">
+  <figcaption>Photo: Name of the author, CC BY 4.0,
+    <a href="https://commons.wikimedia.org/wiki/File:Example.jpg">Wikimedia Commons</a>.</figcaption>
+</figure>
+```
+
+4. Remplacez l'auteur, la licence et l'adresse par les vrais. Vérifiez que l'image apparaît, que `alt` la décrit, et validez à nouveau la page. Toutes les balises sont montrées dans [Les balises HTML et leur résultat](notion-html-tags.html).

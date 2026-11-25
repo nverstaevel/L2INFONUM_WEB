@@ -272,3 +272,21 @@ A **validator** looks for mistakes in your HTML. Open the [W3C validator](https:
 2. Add radio buttons and a checkbox to the form.
 3. Add a second page and link the two.
 4. In the section `about`, add a list (`ul` and `li`): producer, unit, how often the data is published.
+
+### Add your own picture (optional)
+
+Choose a picture about your country or your topic, and credit its author.
+
+1. Search [Wikimedia Commons](https://commons.wikimedia.org/). Open the page of one file and note three things: the **author**, the **licence** and the address of the page. Each file has its own licence: read it, and see [how to reuse a file](https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia).
+2. Download a small version and save it in the folder `images`, with a simple name without spaces.
+3. In the section `about`, keep the first image and add a `figure` (adapt this example):
+
+```html
+<figure>
+  <img src="images/library.jpg" alt="Shelves full of books" width="320">
+  <figcaption>Photo: Name of the author, CC BY 4.0,
+    <a href="https://commons.wikimedia.org/wiki/File:Example.jpg">Wikimedia Commons</a>.</figcaption>
+</figure>
+```
+
+4. Replace the author, the licence and the address by the real ones. Check that the picture appears, that `alt` describes it, and validate the page again. All the tags are shown in [HTML tags, with their result](notion-html-tags.html).

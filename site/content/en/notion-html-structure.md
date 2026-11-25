@@ -23,4 +23,5 @@ title: Page structure, semantic tags, validation
 - Lecture: [CM2](cm2.html)
 - Recipes: [A complete HTML page](recipe-page-skeleton.html)
 - Labs using it: [TD2](td2.html), [TD10](td10.html)
+- [All HTML tags, with their result](notion-html-tags.html)
 - [All notions](notions.html)

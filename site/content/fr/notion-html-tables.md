@@ -21,4 +21,5 @@ Un tableau présente des données en lignes et colonnes : `table`, `caption` (ti
 - Cours : [CM2](cm2.html)
 - Recettes : [Un tableau et un formulaire](recipe-table-form.html)
 - TD qui l'utilisent : [TD2](td2.html)
+- [Toutes les balises HTML et leur résultat](notion-html-tags.html)
 - [Toutes les notions](notions.html)

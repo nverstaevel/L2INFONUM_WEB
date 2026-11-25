@@ -25,6 +25,7 @@ title: Notions
 - [Lists, links, images, accessibility](notion-html-links-images.html)
 - [Tables](notion-html-tables.html)
 - [Forms](notion-html-forms.html)
+- [All HTML tags, with their result](notion-html-tags.html)
 
 ## CSS
 

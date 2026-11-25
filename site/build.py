@@ -3,6 +3,7 @@
 import json
 import pathlib
 import hashlib
+import html
 import re
 import shutil
 
@@ -144,6 +145,30 @@ def page(lang, name, title, body, extra_head="", toc=""):
 </body></html>"""
 
 
+PREVIEW = re.compile(r"notion-html-|recipe-page-skeleton$|recipe-table-form$")
+LABEL = {"en": ("Result in the browser", "links and buttons are inactive here"),
+         "fr": ("Résultat dans le navigateur", "liens et boutons inactifs ici")}
+
+
+def previews(lang, body):
+    """Show, under each HTML example, what a browser displays (isolated, no script)."""
+    title, note = LABEL[lang]
+
+    def add(match):
+        code = html.unescape(match.group(1))
+        if "<script" in code or "{{" in code:
+            return match.group(0)
+        shown = re.sub(r'src="images/[^"]*"', 'src="../assets/demo.svg"', code)
+        shown = re.sub(r'<link rel="stylesheet"[^>]*>', "", shown)
+        if "<html" not in shown:
+            shown = f'<!DOCTYPE html><meta charset="utf-8">{shown}'
+        shown = shown.replace('<meta charset="utf-8">', '<meta charset="utf-8"><base target="_blank">', 1)
+        return (f'{match.group(0)}<div class="preview"><p><strong>{title}</strong> · {note}</p>'
+                f'<iframe sandbox="allow-same-origin" title="{title}" srcdoc="{html.escape(shown)}"></iframe></div>')
+
+    return re.sub(r'<pre><code class="language-html">(.*?)</code></pre>', add, body, flags=re.S)
+
+
 def build():
     shutil.rmtree(OUT, ignore_errors=True)
     shutil.copytree(SITE / "assets", OUT / "assets")
@@ -161,6 +186,8 @@ def build():
             body = md.convert(text)
             body = body.replace("[ ]", '<input type="checkbox" aria-label="done">')
             body = body.replace("<table>", '<div class="table"><table>').replace("</table>", "</table></div>")
+            if PREVIEW.match(source.stem):
+                body = previews(lang, body)
             extra = ""
             found = re.search(r"<p>\{\{slides:(\w+):(\w+)\}\}</p>", body)
             if found:

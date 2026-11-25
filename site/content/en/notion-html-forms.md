@@ -22,4 +22,5 @@ A **form** collects input and sends it. `action` is the address, `method` is `ge
 - Lecture: [CM2](cm2.html)
 - Recipes: [A table and a form](recipe-table-form.html) · [A search form](recipe-search-form.html)
 - Labs using it: [TD2](td2.html), [TD6](td6.html), [TD9](td9.html)
+- [All HTML tags, with their result](notion-html-tags.html)
 - [All notions](notions.html)
