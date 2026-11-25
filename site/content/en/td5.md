@@ -1,68 +1,188 @@
 title: TD5 · Flask: routes and responses
 ---
-**Friday 5 February 2027 · 3 hours.** Starter files: [`td5`](https://github.com/nverstaevel/L2INFONUM_WEB/tree/main/td5).
+**Friday 5 February 2027 · 3 hours.** Starter files: folder [`td5`](https://github.com/nverstaevel/L2INFONUM_WEB/tree/main/td5).
 
 ## Goal
 
-Run your first Flask application with several routes returning text, HTML and JSON.
+Run your first application with Flask, a Python package that answers web requests.
 
-**You have succeeded if** five addresses answer, with the right status codes.
+**You have succeeded if**: `python check.py` shows seven `[OK]`.
 
-| Provided | Your job |
-|---|---|
-| `app.py` with one route, `templates/base.html`, `static/style.css` | the five `TODO` |
+| Step | You do | Time |
+|---|---|---|
+| 1 | Install and run | 30 min |
+| 2 | A first route | 25 min |
+| 3 | Return JSON | 25 min |
+| 4 | A template | 45 min |
+| 5 | A value in the address | 35 min |
+| 6 | Status codes | 20 min |
 
 ## Before the session
 
 - [ ] I have read [CM5](cm5.html).
-- [ ] Python and my virtual environment work.
+
+## How to work
+
+1. Do the steps **in order**.
+2. Write your code only where you see `TODO`. Its number is the number in this sheet.
+3. After each part, **save** (`Ctrl+S`, or `Cmd+S` on a Mac) and run the checker in a terminal (**Terminal → New Terminal** in VS Code):
+
+```text
+python check.py
+```
+
+On macOS or Linux, outside a virtual environment, type `python3`. `[OK]` means the part works, `[  ]` means not yet. The checker does not replace looking at your page in the browser.
 
 ## Step 1 · Install and run (30 min)
 
-A *web framework* is a library that does the repetitive work of a web server. In `td5`, create the environment ([setup](setup.html)), then:
+1. Open the folder `td5` in VS Code and a terminal.
+2. Create the environment (see the [setup guide](setup.html) if it fails).
 
-```
+Windows:
+
+```text
+py -m venv .venv
+.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
+```
+
+macOS / Linux:
+
+```text
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+```
+
+Then start the application:
+
+```text
 python app.py
 ```
 
-**Checkpoint:** <http://127.0.0.1:5000/> says Hello.
+Open `http://127.0.0.1:5000/` (`127.0.0.1` means "this computer"). Leave this terminal running: `Ctrl+C` stops it. Run `check.py` in a **second** terminal, after activating the environment there too. The application restarts by itself when you save a `.py` file.
 
+**Check.** The browser says `Hello, web!` and `check.py` shows seven `[  ]`.
 
-## Step 2 · Routes (35 min)
+## Step 2 · A first route (25 min)
 
-A *route* links an address to a Python function. Add `/about`.
+A **route** links an address to a Python function. The line starting with `@` is a **decorator**: it applies to the function just below. What the function returns is sent to the browser. Read the route `/` in `app.py`.
 
-**Checkpoint:** `/about` shows HTML.
+**Example** (another subject: adapt it, do not copy it as it is).
 
-<details><summary>Hint 1</summary><p>`@app.route("/about")` just above the function.</p></details>
+```python
+@app.route("/contact")
+def contact():
+    return "<h1>Contact</h1><p>Write to the library.</p>"
+```
 
-## Step 3 · JSON and URL parameter (40 min)
+### 2A · /about
 
-Add `/api/info` with `jsonify`, then `/country/<code>`.
+**Your turn.** Under `TODO 2A`, write the route `/about`: it returns an `h1` and a paragraph naming the dataset `tin00028`. Two functions cannot have the same name.
 
-**Checkpoint:** `/country/fr` shows `FR`.
+**Check.** `http://127.0.0.1:5000/about` shows your text and `2A` is `[OK]`.
 
-<details><summary>Hint 1</summary><p>The function receives `code` as an argument.</p></details>
-<details><summary>Hint 2</summary><p>Returning plain text with user input is risky: use a template with `{{ code }}` (copy `base.html`).</p></details>
+## Step 3 · Return JSON (25 min)
 
-## Step 4 · Templates (45 min)
+**JSON** is data written as text. Programs read it more easily than HTML. `jsonify` makes it.
 
-A *template* is an HTML file with holes `{{ name }}` filled by `render_template`. Create `templates/index.html` from `base.html`.
+**Example** (another subject: adapt it, do not copy it as it is).
 
-**Checkpoint:** the home page is styled and its title comes from Python.
+```python
+@app.route("/api/library")
+def library():
+    return jsonify(name="City library", books=1200)
+```
 
-<details><summary>Hint 1</summary><p>`render_template("index.html", title="…")`</p></details>
+### 3A · /api/info
 
-## Step 5 · Status codes (20 min)
+**Your turn.** Write `/api/info` with three keys: `source`, `unit`, `licence`.
 
-Add `/teapot` with code 418 and observe it in the Network tab.
+**Check.** The browser shows the three keys; `3A` is `[OK]`.
 
-**Checkpoint:** you see 200, 404 and 418.
+## Step 4 · A template (45 min)
 
-<details><summary>Hint 1</summary><p>`return "message", 418`</p></details>
+Writing a whole page inside Python is painful. A **template** is an HTML file, in the folder `templates`, with holes written `{{ name }}`. `render_template` fills them.
 
-## Extensions
+**Example** (another subject: adapt it, do not copy it as it is).
 
-1. Add `/count` that shows the number of rows of your clean file.
-2. Add a custom page for errors 404 with `@app.errorhandler(404)`.
+```python
+# in app.py
+return render_template("shop.html", city="Toulouse", number=3)
+```
+
+```html
+<!-- in templates/shop.html -->
+<h1>Shops in {{ city }}</h1>
+<p>{{ number }} shops</p>
+```
+
+### 4A · Create index.html
+
+**Your turn.** Copy `templates/base.html` and name the copy `templates/index.html`. In the copy, replace the text of `h1` by `{{ title }}`.
+
+### 4B · Use it
+
+**Your turn.** In the function `home`, replace the returned text by a `render_template` of `index.html`, giving a value to `title`.
+
+**Check.** The home page has the menu, the colours and your title. `4A`, `4B` `[OK]`.
+
+<details markdown="1"><summary>Stuck?</summary>
+
+`return render_template("index.html", title="…")`. An error `TemplateNotFound` means that the folder or file name is misspelled.
+
+</details>
+
+## Step 5 · A value in the address (35 min)
+
+A part of the address written `<name>` is given to the function as an argument.
+
+**Example** (another subject: adapt it, do not copy it as it is).
+
+```python
+@app.route("/book/<title>")
+def book(title):
+    return render_template("book.html", title=title.capitalize())
+```
+
+### 5A · Create country.html
+
+**Your turn.** Copy `base.html` to `templates/country.html`. Make the `h1` show `{{ code }}`.
+
+### 5B · The route
+
+**Your turn.** Write `/country/<code>`: it renders `country.html` with the code in **capital letters** (`.upper()`).
+
+**Check.** `/country/fr` shows `FR`, `/country/es` shows `ES`. `5A`, `5B` `[OK]`.
+
+Why a template and not `return code`? `{{ }}` shows what the visitor typed as plain text, so nobody can slip code into your page.
+
+## Step 6 · Status codes (20 min)
+
+Every answer has a number: 200 success, 404 not found, 500 error in your code. You can choose it by returning two values.
+
+**Example** (another subject: adapt it, do not copy it as it is).
+
+```python
+return "This book is gone", 410
+```
+
+### 6A · /teapot
+
+**Your turn.** Write `/teapot`, which returns a message with the code 418.
+
+**Check.** In the **Network** tab (`F12`), reload `/teapot`: you read 418. Visit `/nothing`: 404. Seven `[OK]`.
+
+## When something fails
+
+| You see | Look at |
+|---|---|
+| `app.py cannot be loaded` | the **last** line of the message: the file line and the kind of error |
+| `Not Found` (404) | the spelling of the address in `@app.route` |
+| `Method Not Allowed` (405) | `methods=[...]` in the route |
+| `Internal Server Error` (500) | the terminal where `app.py` runs: read the last line |
+
+## If you finish early (optional)
+
+1. Add `/count`: the number of lines of your clean file.
+2. Customise the 404 page with `@app.errorhandler(404)`.

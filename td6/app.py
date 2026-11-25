@@ -21,11 +21,16 @@ def home():
     return render_template("index.html", count=len(DATA))
 
 
-# TODO 1: /search reads ?country=FR with request.args.get and shows the history
-# TODO 2: add a year filter that keeps countries above a minimum value (GET form)
-# TODO 3: /favourites (GET and POST): add a country code to session["favourites"]
-# TODO 4: a button that empties the favourites (POST)
+# TODO 2B: the route /search (read the country)
+#   TODO 2C: build the text `results`
+#   TODO 3B: also read the minimum value
+#   TODO 3C: a message when there is no result
+
+# TODO 4B: the route /favourites (GET and POST)
+#   TODO 4C: keep the list in session["favourites"]
+#   TODO 5A: accept only known country codes
+#   TODO 5B: empty the list
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":   # keep this block at the END of the file
     app.run(debug=True)

@@ -1,67 +1,190 @@
 title: TD3 · Mise en forme et mise en page adaptative
 ---
-**Vendredi 22 janvier 2027 · 3 heures.** Fichiers de départ : [`td3`](https://github.com/nverstaevel/L2INFONUM_WEB/tree/main/td3).
+**Vendredi 22 janvier 2027 · 3 heures.** Fichiers de départ : dossier [`td3`](https://github.com/nverstaevel/L2INFONUM_WEB/tree/main/td3).
 
 ## Objectif
 
-Mettre en forme la page du TD2 et la rendre confortable sur téléphone et sur ordinateur.
+Mettre en forme la page du TD2 pour qu'elle soit confortable sur téléphone et sur ordinateur.
 
-**Vous avez réussi si** à 375 px de large rien ne dépasse, et sur grand écran la navigation tient sur une ligne.
+**Vous avez réussi si** : `python check.py` affiche onze `[OK]` et, à la largeur d'un téléphone, rien ne dépasse.
 
-| Fourni | À vous |
-|---|---|
-| squelette `style.css` | la feuille de style |
+| Étape | Vous faites | Durée |
+|---|---|---|
+| 1 | Lier la feuille de style | 20 min |
+| 2 | Couleurs et polices | 30 min |
+| 3 | Boîtes et espacements | 30 min |
+| 4 | Navigation avec Flexbox | 30 min |
+| 5 | Tableau et formulaire | 40 min |
+| 6 | Écrans de téléphone | 30 min |
 
 ## Avant la séance
 
-- [ ] J'ai relu [CM3](cm3.html).
-- [ ] Ma page du TD2 est valide.
+- [ ] J'ai relu le [CM3](cm3.html).
+- [ ] Ma page du TD2 est valide. Sinon, je demande une page de départ à l'enseignant.
 
-## Étape 1 · Lier et style de base (30 min)
+## Comment travailler
 
-Copiez `style.css` à côté de la page et ajoutez dans `<head>` :
+1. Faites les étapes **dans l'ordre**.
+2. Écrivez uniquement là où vous voyez `TODO`. Son numéro est celui de ce sujet.
+3. Après chaque partie, **enregistrez** (`Ctrl+S`, ou `Cmd+S` sur Mac) et lancez le vérificateur dans un terminal (**Terminal → New Terminal** dans VS Code) :
 
+```text
+python check.py
 ```
+
+Sur macOS ou Linux, hors environnement virtuel, tapez `python3`. `[OK]` : la partie fonctionne ; `[  ]` : pas encore. Le vérificateur ne remplace pas un coup d'œil à votre page dans le navigateur.
+
+## Rappel de cinq minutes
+
+Le CSS dit quelle apparence ont les éléments. Une **règle** a un **sélecteur** (quels éléments) et des **déclarations** (propriété : valeur). Chaque déclaration finit par `;`.
+
+```css
+h2 {              /* selector: every h2 */
+  color: green;   /* property: value; */
+}
+nav a { }         /* the links that are inside nav */
+th, td { }        /* th and td together */
+```
+
+## Étape 1 · Lier la feuille de style (20 min)
+
+1. Copiez `index.html` et le dossier `images` de `td2` dans `td3`.
+2. Ouvrez le dossier `td3` dans VS Code et la page dans le navigateur.
+3. Dans `index.html`, à l'intérieur de `<head>`, ajoutez :
+
+```html
 <link rel="stylesheet" href="style.css">
 ```
 
-**Point de contrôle :** changer la couleur de `body` modifie la page.
+**Vérification.** `1` est `[OK]`.
 
+## Étape 2 · Couleurs et polices (30 min)
 
-## Étape 2 · Modèle de boîte (35 min)
+### 2A · Toute la page
 
-Chaque élément est une boîte : contenu, *padding* (intérieur), bordure, *margin* (extérieur). Centrez `main` et limitez sa largeur.
+**Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
 
-**Point de contrôle :** `main` est centré sur grand écran.
+```css
+h1 {
+  font-family: Georgia, serif;
+  color: darkred;
+  background: #fff4e0;   /* a colour written as a code */
+}
+```
 
-<details><summary>Indice 1</summary><p>`max-width` avec `margin: 0 auto;`</p></details>
+**À vous.** Pour `body` : mettez `margin: 0;`, `font-family: system-ui, Arial, sans-serif;`, `line-height: 1.5;`, puis choisissez une `color` foncée et un `background` clair.
 
-## Étape 3 · Navigation Flexbox (35 min)
+### 2B · En-tête et pied de page
 
-*Flexbox* place les enfants d'une boîte en ligne ou en colonne.
+**À vous.** Donnez à `header, footer` un `background` foncé, une `color` claire et `padding: 1rem;`. `rem` est une unité basée sur la taille du texte.
 
-**Point de contrôle :** les liens sont côte à côte, sans puces.
+**Vérification.** `2A` et `2B` sont `[OK]`. Les liens de l'en-tête sont peut-être peu lisibles : l'étape 4 corrige cela.
 
-<details><summary>Indice 1</summary><p>`nav ul { display: flex; gap: 1rem; list-style: none; }`</p></details>
+<details markdown="1"><summary>Bloqué ?</summary>
 
-## Étape 4 · Tableau et formulaire (35 min)
+Rien ne change dans le navigateur ? Vérifiez que les deux fichiers sont enregistrés et que la ligne `link` est exacte. Une `}` oubliée bloque tout ce qui suit.
 
-Mettez en forme le tableau et espacez les champs.
+</details>
 
-**Point de contrôle :** les bordures sont simples et l'en-tête ressort.
+## Étape 3 · Boîtes et espacements (30 min)
 
-<details><summary>Indice 1</summary><p>`border-collapse: collapse;`</p></details>
+Chaque élément est une boîte : le contenu, puis le **padding** (espace intérieur), la **border** (bordure), puis la **margin** (espace extérieur).
 
-## Étape 5 · Adaptatif (35 min)
+### 3A · Centrer le contenu
 
-Une *media query* applique des règles sous condition. Simulez un téléphone avec la barre d'appareils des outils de développement.
+**Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
 
-**Point de contrôle :** à 375 px le menu et le formulaire sont verticaux.
+```css
+.card {
+  max-width: 20rem;    /* never wider than this */
+  margin: 0 auto;      /* 0 above and below, automatic left and right = centred */
+  padding: 2rem;
+}
+```
 
-<details><summary>Indice 1</summary><p>`@media (max-width: 600px) { ... }`</p></details>
+**À vous.** Centrez `main`, avec une largeur maximale de `60rem` et un padding de `1rem`.
 
-## Extensions
+### 3B · Les images ne débordent jamais
 
-1. Ajoutez des styles `:hover` et `:focus`.
-2. Mettez en évidence une ligne avec une classe.
-3. Vérifiez le contraste de vos couleurs.
+**À vous.** Pour `img` : `max-width: 100%;` et `height: auto;`.
+
+**Vérification.** `3A`, `3B` `[OK]`. Sur une fenêtre large, le contenu reste au milieu. Clic droit → **Inspecter** pour voir le dessin de la boîte.
+
+## Étape 4 · Navigation avec Flexbox (30 min)
+
+**Flexbox** place les enfants d'une boîte en ligne. On l'écrit sur le **parent**.
+
+### 4A · La liste en ligne
+
+**Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
+
+```css
+.toolbar {
+  display: flex;      /* children side by side */
+  gap: 2rem;          /* space between them */
+}
+```
+
+**À vous.** Appliquez-le à `nav ul`, avec un `gap` de `1rem`. Supprimez aussi les puces (`list-style: none;`) et les espaces (`margin: 0;`, `padding: 0;`).
+
+### 4B · Des liens lisibles
+
+**À vous.** Donnez à `nav a` une `color` lisible sur votre en-tête.
+
+**Vérification.** Les trois liens sont sur une ligne, sans puces.
+
+## Étape 5 · Tableau et formulaire (40 min)
+
+### 5A · Une bordure, pas deux
+
+**À vous.** Pour `table` : `width: 100%;` et `border-collapse: collapse;`.
+
+### 5B · Les cellules
+
+**Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
+
+```css
+.price {
+  border: 1px solid grey;   /* thickness, style, colour */
+  padding: 0.5rem;
+  text-align: left;
+}
+```
+
+**À vous.** Donnez à `th, td` une bordure, un padding et `text-align: left;`. Puis, dans une règle à part, un `background` à `th`.
+
+### 5C · Le formulaire
+
+**À vous.** Faites de `form` une boîte flex avec `gap: 0.75rem;`, `flex-wrap: wrap;` (aller à la ligne si besoin) et `align-items: center;`.
+
+**Vérification.** `5A` à `5C` `[OK]` : bordures simples, en-tête visible, champs espacés.
+
+## Étape 6 · Écrans de téléphone (30 min)
+
+Une **media query** applique des règles seulement si une condition est vraie, ici un écran étroit.
+
+**Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
+
+```css
+@media (max-width: 600px) {
+  .toolbar {
+    flex-direction: column;   /* one under the other */
+  }
+}
+```
+
+**À vous.** À la **fin** du fichier, mettez `nav ul` et `form` en colonne sur les écrans jusqu'à 600px. Ajoutez `align-items: stretch;` pour que les champs prennent toute la largeur.
+
+**Vérification.** Appuyez sur `F12`, puis sur l'icône **téléphone et tablette**, et choisissez 375px de large : menu et formulaire sont verticaux, rien ne dépasse. Onze `[OK]`.
+
+<details markdown="1"><summary>Bloqué ?</summary>
+
+Deux sélecteurs peuvent partager une règle : `nav ul, form { … }`. Il y a deux `}` à la fin : une pour la règle, une pour `@media`.
+
+</details>
+
+## Si vous avez fini (facultatif)
+
+1. Ajoutez des styles `:hover` et `:focus` aux liens et boutons.
+2. Mettez en évidence une ligne du tableau avec une classe.
+3. Vérifiez le contraste de vos couleurs avec les outils de développement.

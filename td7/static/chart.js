@@ -6,7 +6,7 @@ function load() {
   fetch("/api/data?country=" + encodeURIComponent(code))
     .then(response => response.json())
     .then(rows => {
-      // TODO 4: if the answer is an error, show it in #message and stop
+      // TODO 4B: if the answer is an error, show it in #message and stop
       const labels = rows.map(row => row.year);
       const values = rows.map(row => row.value);
       if (chart) {

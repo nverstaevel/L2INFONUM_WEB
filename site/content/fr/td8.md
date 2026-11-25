@@ -1,66 +1,106 @@
 title: TD8 · Mini-projet 1 : cadrage et données
 ---
-**Vendredi 5 mars 2027 · 3 heures.** Fichiers de départ : [`project`](https://github.com/nverstaevel/L2INFONUM_WEB/tree/main/project).
+**Vendredi 5 mars 2027 · 3 heures.** Fichiers de départ : dossier [`project`](https://github.com/nverstaevel/L2INFONUM_WEB/tree/main/project).
 
 ## Objectif
 
-Seul ou en binôme, choisir une question et un jeu de données, nettoyer et concevoir les routes.
+Seul ou en binôme : choisir une question et un jeu de données, nettoyer, prévoir les pages.
 
-**Vous avez réussi si** au point d'étape vous montrez des données propres et un tableau des routes.
+**Vous avez réussi si** : vous montrez un fichier CSV propre et un tableau des routes.
 
-| Fourni | À vous |
-|---|---|
-| gabarit de projet : `app.py`, `base.html`, `style.css`, `README.md` | tout ce qui est propre à votre question |
+| Étape | Vous faites | Durée |
+|---|---|---|
+| 1 | Question et jeu de données | 40 min |
+| 2 | Charger et nettoyer | 75 min |
+| 3 | Prévoir les pages | 30 min |
+| 4 | Première route et revue | 35 min |
 
 ## Avant la séance
 
 - [ ] J'ai réfléchi à deux sujets possibles.
 
-## Étape 1 · Question et données (40 min)
+## Comment travailler
 
-Formulez une question qu'un manager pourrait poser. Vérifiez d'abord la licence.
+Cochez chaque case quand c'est fait (le navigateur s'en souvient). Ne commencez pas la partie suivante avant d'avoir atteint le **jalon**. Faites une copie de votre dossier après chaque jalon.
 
-**Point de contrôle :** question, source et licence sont dans le README.
+## Étape 1 · Question et jeu de données (40 min)
 
+Une bonne question compare ou suit quelque chose dans le temps. Exemple : *Comment la part des énergies renouvelables a-t-elle évolué dans mon pays et dans deux autres ?*
 
-## Étape 2 · Charger et nettoyer (70 min)
+Vous hésitez ? Prenez l'un de ces jeux Eurostat (vérifiés le 25 novembre 2026) :
 
-Adaptez vos scripts du TD1. Regardez d'abord colonnes et codes.
+| Code | Contenu | Filtre à appliquer |
+|---|---|---|
+| [`tipsun20`](https://ec.europa.eu/eurostat/databrowser/view/tipsun20/default/table?lang=fr) | Taux de chômage annuel | un seul `age`, par exemple `Y15-74` |
+| [`sdg_07_40`](https://ec.europa.eu/eurostat/databrowser/view/sdg_07_40/default/table?lang=fr) | Part des énergies renouvelables | un seul `nrg_bal`, par exemple `REN` |
+| [`sdg_11_60`](https://ec.europa.eu/eurostat/databrowser/view/sdg_11_60/default/table?lang=fr) | Taux de recyclage des déchets municipaux | aucun |
+| [`sdg_08_10`](https://ec.europa.eu/eurostat/databrowser/view/sdg_08_10/default/table?lang=fr) | PIB réel par habitant | une seule `unit` |
 
-**Point de contrôle :** un CSV propre aux colonnes claires.
+Réutilisation avec attribution ([notice](https://ec.europa.eu/eurostat/fr/help/copyright-notice)). Autres portails : [data.gouv.fr](https://www.data.gouv.fr), [Toulouse Métropole](https://data.toulouse-metropole.fr), [data.europa.eu](https://data.europa.eu).
 
-<details><summary>Indice 1</summary><p>D'autres jeux ont d'autres dimensions : gardez une valeur par pays et par année.</p></details>
+- [ ] Copier le dossier `project` et le renommer à vos noms.
+- [ ] Écrire la question dans `README.md`.
+- [ ] Noter la source, le producteur et la **licence** (pas de licence : changer de jeu).
 
-## Étape 3 · Concevoir (35 min)
+**Jalon.** Question, source et licence sont dans le README.
 
-Dessinez les pages sur papier et remplissez le tableau des routes.
+## Étape 2 · Charger et nettoyer (75 min)
 
-**Point de contrôle :** au moins 3 routes, dont une JSON paramétrée.
+Réutilisez vos trois scripts du TD1. Pour un jeu Eurostat, seule l'adresse change (remplacez `tin00028` par votre code), puis les filtres.
 
+- [ ] Copier `download.py` et `clean.py` dans le projet ; changer l'adresse et les noms de fichiers.
+- [ ] Lancer le téléchargement et ouvrir le fichier : lire les noms des colonnes.
+- [ ] Supprimer le test sur `indic_is` si votre fichier n'a pas cette colonne.
+- [ ] Ajouter votre filtre (tableau ci-dessus).
+- [ ] Vérifier : une seule ligne par pays et par année.
 
-## Étape 4 · Point d'étape 1 (35 min)
+**Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
 
-Courte revue (non notée) : données, périmètre, chargement, routes. En attendant, écrivez la première route.
+```python
+if row["age"] != "Y15-74":   # keep one value of a column
+    continue
+```
 
-**Point de contrôle :** retours notés.
+<details markdown="1"><summary>Bloqué ?</summary>
 
+Affichez les valeurs différentes d'une colonne : `print(set(row["age"] for row in rows))`.
+
+</details>
+
+**Jalon.** Un CSV propre `country,year,value` dans le dossier `data`.
+
+## Étape 3 · Prévoir les pages (30 min)
+
+- [ ] Dessiner chaque page sur papier.
+- [ ] Remplir le tableau des routes du README (au moins 3, dont une JSON avec paramètre).
+- [ ] Se répartir le travail.
+
+**Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
+
+```text
+| Route                  | Method | What it does                |
+| /                      | GET    | presents the question       |
+| /search                | GET    | filter by country           |
+| /api/data?country=FR   | GET    | JSON used by the chart      |
+```
+
+**Jalon.** Le tableau des routes est complet.
+
+## Étape 4 · Première route et revue (35 min)
+
+- [ ] Copier `load_data` du TD6 et afficher le nombre de lignes sur l'accueil.
+- [ ] **Point d'étape 1** (courte revue, non notée) : montrer les données et les routes.
+- [ ] Noter les remarques de l'enseignant.
+
+**Jalon.** L'application tourne et charge vos données.
 
 ## Exigences minimales
 
-- Un jeu de données sous licence ouverte, chargé et nettoyé avec Python.
-- Au moins 3 routes Flask, dont 1 route JSON avec paramètre.
-- Au moins 1 formulaire ou filtre qui change l'affichage.
-- Au moins 1 graphique Chart.js alimenté par la route JSON via `fetch`.
-- HTML et CSS écrits à la main, adaptatifs, avec une barre de navigation commune (`base.html` copié dans chaque page).
-- Un README : source, licence, lancement, routes principales, aide d'IA reçue.
-
-## Jeux de données sûrs (Eurostat)
-
-| Code | Contenu |
+| Exigence | Vue au |
 |---|---|
-| [`tipsun20`](https://ec.europa.eu/eurostat/databrowser/view/tipsun20/default/table?lang=fr) | Taux de chômage annuel (plusieurs âges : filtrer `age`) |
-| [`sdg_07_40`](https://ec.europa.eu/eurostat/databrowser/view/sdg_07_40/default/table?lang=fr) | Part des énergies renouvelables (plusieurs secteurs : filtrer `nrg_bal`) |
-| [`sdg_11_60`](https://ec.europa.eu/eurostat/databrowser/view/sdg_11_60/default/table?lang=fr) | Taux de recyclage des déchets municipaux |
-| [`sdg_08_10`](https://ec.europa.eu/eurostat/databrowser/view/sdg_08_10/default/table?lang=fr) | PIB réel par habitant (deux unités : filtrer `unit`) |
-
-Vérifiés le 25 novembre 2026. Adresse de téléchargement : remplacez `tin00028` par le code dans l'adresse du TD1. Réutilisation avec attribution ([notice](https://ec.europa.eu/eurostat/fr/help/copyright-notice)). Autres portails : [data.gouv.fr](https://www.data.gouv.fr), [Toulouse Métropole](https://data.toulouse-metropole.fr), [data.europa.eu](https://data.europa.eu).
+| Un jeu de données sous licence ouverte, chargé et nettoyé avec Python | TD1 |
+| Au moins 3 routes Flask, dont 1 route JSON avec paramètre | TD5, TD7 |
+| Au moins 1 formulaire ou filtre qui change l'affichage | TD6 |
+| Au moins 1 graphique Chart.js alimenté par la route JSON avec `fetch` | TD4, TD7 |
+| HTML et CSS écrits à la main, adaptatifs, même navigation sur chaque page (`base.html` copié) | TD2, TD3 |
+| Un README : source, licence, lancement, routes principales, aide d'IA reçue | TD8 |

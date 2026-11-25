@@ -1,73 +1,158 @@
 title: TD4 · Visualisation avec Chart.js
 ---
-**Vendredi 29 janvier 2027 · 3 heures.** Fichiers de départ : [`td4`](https://github.com/nverstaevel/L2INFONUM_WEB/tree/main/td4).
+**Vendredi 29 janvier 2027 · 3 heures.** Fichiers de départ : dossier [`td4`](https://github.com/nverstaevel/L2INFONUM_WEB/tree/main/td4).
 
 ## Objectif
 
-Afficher les résultats du TD1 sous forme de graphiques avec quelques lignes de JavaScript.
+Transformer les résultats du TD1 en graphique avec quelques lignes de JavaScript (le langage de programmation des pages web). Le code fonctionne déjà : vous l'**adaptez**.
 
-**Vous avez réussi si** la page montre un graphique de votre pays, avec un titre et la source.
+**Vous avez réussi si** : un graphique de votre pays, avec titre et source, et cinq `[OK]`.
 
-| Fourni | À vous |
-|---|---|
-| `chart.html` et `chart.js` fonctionnels, exemple `data/summary.json` | adapter données, étiquettes et type |
+| Étape | Vous faites | Durée |
+|---|---|---|
+| 1 | Lancer un serveur local | 25 min |
+| 2 | Essayer JavaScript | 35 min |
+| 3 | Utiliser vos données | 25 min |
+| 4 | Adapter le graphique | 55 min |
+| 5 | Le lire avec esprit critique | 30 min |
 
 ## Avant la séance
 
-- [ ] J'ai relu [CM4](cm4.html).
-- [ ] J'ai mon `summary.json` du TD1.
+- [ ] J'ai relu le [CM4](cm4.html).
+- [ ] J'ai mon `summary.json` du TD1 (un exemple est fourni).
 
-## Étape 1 · Servir la page (20 min)
+## Comment travailler
 
-Un navigateur interdit à une page ouverte par double-clic de lire d'autres fichiers. Lancez un petit serveur local **dans le dossier `td4`**, puis ouvrez <http://localhost:8000/chart.html> :
+1. Faites les étapes **dans l'ordre**.
+2. Écrivez uniquement là où vous voyez `TODO`. Son numéro est celui de ce sujet.
+3. Après chaque partie, **enregistrez** (`Ctrl+S`, ou `Cmd+S` sur Mac) et lancez le vérificateur dans un terminal (**Terminal → New Terminal** dans VS Code) :
 
+```text
+python check.py
 ```
+
+Sur macOS ou Linux, hors environnement virtuel, tapez `python3`. `[OK]` : la partie fonctionne ; `[  ]` : pas encore. Le vérificateur ne remplace pas un coup d'œil à votre page dans le navigateur.
+
+## Étape 1 · Lancer un serveur local (25 min)
+
+Une page ouverte par double-clic n'a pas le droit de lire d'autres fichiers. Un **serveur** est un programme qui envoie des fichiers au navigateur. Python en a un petit.
+
+Ouvrez le dossier `td4` dans VS Code, ouvrez un terminal et lancez :
+
+```text
 python -m http.server
 ```
 
-**Point de contrôle :** le graphique d'exemple apparaît.
+Laissez ce terminal ouvert. Dans le navigateur, allez sur `http://localhost:8000/chart.html` (`localhost` signifie « cet ordinateur »).
 
-<details><summary>Indice 1</summary><p>Utilisez `python3` sur macOS ou Linux. Arrêtez avec Ctrl+C.</p></details>
+**Vérification.** Vous voyez une courbe. Pour lancer `check.py`, ouvrez un **second** terminal.
 
-## Étape 2 · Échauffement JavaScript (40 min)
+<details markdown="1"><summary>Bloqué ?</summary>
 
-Ouvrez la *console* (outils de développement) et essayez :
+`Address already in use` : lancez `python -m http.server 8001` et utilisez `localhost:8001`. Erreur 404 : le serveur n'a pas été lancé dans le dossier `td4`. On l'arrête avec `Ctrl+C`.
 
+</details>
+
+## Étape 2 · Essayer JavaScript (35 min)
+
+La **console** permet de taper du JavaScript : `F12`, onglet **Console**. Tapez chaque bloc, validez, et **devinez le résultat avant**.
+
+### 2A · Variables
+
+```javascript
+const city = "Toulouse";    // const: cannot be changed
+let people = 500000;        // let: can be changed
+people = people + 1;
+console.log(city, people);  // like print()
 ```
-const years = [2023, 2024];
-const point = { year: 2025, value: 94.98 };
-console.log(years.length, point.value);
-console.log(years.map(y => y + 1));
+
+### 2B · Tableaux et objets
+
+Un **tableau** ressemble à une liste Python. Un **objet** ressemble à un dictionnaire, lu avec un point.
+
+```javascript
+const months = ["Jan", "Feb"];
+console.log(months.length, months[0]);
+
+const book = { title: "Emma", pages: 400 };
+console.log(book.title);
 ```
 
-**Point de contrôle :** vous savez expliquer chaque ligne.
+### 2C · map
 
+`map` construit un nouveau tableau en transformant chaque élément. `x => x.pages` signifie « pour chaque x, prendre x.pages ».
 
-## Étape 3 · Vos données (30 min)
+```javascript
+const books = [{ title: "Emma", pages: 400 }, { title: "Dune", pages: 600 }];
+console.log(books.map(b => b.pages));    // Python: [b["pages"] for b in books]
+```
 
-Remplacez `data/summary.json` par le vôtre. Lisez `chart.js` ligne par ligne.
+**Vérification.** Écrivez la ligne qui donne les deux titres. Montrez-la à votre voisin.
 
-**Point de contrôle :** le graphique montre votre pays.
+<details markdown="1"><summary>Bloqué ?</summary>
 
-<details><summary>Indice 1</summary><p>L'onglet *Réseau* montre si `summary.json` a été chargé (code 200).</p></details>
+La même ligne que ci-dessus, avec `b.title`.
 
-## Étape 4 · Adapter (50 min)
+</details>
 
-Passez au type `bar`, écrivez le pays dans le titre, réglez l'axe vertical de 0 à 100.
+## Étape 3 · Utiliser vos données (25 min)
 
-**Point de contrôle :** les trois changements sont visibles.
+**À vous.** Copiez **votre** `summary.json` (créé au TD1, dossier `td1/data`) à la place de `td4/data/summary.json`. Rechargez avec `Ctrl+F5` (`Cmd+Shift+R` sur Mac). Puis lisez `chart.js` et ses commentaires, ligne par ligne.
 
-<details><summary>Indice 1</summary><p>`options: { scales: { y: { min: 0, max: 100 } } }`</p></details>
+**Vérification.** `3` est `[OK]`. Dans l'onglet **Réseau** (`F12`), rechargez : `summary.json` a le code 200.
 
-## Étape 5 · Lire de façon critique (40 min)
+## Étape 4 · Adapter le graphique (55 min)
 
-Comparez la courbe à axe automatique et à axe partant de 0. Dans `notes.txt`, écrivez laquelle vous montreriez à un manager et pourquoi. Notez ce qui se passe en 2020.
+Changez une chose, enregistrez, rechargez, regardez. Si le graphique disparaît, lisez le message rouge dans la console.
 
-**Point de contrôle :** deux courts paragraphes.
+### 4A · Des barres
 
+**À vous.** Changez le type de graphique de `line` à `bar`.
 
-## Extensions
+### 4B · Un titre avec le pays
 
-1. Ajoutez une seconde série (autre pays).
-2. Appliquez votre feuille de style du TD3.
-3. Comparez minimum, moyenne et maximum en barres.
+**Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
+
+```javascript
+document.getElementById("shop-name").textContent = "Shop of " + data.city;
+// finds the element with id="shop-name" and replaces its text
+```
+
+**À vous.** Le titre de `chart.html` a `id="title"`. Sous `TODO 4B`, écrivez un titre qui se termine par `summary.country`.
+
+### 4C · L'axe vertical
+
+**Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
+
+```javascript
+new Chart(canvas, {
+  type: "bar",
+  data: myData,      // a comma between data and options
+  options: { scales: { y: { min: 10, max: 50 } } }
+});
+```
+
+**À vous.** Faites aller votre axe de 0 à 100. N'oubliez pas la **virgule** avant `options`.
+
+**Vérification.** `4A`, `4B`, `4C` `[OK]` et les trois changements sont visibles.
+
+<details markdown="1"><summary>Bloqué ?</summary>
+
+Page vide après 4C ? La console dit `Unexpected identifier` quand il manque une virgule : elle se place juste après la `}` qui ferme `data`.
+
+</details>
+
+## Étape 5 · Lire le graphique avec esprit critique (30 min)
+
+**À vous.** Créez `notes.txt` dans `td4` et écrivez au moins 30 mots :
+
+1. Enlevez un instant `min` et `max` et observez. Remettez-les. Quel graphique montreriez-vous à un manager, et pourquoi ?
+2. Quelle année manque pour certains pays (regardez 2020) ? Le graphique le rend-il visible ?
+
+**Vérification.** Cinq `[OK]`.
+
+## Si vous avez fini (facultatif)
+
+1. Ajoutez une seconde série (autre pays) dans `datasets`.
+2. Utilisez votre feuille de style du TD3.
+3. Comparez minimum, moyenne et maximum avec trois barres.

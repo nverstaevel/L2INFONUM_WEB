@@ -23,10 +23,9 @@ def home():
 @app.route("/api/data")
 def api_data():
     country = request.args.get("country", "FR").upper()
-    # TODO 1: keep only the rows of this country
-    rows = DATA
-    # TODO 2: accept an optional year parameter (?year=2022)
-    # TODO 3: return status code 404 with a JSON error when there is no row
+    rows = DATA   # TODO 2A: keep only the rows of this country
+    # TODO 3A: accept an optional year (?year=2024)
+    # TODO 4A: error 404 when there is no row
     return jsonify(rows)
 
 

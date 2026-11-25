@@ -1,55 +1,69 @@
 title: TD9 · Mini-project 2: pages, filters, charts
 ---
-**Friday 12 March 2027 · 3 hours.** Starter files: [`project`](https://github.com/nverstaevel/L2INFONUM_WEB/tree/main/project).
+**Friday 12 March 2027 · 3 hours.** Starter files: folder [`project`](https://github.com/nverstaevel/L2INFONUM_WEB/tree/main/project).
 
 ## Goal
 
-Build the pages, the form or filter and a first chart.
+Build the pages, the filter and the first chart.
 
-**You have succeeded if** the main path works from the home page to the chart.
+**You have succeeded if**: the main path works, from the home page to the chart.
 
-| Provided | Your job |
-|---|---|
-| your TD2 to TD7 code | the application |
+| Step | You do | Time |
+|---|---|---|
+| 1 | Pages | 45 min |
+| 2 | Form or filter | 45 min |
+| 3 | JSON route and chart | 60 min |
+| 4 | Review | 30 min |
 
 ## Before the session
 
-- [ ] Checkpoint 1 feedback is handled.
+- [ ] The remarks of checkpoint 1 are dealt with.
 
-## Step 1 · Pages (50 min)
+## How to work
 
-Copy `base.html` for each page and check the navigation.
+Tick each box when it is done (your browser remembers it). Do not start the next part before reaching the **milestone**. Make a copy of your folder after each milestone.
 
-**Checkpoint:** all links work.
+## Step 1 · Pages (45 min)
 
+- [ ] For each page: copy `base.html`, rename it, change the titles.
+- [ ] Write one route per page (TD5, step 4).
+- [ ] Update the links of the menu **in every file**.
+- [ ] Add your TD3 rules to `static/style.css`.
 
-## Step 2 · Form or filter (40 min)
+**Milestone.** Every link of the menu works.
 
-Reuse TD6.
+## Step 2 · Form or filter (45 min)
 
-**Checkpoint:** the display changes with the input.
+- [ ] Copy the search route and template of TD6.
+- [ ] Adapt the field names and the test of the loop.
+- [ ] Test a normal value, an unknown value and an empty field.
 
+**Milestone.** The display changes with the input and nothing crashes.
 
 ## Step 3 · JSON route and chart (60 min)
 
-Reuse TD7.
+- [ ] Copy `api_data` from TD7.
+- [ ] Test the JSON address **alone** in the browser.
+- [ ] Copy `chart.html` to `templates` and `chart.js` to `static`; add the route of the page.
+- [ ] Change the title, the label and the type of chart.
+- [ ] Check the console: no red message.
 
-**Checkpoint:** the chart is fed by `fetch`.
+**Milestone.** The chart changes when the parameter changes.
 
-<details><summary>Hint 1</summary><p>Test the JSON address alone first.</p></details>
+## Step 4 · Review (30 min)
 
-## Step 4 · Checkpoint 2 (30 min)
+- [ ] **Checkpoint 2** (not graded): show pages, filter and chart.
+- [ ] Write the list of what remains, most important first.
 
-Short review (not graded): pages, filter, chart.
-
-**Checkpoint:** a list of what remains.
-
+**Milestone.** You have your list.
 
 ## Minimum requirements
 
-- A dataset under an open licence, loaded and cleaned with Python.
-- At least 3 Flask routes, including 1 JSON route with a parameter.
-- At least 1 form or filter that changes what is displayed.
-- At least 1 Chart.js chart fed by the JSON route through `fetch`.
-- Hand-written HTML and CSS, responsive, with a shared navigation bar (`base.html` copied into each page).
-- A README: data source, licence, how to run, main routes, AI help received.
+| Requirement | Seen in |
+|---|---|
+| A dataset under an open licence, loaded and cleaned with Python | TD1 |
+| At least 3 Flask routes, including 1 JSON route with a parameter | TD5, TD7 |
+| At least 1 form or filter that changes what is shown | TD6 |
+| At least 1 Chart.js chart fed by the JSON route with `fetch` | TD4, TD7 |
+| Hand-written, responsive HTML and CSS, same navigation on every page (`base.html` copied) | TD2, TD3 |
+| A README: source, licence, how to run, main routes, help received from AI | TD8 |

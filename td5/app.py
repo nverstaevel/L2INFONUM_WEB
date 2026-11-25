@@ -5,15 +5,17 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello, web!"
+    return "Hello, web!"   # TODO 4B: return the template index.html instead
 
 
-# TODO 1: a route /about that returns a short HTML text
-# TODO 2: a route /api/info that returns JSON (source, unit, licence) with jsonify
-# TODO 3: a route /country/<code> that returns the code in upper case
-# TODO 4: make "/" return templates/index.html with render_template
-# TODO 5: a route /teapot that returns a message with status code 418
+# TODO 2A: the route /about
+
+# TODO 3A: the route /api/info
+
+# TODO 5B: the route /country/<code>
+
+# TODO 6A: the route /teapot
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":   # keep this block at the END of the file
     app.run(debug=True)

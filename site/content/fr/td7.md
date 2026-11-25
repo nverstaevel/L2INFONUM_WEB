@@ -1,63 +1,164 @@
 title: TD7 · Une API JSON consommée par un graphique
 ---
-**Vendredi 26 février 2027 · 3 heures.** Fichiers de départ : [`td7`](https://github.com/nverstaevel/L2INFONUM_WEB/tree/main/td7).
+**Vendredi 26 février 2027 · 3 heures.** Fichiers de départ : dossier [`td7`](https://github.com/nverstaevel/L2INFONUM_WEB/tree/main/td7).
 
 ## Objectif
 
-Servir des données filtrées en JSON et les tracer dans un graphique qui se met à jour.
+Votre application envoie des données filtrées en JSON, et la page les trace sans se recharger. Une **API** est un ensemble d'adresses que des programmes utilisent pour obtenir des données.
 
-**Vous avez réussi si** choisir un autre pays redessine le graphique sans recharger la page.
+**Vous avez réussi si** : choisir un autre pays redessine le graphique, et `check.py` affiche cinq `[OK]`.
 
-| Fourni | À vous |
-|---|---|
-| `app.py`, `templates/chart.html`, `static/chart.js` fonctionnel | les quatre `TODO` |
+| Étape | Vous faites | Durée |
+|---|---|---|
+| 1 | Installer et observer | 35 min |
+| 2 | Filtrer par pays | 30 min |
+| 3 | Filtrer par année | 30 min |
+| 4 | Gérer les erreurs | 45 min |
+| 5 | Déboguer | 40 min |
 
 ## Avant la séance
 
-- [ ] J'ai relu [CM7](cm7.html).
-- [ ] Mon CSV nettoyé est dans `data/`.
+- [ ] J'ai relu le [CM7](cm7.html).
+- [ ] J'ai mon fichier CSV nettoyé du TD1.
 
-## Étape 1 · Observer (25 min)
+## Comment travailler
 
-Lancez l'application. Dans l'onglet Réseau, rechargez, cliquez sur `data?country=FR` et lisez la réponse.
+1. Faites les étapes **dans l'ordre**.
+2. Écrivez uniquement là où vous voyez `TODO`. Son numéro est celui de ce sujet.
+3. Après chaque partie, **enregistrez** (`Ctrl+S`, ou `Cmd+S` sur Mac) et lancez le vérificateur dans un terminal (**Terminal → New Terminal** dans VS Code) :
 
-**Point de contrôle :** vous savez dire qui envoie la requête.
+```text
+python check.py
+```
 
+Sur macOS ou Linux, hors environnement virtuel, tapez `python3`. `[OK]` : la partie fonctionne ; `[  ]` : pas encore. Le vérificateur ne remplace pas un coup d'œil à votre page dans le navigateur.
 
-## Étape 2 · Filtrer par pays (35 min)
+## Étape 1 · Installer et observer (35 min)
 
-Complétez la route pour ne renvoyer qu'un pays.
+1. Ouvrez le dossier `td7` dans VS Code et un terminal.
+2. Créez l'environnement (voir le [guide d'installation](setup.html) en cas d'échec).
 
-**Point de contrôle :** le graphique change quand vous saisissez `DE`.
+Windows :
 
-<details><summary>Indice 1</summary><p>Une liste en compréhension : `[r for r in DATA if ...]`.</p></details>
+```text
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+```
 
-## Étape 3 · Paramètre année (35 min)
+macOS / Linux :
 
-Acceptez `?year=2022`.
+```text
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+```
 
-**Point de contrôle :** `/api/data?country=FR&year=2022` renvoie une ligne.
+Copiez ensuite **votre** `internet_use_clean.csv` (créé au TD1) dans le dossier `data`. Pas de fichier ? Copiez celui du dossier `sample` : il ne contient que la France.
 
-<details><summary>Indice 1</summary><p>`request.args.get("year", type=int)` vaut `None` si absent.</p></details>
+Puis lancez l'application :
 
-## Étape 4 · Erreurs (45 min)
+```text
+python app.py
+```
 
-Renvoyez une erreur JSON avec le code 404 et affichez le message dans la page.
+Ouvrez `http://127.0.0.1:5000/` (`127.0.0.1` signifie « cet ordinateur »). Laissez ce terminal tourner : `Ctrl+C` l'arrête. Lancez `check.py` dans un **second** terminal, après y avoir aussi activé l'environnement. L'application redémarre toute seule quand vous enregistrez un fichier `.py`.
 
-**Point de contrôle :** saisir `ZZ` affiche un message, sans erreur JavaScript non gérée.
+Dans le navigateur, appuyez sur `F12`, ouvrez l'onglet **Réseau** et rechargez. Cliquez sur la ligne `data?country=FR`, puis **Réponse**. Lisez `static/chart.js` : `fetch` demande une adresse, puis le graphique est tracé avec la réponse.
 
-<details><summary>Indice 1</summary><p>`return jsonify(error="..."), 404`</p></details>
-<details><summary>Indice 2</summary><p>En JavaScript, testez `rows.error`, puis `return`.</p></details>
+**Vérification.** Vous savez dire qui envoie cette requête (la page ou Python ?). Le graphique mélange tous les pays : c'est l'étape suivante.
+
+## Étape 2 · Filtrer par pays (30 min)
+
+**Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
+
+```python
+author = request.args.get("author", "")
+found = [b for b in BOOKS if b["author"] == author]    # keep some items
+return jsonify(found)
+```
+
+### 2A · Un seul pays
+
+**À vous.** Remplacez `rows = DATA` par les lignes de `country`.
+
+**Vérification.** Saisissez `ES` dans la page et cliquez sur **Show** : le graphique change. Avec le fichier d'exemple (France seule), le graphique est vide : c'est normal. `2A` `[OK]`.
+
+## Étape 3 · Filtrer par année (30 min)
+
+**Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
+
+```python
+pages = request.args.get("pages", type=int)   # None if absent
+if pages is not None:
+    found = [b for b in found if b["pages"] == pages]
+```
+
+### 3A · Année facultative
+
+**À vous.** Acceptez `year`. S'il manque, gardez toutes les années.
+
+**Vérification.** `/api/data?country=FR&year=2024` montre une seule ligne. `3A` `[OK]`.
+
+## Étape 4 · Gérer les erreurs (45 min)
+
+### 4A · En Python
+
+**Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
+
+```python
+if not found:
+    return jsonify(error="No book found"), 404
+```
+
+**À vous.** Renvoyez une erreur JSON avec le code 404 quand il n'y a aucune ligne. La clé doit être `error`.
+
+### 4B · En JavaScript
+
+**Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
+
+```javascript
+if (books.error) {
+  document.getElementById("info").textContent = books.error;
+  return;                     // stop here: no chart
+}
+document.getElementById("info").textContent = "";
+```
+
+**À vous.** Sous `TODO 4B` dans `static/chart.js`, faites de même. La réponse s'appelle `rows` et le paragraphe vide de la page est `message`.
+
+**Vérification.** Saisissez `ZZ` : un message apparaît et la console ne montre aucune erreur `Uncaught`. Une ligne 404 est normale. `4A`, `4B` `[OK]`.
+
+<details markdown="1"><summary>Bloqué ?</summary>
+
+Le navigateur peut garder l'ancien JavaScript : rechargez avec `Ctrl+F5` (`Cmd+Shift+R` sur Mac).
+
+</details>
 
 ## Étape 5 · Déboguer (40 min)
 
-Cassez volontairement l'adresse dans `chart.js`. Trouvez l'erreur avec la console et l'onglet Réseau, puis corrigez.
+**Déboguer**, c'est trouver et corriger une erreur. Entraînez-vous exprès :
 
-**Point de contrôle :** vous décrivez votre méthode en trois lignes.
+1. Dans `chart.js`, changez `/api/data` en `/api/dat`. Rechargez.
+2. Ouvrez la **Console** : quel est le message ?
+3. Ouvrez **Réseau** : quelle adresse a échoué, avec quel code ?
+4. Réparez.
+5. Écrivez maintenant `row.values` au lieu de `row.value`. Que se passe-t-il, y a-t-il un message ? Réparez.
+6. Notez dans `notes.txt` (dossier `td7`) où vous avez regardé et ce que vous avez vu, en 20 mots au moins.
 
+**Vérification.** Le graphique fonctionne à nouveau et cinq `[OK]`.
 
-## Extensions
+## Quand ça ne marche pas
 
-1. Ajoutez un second pays à comparer.
+| Vous voyez | Regardez |
+|---|---|
+| `app.py cannot be loaded` | la **dernière** ligne du message : la ligne du fichier et le type d'erreur |
+| `Not Found` (404) | l'orthographe de l'adresse dans `@app.route` |
+| `Method Not Allowed` (405) | `methods=[...]` dans la route |
+| `Internal Server Error` (500) | le terminal où tourne `app.py` : lisez la dernière ligne |
+
+## Si vous avez fini (facultatif)
+
+1. Comparez avec un second pays.
 2. Remplacez le champ par une liste `select`.
 3. Choisissez le type de graphique dans la page.

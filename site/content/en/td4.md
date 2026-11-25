@@ -1,73 +1,158 @@
 title: TD4 · Data visualisation with Chart.js
 ---
-**Friday 29 January 2027 · 3 hours.** Starter files: [`td4`](https://github.com/nverstaevel/L2INFONUM_WEB/tree/main/td4).
+**Friday 29 January 2027 · 3 hours.** Starter files: folder [`td4`](https://github.com/nverstaevel/L2INFONUM_WEB/tree/main/td4).
 
 ## Goal
 
-Display your TD1 results as charts with a few lines of JavaScript.
+Turn your TD1 results into a chart, with a few lines of JavaScript (the programming language of web pages). The code already works: you **adapt** it.
 
-**You have succeeded if** the page shows a chart of your country, with a title and the source.
+**You have succeeded if**: a chart of your country, with a title and the source, and five `[OK]`.
 
-| Provided | Your job |
-|---|---|
-| working `chart.html` and `chart.js`, sample `data/summary.json` | adapt data, labels and chart type |
+| Step | You do | Time |
+|---|---|---|
+| 1 | Start a local server | 25 min |
+| 2 | Try JavaScript | 35 min |
+| 3 | Use your data | 25 min |
+| 4 | Adapt the chart | 55 min |
+| 5 | Read it critically | 30 min |
 
 ## Before the session
 
 - [ ] I have read [CM4](cm4.html).
-- [ ] I have my `summary.json` from TD1.
+- [ ] I have my `summary.json` from TD1 (a sample is provided).
 
-## Step 1 · Serve the page (20 min)
+## How to work
 
-A browser refuses to let a page opened by double-click read other files. Start a small local web server **in the `td4` folder**, then open <http://localhost:8000/chart.html>:
+1. Do the steps **in order**.
+2. Write your code only where you see `TODO`. Its number is the number in this sheet.
+3. After each part, **save** (`Ctrl+S`, or `Cmd+S` on a Mac) and run the checker in a terminal (**Terminal → New Terminal** in VS Code):
 
+```text
+python check.py
 ```
+
+On macOS or Linux, outside a virtual environment, type `python3`. `[OK]` means the part works, `[  ]` means not yet. The checker does not replace looking at your page in the browser.
+
+## Step 1 · Start a local server (25 min)
+
+A page opened by double-click is not allowed to read other files. A **server** is a program that sends files to the browser. Python has a small one.
+
+Open the folder `td4` in VS Code, open a terminal and run:
+
+```text
 python -m http.server
 ```
 
-**Checkpoint:** the sample chart appears.
+Leave this terminal open. In the browser, go to `http://localhost:8000/chart.html` (`localhost` means "this computer").
 
-<details><summary>Hint 1</summary><p>Use `python3` on macOS or Linux. Stop the server with Ctrl+C.</p></details>
+**Check.** You see a line chart. To run `check.py`, open a **second** terminal.
 
-## Step 2 · JavaScript warm-up (40 min)
+<details markdown="1"><summary>Stuck?</summary>
 
-Open the *console* (developer tools) and try:
+`Address already in use`: run `python -m http.server 8001` and use `localhost:8001`. Error 404: the server was not started in the folder `td4`. Stop it with `Ctrl+C`.
 
+</details>
+
+## Step 2 · Try JavaScript (35 min)
+
+The **console** is a place to type JavaScript: press `F12`, tab **Console**. Type each block, press Enter, and **guess the result before**.
+
+### 2A · Variables
+
+```javascript
+const city = "Toulouse";    // const: cannot be changed
+let people = 500000;        // let: can be changed
+people = people + 1;
+console.log(city, people);  // like print()
 ```
-const years = [2023, 2024];
-const point = { year: 2025, value: 94.98 };
-console.log(years.length, point.value);
-console.log(years.map(y => y + 1));
+
+### 2B · Arrays and objects
+
+An **array** is like a Python list. An **object** is like a dictionary, read with a dot.
+
+```javascript
+const months = ["Jan", "Feb"];
+console.log(months.length, months[0]);
+
+const book = { title: "Emma", pages: 400 };
+console.log(book.title);
 ```
 
-**Checkpoint:** you can explain each line.
+### 2C · map
 
+`map` builds a new array by transforming each item. `x => x.pages` means "for each x, take x.pages".
 
-## Step 3 · Your data (30 min)
+```javascript
+const books = [{ title: "Emma", pages: 400 }, { title: "Dune", pages: 600 }];
+console.log(books.map(b => b.pages));    // Python: [b["pages"] for b in books]
+```
 
-Replace `data/summary.json` with yours. Read `chart.js` line by line.
+**Check.** Write the line that gives the two titles. Show it to your neighbour.
 
-**Checkpoint:** the chart shows your country.
+<details markdown="1"><summary>Stuck?</summary>
 
-<details><summary>Hint 1</summary><p>The *Network* tab shows whether `summary.json` was loaded (status 200).</p></details>
+Same line as above, with `b.title`.
 
-## Step 4 · Adapt (50 min)
+</details>
 
-Change the type to `bar`, write the country in the title, set the vertical axis from 0 to 100.
+## Step 3 · Use your data (25 min)
 
-**Checkpoint:** the three changes are visible.
+**Your turn.** Copy **your** `summary.json` (made in TD1, folder `td1/data`) over `td4/data/summary.json`. Reload the page with `Ctrl+F5` (`Cmd+Shift+R` on a Mac). Then read `chart.js` and its comments, line by line.
 
-<details><summary>Hint 1</summary><p>`options: { scales: { y: { min: 0, max: 100 } } }`</p></details>
+**Check.** `3` is `[OK]`. In the **Network** tab (`F12`), reload: `summary.json` has the status 200.
 
-## Step 5 · Read critically (40 min)
+## Step 4 · Adapt the chart (55 min)
 
-Compare the line chart with automatic axis and with an axis from 0. In `notes.txt`, write which one you would show a manager and why. Note what happens in 2020.
+Change one thing, save, reload, look. If the chart disappears, read the red message in the console.
 
-**Checkpoint:** two short paragraphs.
+### 4A · Bars
 
+**Your turn.** Change the type of chart from `line` to `bar`.
 
-## Extensions
+### 4B · A title with the country
 
-1. Add a second dataset (another country).
-2. Style the page with your TD3 stylesheet.
-3. Draw a bar chart comparing the lowest, average and highest values.
+**Example** (another subject: adapt it, do not copy it as it is).
+
+```javascript
+document.getElementById("shop-name").textContent = "Shop of " + data.city;
+// finds the element with id="shop-name" and replaces its text
+```
+
+**Your turn.** The title of `chart.html` has `id="title"`. Under `TODO 4B`, write a title that ends with `summary.country`.
+
+### 4C · The vertical axis
+
+**Example** (another subject: adapt it, do not copy it as it is).
+
+```javascript
+new Chart(canvas, {
+  type: "bar",
+  data: myData,      // a comma between data and options
+  options: { scales: { y: { min: 10, max: 50 } } }
+});
+```
+
+**Your turn.** Make your axis go from 0 to 100. Do not forget the **comma** before `options`.
+
+**Check.** `4A`, `4B`, `4C` `[OK]` and the three changes are visible.
+
+<details markdown="1"><summary>Stuck?</summary>
+
+Blank page after 4C? The console says `Unexpected identifier` when a comma is missing: it goes just after the `}` that closes `data`.
+
+</details>
+
+## Step 5 · Read the chart critically (30 min)
+
+**Your turn.** Create `notes.txt` in `td4` and write at least 30 words:
+
+1. Remove the `min` and `max` for a moment and look. Put them back. Which chart would you show to a manager, and why?
+2. Which year is missing for some countries (look at 2020)? Does the chart make it visible?
+
+**Check.** Five `[OK]`.
+
+## If you finish early (optional)
+
+1. Add a second series (another country) in `datasets`.
+2. Use your TD3 stylesheet.
+3. Compare minimum, average and maximum with three bars.
