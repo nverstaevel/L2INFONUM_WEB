@@ -27,6 +27,8 @@ Open them when you need them: each one is a short page. The links are repeated a
 - [GET and POST](notion-get-post.html)
 - [Sessions and cookies](notion-sessions.html)
 - [Input checking and escaping](notion-safety.html)
+- **[Flask, with its result](notion-flask-ref.html)**
+- **[Python, with its result](notion-python-ref.html)**
 
 **Ready-made examples:** [Set up a project](recipe-venv.html) · [A search form](recipe-search-form.html) · [Remember a list with a session](recipe-session-list.html)
 

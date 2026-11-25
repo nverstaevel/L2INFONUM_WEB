@@ -17,6 +17,15 @@ if __name__ == "__main__":
     app.run(debug=True)     # only on your own computer
 ```
 
+## Ce que vous voyez
+
+```text
+GET /  ->  200
+Hello
+
+GET /nothing  ->  404
+```
+
 ## Erreurs fréquentes
 
 - Deux fonctions portant le même nom.
@@ -28,4 +37,5 @@ if __name__ == "__main__":
 - Cours : [CM5](cm5.html)
 - Recettes : [Une application Flask avec un gabarit](recipe-flask-app.html)
 - TD qui l'utilisent : [TD5](td5.html), [TD8](td8.html)
+- [Flask et ses résultats](notion-flask-ref.html)
 - [Toutes les notions](notions.html)

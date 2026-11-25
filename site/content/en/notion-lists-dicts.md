@@ -12,6 +12,12 @@ for book in books:
         print(book["title"])
 ```
 
+## What you see
+
+```text
+Dune
+```
+
 ## Common mistakes
 
 - `KeyError`: the column name is not exactly the same (capital letters count).
@@ -22,4 +28,5 @@ for book in books:
 - Lecture: [CM1](cm1.html)
 - Recipes: [Compute figures and save them as JSON](recipe-stats-json.html)
 - Labs using it: [TD1](td1.html), [TD6](td6.html), [TD8](td8.html)
+- [Python, with its result](notion-python-ref.html)
 - [All notions](notions.html)

@@ -46,6 +46,27 @@ python app.py
 # then open http://127.0.0.1:5000/
 ```
 
+<details markdown="1"><summary>The output, or what the server answers</summary>
+
+```text
+GET /  ->  200
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>City library</title>
+</head>
+<body>
+  <main>
+    <h1>Library of Toulouse</h1>
+  </main>
+</body>
+</html>
+```
+
+</details>
+
 **You should see:** The page shows `Library of Toulouse`.
 
 ## Adapt it

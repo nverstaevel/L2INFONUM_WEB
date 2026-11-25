@@ -12,6 +12,15 @@ by_size = sorted(books, key=lambda b: b["pages"], reverse=True)
 average = sum(b["pages"] for b in books) / len(books)
 ```
 
+## What you see
+
+```text
+[{'title': 'Dune', 'pages': 600}]
+{'title': 'Emma', 'pages': 400}
+{'title': 'Dune', 'pages': 600}
+500.0
+```
+
 ## Common mistakes
 
 - `min` of an empty list raises an error: check the filter first.
@@ -21,4 +30,5 @@ average = sum(b["pages"] for b in books) / len(books)
 - Lecture: [CM1](cm1.html)
 - Recipes: [Compute figures and save them as JSON](recipe-stats-json.html)
 - Labs using it: [TD1](td1.html), [TD7](td7.html)
+- [Python, with its result](notion-python-ref.html)
 - [All notions](notions.html)

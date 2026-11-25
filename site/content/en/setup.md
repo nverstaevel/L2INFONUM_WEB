@@ -10,7 +10,7 @@ Do this **before TD1** if you use your own computer.
 
 ## 2. Get the course files
 
-On the [course repository](https://github.com/nverstaevel/L2INFONUM_WEB), choose **Code → Download ZIP** and unzip it.
+Each lab sheet has a button **Download the starter files (ZIP)**. Create one folder for the course (for example `web-course`), download the ZIP of the lab and **unzip it there** (on Windows: right-click → *Extract All*; do not work inside the ZIP). Keep all labs side by side: `web-course/td1`, `web-course/td2`… If a lab folder already contains your work, do not overwrite it. Everything is also on the [course repository](https://github.com/nverstaevel/L2INFONUM_WEB).
 
 ## 3. Create a virtual environment
 

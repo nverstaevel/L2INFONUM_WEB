@@ -12,6 +12,12 @@ with open("books.csv", newline="", encoding="utf-8") as f:
 print(rows[0]["title"])
 ```
 
+## What you see
+
+```text
+Emma
+```
+
 ## Common mistakes
 
 - `"10" > "9"` is False: texts are not compared like numbers. Use `int` or `float`.
@@ -22,4 +28,5 @@ print(rows[0]["title"])
 - Lecture: [CM1](cm1.html)
 - Recipes: [Filter a CSV file](recipe-clean-csv.html)
 - Labs using it: [TD1](td1.html), [TD8](td8.html)
+- [Python, with its result](notion-python-ref.html)
 - [All notions](notions.html)

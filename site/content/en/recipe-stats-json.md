@@ -31,6 +31,14 @@ print(result)
 python summary.py
 ```
 
+<details markdown="1"><summary>The output, or what the server answers</summary>
+
+```text
+{'count': 3, 'average': 356.7, 'longest': {'title': 'Dracula', 'pages': 420}, 'titles': ['Dracula', 'Emma', 'Persuasion']}
+```
+
+</details>
+
 **You should see:** `summary.json` contains `"average": 356.7`.
 
 ## Adapt it

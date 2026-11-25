@@ -1,5 +1,28 @@
 title: Cheat sheets
 ---
+
+All results and error messages: [Python, with its result](notion-python-ref.html) · [Flask, with its result](notion-flask-ref.html) · [HTML tags](notion-html-tags.html).
+
+## Python
+
+```
+name = "Emma"; pages = 400                 # str, int
+print(f"{name}: {pages} pages")
+books = [{"title": "Emma", "pages": 400}]  # list of dictionaries
+for book in books:
+    if book["pages"] > 300:
+        print(book["title"])
+long_titles = [b["title"] for b in books if b["pages"] > 300]
+shortest = min(books, key=lambda b: b["pages"])
+def average(values):
+    return sum(values) / len(values)
+import csv, json
+with open("books.csv", newline="", encoding="utf-8") as f:
+    rows = list(csv.DictReader(f))          # values are text: int(row["pages"])
+with open("out.json", "w", encoding="utf-8") as f:
+    json.dump(rows, f, indent=2)
+```
+
 ## HTML
 
 ```

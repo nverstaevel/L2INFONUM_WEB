@@ -6,6 +6,8 @@ import hashlib
 import html
 import re
 import shutil
+import subprocess
+import zipfile
 
 import markdown
 
@@ -145,7 +147,7 @@ def page(lang, name, title, body, extra_head="", toc=""):
 </body></html>"""
 
 
-PREVIEW = re.compile(r"notion-html-|recipe-page-skeleton$|recipe-table-form$")
+PREVIEW = re.compile(r"notion-flask-ref$|notion-html-|recipe-page-skeleton$|recipe-table-form$")
 LABEL = {"en": ("Result in the browser", "links and buttons are inactive here"),
          "fr": ("Résultat dans le navigateur", "liens et boutons inactifs ici")}
 
@@ -169,11 +171,37 @@ def previews(lang, body):
     return re.sub(r'<pre><code class="language-html">(.*?)</code></pre>', add, body, flags=re.S)
 
 
+LABS = ("td1", "td2", "td3", "td4", "td5", "td6", "td7", "project")
+
+
+def starter_zips():
+    """One ZIP of starter files per lab, made from the files tracked by git."""
+    (OUT / "files").mkdir()
+    for folder in LABS:
+        names = subprocess.run(["git", "ls-files", folder], cwd=ROOT, capture_output=True, text=True, check=True).stdout.split("\n")
+        assert any(names), folder
+        with zipfile.ZipFile(OUT / "files" / f"{folder}.zip", "w", zipfile.ZIP_DEFLATED) as z:
+            for name in filter(None, names):
+                z.write(ROOT / name, name)
+
+
+def download_button(lang, body):
+    """Add a download button next to the first link to a starter folder."""
+    label = {"en": "Download the starter files (ZIP)", "fr": "Télécharger les fichiers de départ (ZIP)"}[lang]
+    found = re.search(rf'<a href="{REPO}/tree/main/(\w+)">', body)
+    if not found or found.group(1) not in LABS:
+        return body
+    button = f'<p><a class="download" href="../files/{found.group(1)}.zip" download>⬇ {label} · {found.group(1)}.zip</a></p>'
+    end = body.index("</p>", found.end()) + 4
+    return body[:end] + button + body[end:]
+
+
 def build():
     shutil.rmtree(OUT, ignore_errors=True)
     shutil.copytree(SITE / "assets", OUT / "assets")
     for deck in (ROOT / "cours").iterdir():
         (OUT / "assets" / f"{deck.name}.css").write_text(deck_css(deck.name), encoding="utf-8")
+    starter_zips()
     fonts = ('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700'
              '&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">')
     for lang in UI:
@@ -186,6 +214,8 @@ def build():
             body = md.convert(text)
             body = body.replace("[ ]", '<input type="checkbox" aria-label="done">')
             body = body.replace("<table>", '<div class="table"><table>').replace("</table>", "</table></div>")
+            if re.fullmatch(r"td\d+", source.stem):
+                body = download_button(lang, body)
             if PREVIEW.match(source.stem):
                 body = previews(lang, body)
             extra = ""

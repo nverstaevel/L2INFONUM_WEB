@@ -13,6 +13,12 @@ with open("data/hello.txt", "w", encoding="utf-8") as f:
 print(Path("data/hello.txt").read_text(encoding="utf-8"))
 ```
 
+## Ce que vous voyez
+
+```text
+Hello
+```
+
 ## Erreurs fréquentes
 
 - Ouvrir avec `"w"` un fichier que l'on voulait seulement lire l'efface.
@@ -22,4 +28,5 @@ print(Path("data/hello.txt").read_text(encoding="utf-8"))
 - Cours : [CM1](cm1.html)
 - Recettes : [Télécharger un fichier](recipe-download.html) · [Filtrer un fichier CSV](recipe-clean-csv.html)
 - TD qui l'utilisent : [TD1](td1.html), [TD8](td8.html)
+- [Python et ses résultats](notion-python-ref.html)
 - [Toutes les notions](notions.html)

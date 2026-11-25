@@ -12,6 +12,14 @@ author = request.args.get("author", "")        # "" if missing
 year = request.args.get("year", type=int)      # None if missing or not a number
 ```
 
+## Ce que vous voyez
+
+```text
+address: /?author=Austen&year=abc
+author = 'Austen'
+year   = None
+```
+
 ## Erreurs fréquentes
 
 - La fonction n'a pas l'argument nommé dans `<...>`.
@@ -22,4 +30,5 @@ year = request.args.get("year", type=int)      # None if missing or not a number
 - Cours : [CM6](cm6.html)
 - Recettes : [Un formulaire de recherche](recipe-search-form.html)
 - TD qui l'utilisent : [TD5](td5.html), [TD6](td6.html), [TD7](td7.html), [TD9](td9.html)
+- [Flask et ses résultats](notion-flask-ref.html)
 - [Toutes les notions](notions.html)

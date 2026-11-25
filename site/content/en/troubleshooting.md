@@ -15,3 +15,5 @@ Read the **last line** of a Python error, and the **first red line** of the brow
 | `RuntimeError … secret key` | set `app.secret_key` |
 | Port 5000 already in use | stop the other server, or `app.run(debug=True, port=5001)` |
 | Changes not visible | reload with Ctrl+Shift+R (Cmd+Shift+R) |
+
+A Python error you do not understand? See the examples in [Read an error message](notion-python-ref.html#read-an-error-message).

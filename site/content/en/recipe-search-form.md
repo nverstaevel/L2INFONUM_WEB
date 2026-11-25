@@ -59,6 +59,54 @@ if __name__ == "__main__":
 python app.py
 ```
 
+<details markdown="1"><summary>The output, or what the server answers</summary>
+
+```text
+GET /?author=stoker  ->  200
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>City library</title>
+</head>
+<body>
+  <main>
+    <h1>Search</h1>
+    <form action="/" method="get">
+      <label for="author">Author</label>
+      <input id="author" name="author" value="STOKER">
+      <button type="submit">Search</button>
+    </form>
+    <pre>Dracula</pre>
+  </main>
+</body>
+</html>
+
+GET /?author=zzz  ->  200
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>City library</title>
+</head>
+<body>
+  <main>
+    <h1>Search</h1>
+    <form action="/" method="get">
+      <label for="author">Author</label>
+      <input id="author" name="author" value="ZZZ">
+      <button type="submit">Search</button>
+    </form>
+    <pre>No result.</pre>
+  </main>
+</body>
+</html>
+```
+
+</details>
+
 **You should see:** `stoker` shows only Dracula; `zzz` shows `No result.`
 
 ## Adapt it

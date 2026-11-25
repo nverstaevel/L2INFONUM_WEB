@@ -31,6 +31,7 @@ Open them when you need them: each one is a short page. The links are repeated a
 - [Input checking and escaping](notion-safety.html)
 - [HTTP: requests, responses, status codes](notion-http.html)
 - [Developer tools](notion-devtools.html)
+- **[Flask, with its result](notion-flask-ref.html)**
 
 **Ready-made examples:** [Set up a project](recipe-venv.html) · [A Flask app with a template](recipe-flask-app.html)
 

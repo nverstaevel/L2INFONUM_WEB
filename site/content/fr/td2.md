@@ -26,6 +26,7 @@ Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens so
 - [Listes, liens, images, accessibilité](notion-html-links-images.html)
 - [Tableaux](notion-html-tables.html)
 - [Formulaires](notion-html-forms.html)
+- **[Toutes les balises HTML et leur résultat](notion-html-tags.html)**
 
 **Exemples clés en main :** [Une page HTML complète](recipe-page-skeleton.html) · [Un tableau et un formulaire](recipe-table-form.html)
 

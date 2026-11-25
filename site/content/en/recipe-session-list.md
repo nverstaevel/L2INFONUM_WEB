@@ -66,6 +66,84 @@ if __name__ == "__main__":
 python app.py
 ```
 
+<details markdown="1"><summary>The output, or what the server answers</summary>
+
+```text
+GET /  ->  200
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>City library</title>
+</head>
+<body>
+  <main>
+    <h1>My books</h1>
+    <p>none</p>
+    <form action="/" method="post">
+      <label for="title">Title</label>
+      <input id="title" name="title" required>
+      <button type="submit">Add</button>
+    </form>
+    <form action="/" method="post">
+      <button type="submit" name="action" value="clear">Empty</button>
+    </form>
+  </main>
+</body>
+</html>
+
+POST /  data={'title': 'emma'}  ->  200
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>City library</title>
+</head>
+<body>
+  <main>
+    <h1>My books</h1>
+    <p>Emma</p>
+    <form action="/" method="post">
+      <label for="title">Title</label>
+      <input id="title" name="title" required>
+      <button type="submit">Add</button>
+    </form>
+    <form action="/" method="post">
+      <button type="submit" name="action" value="clear">Empty</button>
+    </form>
+  </main>
+</body>
+</html>
+
+GET /  ->  200
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>City library</title>
+</head>
+<body>
+  <main>
+    <h1>My books</h1>
+    <p>Emma</p>
+    <form action="/" method="post">
+      <label for="title">Title</label>
+      <input id="title" name="title" required>
+      <button type="submit">Add</button>
+    </form>
+    <form action="/" method="post">
+      <button type="submit" name="action" value="clear">Empty</button>
+    </form>
+  </main>
+</body>
+</html>
+```
+
+</details>
+
 **You should see:** Add `emma`, reload: `Emma` is still there. `Empty` removes it.
 
 ## Adapt it

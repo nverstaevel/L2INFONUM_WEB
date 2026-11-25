@@ -10,6 +10,13 @@ if code in ["FR", "ES"]:      # known values only
     ...
 ```
 
+## Ce que vous voyez
+
+```text
+accepted: FR
+refused:  <B>
+```
+
 ## Erreurs fréquentes
 
 - Construire du HTML en collant la saisie du visiteur dans un texte.
@@ -19,4 +26,5 @@ if code in ["FR", "ES"]:      # known values only
 - Cours : [CM6](cm6.html)
 - Recettes : [Un formulaire de recherche](recipe-search-form.html) · [Mémoriser une liste avec une session](recipe-session-list.html)
 - TD qui l'utilisent : [TD5](td5.html), [TD6](td6.html)
+- [Flask et ses résultats](notion-flask-ref.html)
 - [Toutes les notions](notions.html)

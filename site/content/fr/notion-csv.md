@@ -12,6 +12,12 @@ with open("books.csv", newline="", encoding="utf-8") as f:
 print(rows[0]["title"])
 ```
 
+## Ce que vous voyez
+
+```text
+Emma
+```
+
 ## Erreurs fréquentes
 
 - `"10" > "9"` vaut False : les textes ne se comparent pas comme des nombres. Utilisez `int` ou `float`.
@@ -22,4 +28,5 @@ print(rows[0]["title"])
 - Cours : [CM1](cm1.html)
 - Recettes : [Filtrer un fichier CSV](recipe-clean-csv.html)
 - TD qui l'utilisent : [TD1](td1.html), [TD8](td8.html)
+- [Python et ses résultats](notion-python-ref.html)
 - [Toutes les notions](notions.html)

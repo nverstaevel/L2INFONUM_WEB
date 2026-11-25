@@ -13,18 +13,26 @@ Cumulative English–French glossary. Allowed at the written exam.
 | CSS | CSS (feuilles de style) | The language that describes the look of a page. |
 | CSV | CSV | A text file holding a table, values separated by commas. |
 | Dataset | Jeu de données | A collection of related data. |
+| Dictionary | Dictionnaire | Values found by their key, written between `{ }`. |
+| Error message (traceback) | Message d'erreur (traceback) | Text saying what failed and where; read the last line first. |
 | Escaping | Échappement | Showing characters as text so they are not run as code. |
 | Flexbox | Flexbox | CSS layout in rows or columns. |
 | Form | Formulaire | Fields that send user input. |
 | Framework | Cadriciel (framework) | A library that structures an application. |
+| Function | Fonction | A named block of code that receives values and returns a result. |
 | HTML | HTML | The language that describes the structure of a page. |
 | HTTP | HTTP | The rules used by clients and servers to talk. |
 | JavaScript | JavaScript | The programming language of the browser. |
 | JSON | JSON | A text format made of lists and objects. |
 | Licence | Licence | The text saying what you may do with a work. |
+| List | Liste | An ordered series of values, written between `[ ]`. |
+| Local server | Serveur local | A server running on your own computer (`localhost`). |
 | Media query | Requête média | CSS rules applied under a condition on the screen. |
 | Method (GET, POST) | Méthode (GET, POST) | The action of a request: read, or send data. |
+| Module | Module | A file of Python code that you import. |
 | Open data | Données ouvertes | Data anyone can use, change and share. |
+| Package | Paquet | Code written by others that you install with `pip`. |
+| Parameter | Paramètre | A value given to a function or sent in an address. |
 | Query string | Chaîne de requête | The part of a URL after the question mark. |
 | Request | Requête | A message asking a server for something. |
 | Response | Réponse | The message the server sends back. |
@@ -33,6 +41,7 @@ Cumulative English–French glossary. Allowed at the written exam.
 | Server | Serveur | A computer that waits for requests and answers. |
 | Session | Session | Data kept for one visitor between requests. |
 | Specificity | Spécificité | Rule deciding which CSS rule wins. |
+| Static file | Fichier statique | A file sent as it is: CSS, JavaScript, image. |
 | Status code | Code d'état | A number giving the result of a request. |
 | Tag | Balise | A marker such as &lt;p&gt; around content. |
 | Template | Gabarit | An HTML file with places filled by Python. |

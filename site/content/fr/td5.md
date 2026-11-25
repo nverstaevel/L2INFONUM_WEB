@@ -31,6 +31,7 @@ Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens so
 - [Contrôle des saisies et échappement](notion-safety.html)
 - [HTTP : requêtes, réponses, codes d'état](notion-http.html)
 - [Outils de développement](notion-devtools.html)
+- **[Flask et ses résultats](notion-flask-ref.html)**
 
 **Exemples clés en main :** [Installer un projet](recipe-venv.html) · [Une application Flask avec un gabarit](recipe-flask-app.html)
 

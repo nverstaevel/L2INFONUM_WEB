@@ -26,6 +26,8 @@ Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens so
 - [Flask et les routes](notion-flask-routes.html)
 - [Gabarits et fichiers statiques](notion-templates.html)
 - [Listes de dictionnaires](notion-lists-dicts.html)
+- **[Python et ses résultats](notion-python-ref.html)**
+- **[Flask et ses résultats](notion-flask-ref.html)**
 
 **Exemples clés en main :** [Télécharger un fichier](recipe-download.html) · [Filtrer un fichier CSV](recipe-clean-csv.html) · [Un README de projet](recipe-readme.html) · [Une application Flask avec un gabarit](recipe-flask-app.html)
 

@@ -12,6 +12,15 @@ by_size = sorted(books, key=lambda b: b["pages"], reverse=True)
 average = sum(b["pages"] for b in books) / len(books)
 ```
 
+## Ce que vous voyez
+
+```text
+[{'title': 'Dune', 'pages': 600}]
+{'title': 'Emma', 'pages': 400}
+{'title': 'Dune', 'pages': 600}
+500.0
+```
+
 ## Erreurs fréquentes
 
 - `min` d'une liste vide provoque une erreur : vérifiez d'abord le filtre.
@@ -21,4 +30,5 @@ average = sum(b["pages"] for b in books) / len(books)
 - Cours : [CM1](cm1.html)
 - Recettes : [Calculer des chiffres et les enregistrer en JSON](recipe-stats-json.html)
 - TD qui l'utilisent : [TD1](td1.html), [TD7](td7.html)
+- [Python et ses résultats](notion-python-ref.html)
 - [Toutes les notions](notions.html)

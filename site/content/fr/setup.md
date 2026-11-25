@@ -10,7 +10,7 @@ title: Guide d'installation
 
 ## 2. Récupérer les fichiers du cours
 
-Sur le [dépôt du cours](https://github.com/nverstaevel/L2INFONUM_WEB), choisir **Code → Download ZIP** puis décompresser.
+Chaque sujet de TD a un bouton **Télécharger les fichiers de départ (ZIP)**. Créez un dossier pour le cours (par exemple `cours-web`), téléchargez le ZIP du TD et **décompressez-le dedans** (sous Windows : clic droit → *Extraire tout* ; ne travaillez pas dans le ZIP). Gardez les TD côte à côte : `cours-web/td1`, `cours-web/td2`… Si un dossier contient déjà votre travail, ne l'écrasez pas. Tout est aussi sur le [dépôt du cours](https://github.com/nverstaevel/L2INFONUM_WEB).
 
 ## 3. Créer un environnement virtuel
 

@@ -13,6 +13,12 @@ with open("data/hello.txt", "w", encoding="utf-8") as f:
 print(Path("data/hello.txt").read_text(encoding="utf-8"))
 ```
 
+## What you see
+
+```text
+Hello
+```
+
 ## Common mistakes
 
 - Opening with `"w"` a file you only wanted to read erases it.
@@ -22,4 +28,5 @@ print(Path("data/hello.txt").read_text(encoding="utf-8"))
 - Lecture: [CM1](cm1.html)
 - Recipes: [Download a file](recipe-download.html) · [Filter a CSV file](recipe-clean-csv.html)
 - Labs using it: [TD1](td1.html), [TD8](td8.html)
+- [Python, with its result](notion-python-ref.html)
 - [All notions](notions.html)

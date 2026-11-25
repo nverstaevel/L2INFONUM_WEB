@@ -13,18 +13,26 @@ Glossaire anglais–français cumulatif. Autorisé à l'examen écrit.
 | CSS | CSS (feuilles de style) | Langage décrivant l'apparence d'une page. |
 | CSV | CSV | Fichier texte contenant un tableau aux valeurs séparées par des virgules. |
 | Dataset | Jeu de données | Ensemble de données liées. |
+| Dictionary | Dictionnaire | Des valeurs retrouvées par leur clé, entre `{ }`. |
+| Error message (traceback) | Message d'erreur (traceback) | Texte disant ce qui a échoué et où ; lire la dernière ligne d'abord. |
 | Escaping | Échappement | Afficher des caractères comme du texte, sans les exécuter. |
 | Flexbox | Flexbox | Mise en page CSS en lignes ou colonnes. |
 | Form | Formulaire | Champs qui envoient la saisie. |
 | Framework | Cadriciel (framework) | Bibliothèque qui structure une application. |
+| Function | Fonction | Un bloc de code nommé qui reçoit des valeurs et renvoie un résultat. |
 | HTML | HTML | Langage décrivant la structure d'une page. |
 | HTTP | HTTP | Les règles de dialogue entre clients et serveurs. |
 | JavaScript | JavaScript | Langage de programmation du navigateur. |
 | JSON | JSON | Format texte fait de listes et d'objets. |
 | Licence | Licence | Texte indiquant ce que l'on peut faire d'une œuvre. |
+| List | Liste | Une suite ordonnée de valeurs, entre `[ ]`. |
+| Local server | Serveur local | Un serveur qui tourne sur votre ordinateur (`localhost`). |
 | Media query | Requête média | Règles CSS conditionnées à l'écran. |
 | Method (GET, POST) | Méthode (GET, POST) | Action d'une requête : lire ou envoyer. |
+| Module | Module | Un fichier de code Python que l'on importe. |
 | Open data | Données ouvertes | Données que chacun peut utiliser, modifier et partager. |
+| Package | Paquet | Du code écrit par d'autres, installé avec `pip`. |
+| Parameter | Paramètre | Une valeur donnée à une fonction ou envoyée dans une adresse. |
 | Query string | Chaîne de requête | Partie d'une URL après le point d'interrogation. |
 | Request | Requête | Message demandant quelque chose à un serveur. |
 | Response | Réponse | Message renvoyé par le serveur. |
@@ -33,6 +41,7 @@ Glossaire anglais–français cumulatif. Autorisé à l'examen écrit.
 | Server | Serveur | Ordinateur qui attend des requêtes et y répond. |
 | Session | Session | Données conservées pour un visiteur entre requêtes. |
 | Specificity | Spécificité | Règle désignant la règle CSS prioritaire. |
+| Static file | Fichier statique | Un fichier envoyé tel quel : CSS, JavaScript, image. |
 | Status code | Code d'état | Nombre indiquant le résultat d'une requête. |
 | Tag | Balise | Marque entourant un contenu. |
 | Template | Gabarit | Fichier HTML à trous remplis par Python. |

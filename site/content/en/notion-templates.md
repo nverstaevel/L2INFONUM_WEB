@@ -13,6 +13,13 @@ return render_template("shop.html", city="Toulouse")
 # <h1>Shops in {{ city }}</h1>
 ```
 
+## What you see
+
+```text
+<link rel="stylesheet" href="/static/style.css">
+<h1>Shops in Toulouse</h1>
+```
+
 ## Common mistakes
 
 - `TemplateNotFound`: folder not called exactly `templates`.
@@ -23,4 +30,5 @@ return render_template("shop.html", city="Toulouse")
 - Lecture: [CM5](cm5.html)
 - Recipes: [A Flask app with a template](recipe-flask-app.html)
 - Labs using it: [TD5](td5.html), [TD6](td6.html), [TD8](td8.html), [TD9](td9.html)
+- [Flask, with its result](notion-flask-ref.html)
 - [All notions](notions.html)

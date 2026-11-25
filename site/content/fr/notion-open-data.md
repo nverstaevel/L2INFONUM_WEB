@@ -18,4 +18,5 @@ Changes: kept one indicator and countries only.
 
 - Cours : [CM1](cm1.html)
 - TD qui l'utilisent : [TD1](td1.html), [TD8](td8.html)
+- [Python et ses résultats](notion-python-ref.html)
 - [Toutes les notions](notions.html)

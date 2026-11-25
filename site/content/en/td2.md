@@ -26,6 +26,7 @@ Open them when you need them: each one is a short page. The links are repeated a
 - [Lists, links, images, accessibility](notion-html-links-images.html)
 - [Tables](notion-html-tables.html)
 - [Forms](notion-html-forms.html)
+- **[All HTML tags, with their result](notion-html-tags.html)**
 
 **Ready-made examples:** [A complete HTML page](recipe-page-skeleton.html) · [A table and a form](recipe-table-form.html)
 

@@ -17,6 +17,7 @@ title: Notions
 - [Lists of dictionaries](notion-lists-dicts.html)
 - [Reading and writing files](notion-python-files.html)
 - [Comprehensions, min, max, sorted](notion-list-tools.html)
+- **[Python, with its result](notion-python-ref.html)**
 
 ## HTML
 
@@ -25,7 +26,7 @@ title: Notions
 - [Lists, links, images, accessibility](notion-html-links-images.html)
 - [Tables](notion-html-tables.html)
 - [Forms](notion-html-forms.html)
-- [All HTML tags, with their result](notion-html-tags.html)
+- **[All HTML tags, with their result](notion-html-tags.html)**
 
 ## CSS
 
@@ -51,6 +52,7 @@ title: Notions
 - [Sessions and cookies](notion-sessions.html)
 - [Input checking and escaping](notion-safety.html)
 - [JSON API](notion-api.html)
+- **[Flask, with its result](notion-flask-ref.html)**
 
 ## Notions by lab
 

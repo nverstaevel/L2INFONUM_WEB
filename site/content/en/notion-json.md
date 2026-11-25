@@ -14,6 +14,12 @@ with open("book.json", encoding="utf-8") as f:
     print(json.load(f)["title"])
 ```
 
+## What you see
+
+```text
+Emma
+```
+
 ## Common mistakes
 
 - A JSON file written by hand with a comma after the last item is invalid.
@@ -23,4 +29,5 @@ with open("book.json", encoding="utf-8") as f:
 - Lecture: [CM1](cm1.html)
 - Recipes: [Compute figures and save them as JSON](recipe-stats-json.html)
 - Labs using it: [TD1](td1.html), [TD4](td4.html), [TD5](td5.html)
+- [Python, with its result](notion-python-ref.html)
 - [All notions](notions.html)

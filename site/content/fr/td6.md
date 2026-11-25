@@ -27,6 +27,8 @@ Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens so
 - [GET et POST](notion-get-post.html)
 - [Sessions et cookies](notion-sessions.html)
 - [Contrôle des saisies et échappement](notion-safety.html)
+- **[Flask et ses résultats](notion-flask-ref.html)**
+- **[Python et ses résultats](notion-python-ref.html)**
 
 **Exemples clés en main :** [Installer un projet](recipe-venv.html) · [Un formulaire de recherche](recipe-search-form.html) · [Mémoriser une liste avec une session](recipe-session-list.html)
 

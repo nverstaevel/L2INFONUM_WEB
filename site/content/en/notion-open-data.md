@@ -18,4 +18,5 @@ Changes: kept one indicator and countries only.
 
 - Lecture: [CM1](cm1.html)
 - Labs using it: [TD1](td1.html), [TD8](td8.html)
+- [Python, with its result](notion-python-ref.html)
 - [All notions](notions.html)

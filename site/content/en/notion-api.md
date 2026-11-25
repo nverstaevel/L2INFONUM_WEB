@@ -14,6 +14,16 @@ def api_books():
     return jsonify(found)
 ```
 
+## What you see
+
+```text
+GET /api/books?author=Austen  ->  200
+[{"author":"Austen","title":"Emma"}]
+
+GET /api/books?author=Nobody  ->  404
+{"error":"No book found"}
+```
+
 ## Common mistakes
 
 - Forgetting `, 404`: the error looks like a success.
@@ -23,4 +33,5 @@ def api_books():
 - Lecture: [CM7](cm7.html)
 - Recipes: [A JSON API and its chart](recipe-api-chart.html)
 - Labs using it: [TD5](td5.html), [TD7](td7.html), [TD9](td9.html)
+- [Flask, with its result](notion-flask-ref.html)
 - [All notions](notions.html)

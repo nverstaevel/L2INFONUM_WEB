@@ -28,6 +28,7 @@ Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens so
 - [HTTP : requêtes, réponses, codes d'état](notion-http.html)
 - [Modifier la page en JavaScript](notion-dom.html)
 - [Déboguer](notion-debugging.html)
+- **[Flask et ses résultats](notion-flask-ref.html)**
 
 **Exemples clés en main :** [Une API JSON et son graphique](recipe-api-chart.html)
 

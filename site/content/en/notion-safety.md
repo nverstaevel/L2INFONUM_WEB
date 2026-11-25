@@ -10,6 +10,13 @@ if code in ["FR", "ES"]:      # known values only
     ...
 ```
 
+## What you see
+
+```text
+accepted: FR
+refused:  <B>
+```
+
 ## Common mistakes
 
 - Building HTML by joining text with the visitor's input.
@@ -19,4 +26,5 @@ if code in ["FR", "ES"]:      # known values only
 - Lecture: [CM6](cm6.html)
 - Recipes: [A search form](recipe-search-form.html) · [Remember a list with a session](recipe-session-list.html)
 - Labs using it: [TD5](td5.html), [TD6](td6.html)
+- [Flask, with its result](notion-flask-ref.html)
 - [All notions](notions.html)

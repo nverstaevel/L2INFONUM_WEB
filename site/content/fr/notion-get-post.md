@@ -12,6 +12,18 @@ def add():
     return render_template("add.html")
 ```
 
+## Ce que vous voyez
+
+```text
+GET /add  ->  200
+<p>Add an item</p>
+
+POST /add  data={'item': 'apple'}  ->  200
+<p>Add an item</p>
+
+DELETE /add  ->  405
+```
+
 ## Erreurs fréquentes
 
 - Erreur 405 : `methods` manque.
@@ -22,4 +34,5 @@ def add():
 - Cours : [CM6](cm6.html)
 - Recettes : [Mémoriser une liste avec une session](recipe-session-list.html)
 - TD qui l'utilisent : [TD6](td6.html)
+- [Flask et ses résultats](notion-flask-ref.html)
 - [Toutes les notions](notions.html)

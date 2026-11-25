@@ -6,7 +6,9 @@ from pathlib import Path
 try:
     import app as student
 except Exception as error:  # a mistake in app.py: show it and stop
-    raise SystemExit(f"app.py cannot be loaded -> {type(error).__name__}: {error}")
+    hint = ("\n-> Copy your internet_use_clean.csv (TD1) into the folder data, or the one of the folder sample."
+            if isinstance(error, FileNotFoundError) and "internet_use" in str(error) else "")
+    raise SystemExit(f"app.py cannot be loaded -> {type(error).__name__}: {error}{hint}")
 
 student.app.logger.disabled = True   # keep the output short
 logging.getLogger("flask.app").disabled = True

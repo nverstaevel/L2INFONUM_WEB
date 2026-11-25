@@ -12,6 +12,12 @@ for book in books:
         print(book["title"])
 ```
 
+## Ce que vous voyez
+
+```text
+Dune
+```
+
 ## Erreurs fréquentes
 
 - `KeyError` : le nom de colonne n'est pas exactement le même (les majuscules comptent).
@@ -22,4 +28,5 @@ for book in books:
 - Cours : [CM1](cm1.html)
 - Recettes : [Calculer des chiffres et les enregistrer en JSON](recipe-stats-json.html)
 - TD qui l'utilisent : [TD1](td1.html), [TD6](td6.html), [TD8](td8.html)
+- [Python et ses résultats](notion-python-ref.html)
 - [Toutes les notions](notions.html)

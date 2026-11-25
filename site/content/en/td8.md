@@ -26,6 +26,8 @@ Open them when you need them: each one is a short page. The links are repeated a
 - [Flask and routes](notion-flask-routes.html)
 - [Templates and static files](notion-templates.html)
 - [Lists of dictionaries](notion-lists-dicts.html)
+- **[Python, with its result](notion-python-ref.html)**
+- **[Flask, with its result](notion-flask-ref.html)**
 
 **Ready-made examples:** [Download a file](recipe-download.html) · [Filter a CSV file](recipe-clean-csv.html) · [A project README](recipe-readme.html) · [A Flask app with a template](recipe-flask-app.html)
 

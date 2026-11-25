@@ -97,6 +97,18 @@ load();
 python app.py
 ```
 
+<details markdown="1"><summary>The output, or what the server answers</summary>
+
+```text
+GET /api/loans?branch=south  ->  200
+[{"branch":"SOUTH","loans":70,"month":"Jan"}]
+
+GET /api/loans?branch=east  ->  404
+{"error":"Unknown branch"}
+```
+
+</details>
+
 **You should see:** `south` redraws one bar; `east` shows `Unknown branch`.
 
 ## Adapt it

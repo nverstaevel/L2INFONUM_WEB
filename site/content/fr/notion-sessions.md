@@ -11,6 +11,13 @@ items = session.get("basket", [])
 session["basket"] = items + ["apple"]    # assign a new list
 ```
 
+## Ce que vous voyez
+
+```text
+visit 1 -> ['apple']
+visit 2 -> ['apple', 'apple']
+```
+
 ## Erreurs fréquentes
 
 - `items.append(...)` seul peut ne pas être enregistré : réaffecter `session[...]`.
@@ -21,4 +28,5 @@ session["basket"] = items + ["apple"]    # assign a new list
 - Cours : [CM6](cm6.html)
 - Recettes : [Mémoriser une liste avec une session](recipe-session-list.html)
 - TD qui l'utilisent : [TD6](td6.html)
+- [Flask et ses résultats](notion-flask-ref.html)
 - [Toutes les notions](notions.html)

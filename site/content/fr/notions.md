@@ -17,6 +17,7 @@ title: Notions
 - [Listes de dictionnaires](notion-lists-dicts.html)
 - [Lire et écrire des fichiers](notion-python-files.html)
 - [Compréhensions, min, max, sorted](notion-list-tools.html)
+- **[Python et ses résultats](notion-python-ref.html)**
 
 ## HTML
 
@@ -25,7 +26,7 @@ title: Notions
 - [Listes, liens, images, accessibilité](notion-html-links-images.html)
 - [Tableaux](notion-html-tables.html)
 - [Formulaires](notion-html-forms.html)
-- [Toutes les balises HTML et leur résultat](notion-html-tags.html)
+- **[Toutes les balises HTML et leur résultat](notion-html-tags.html)**
 
 ## CSS
 
@@ -51,6 +52,7 @@ title: Notions
 - [Sessions et cookies](notion-sessions.html)
 - [Contrôle des saisies et échappement](notion-safety.html)
 - [API JSON](notion-api.html)
+- **[Flask et ses résultats](notion-flask-ref.html)**
 
 ## Notions par TD
 

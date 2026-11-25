@@ -23,4 +23,5 @@ https://example.org/search?country=FR
 - Lecture: [CM1](cm1.html)
 - Recipes: [Download a file](recipe-download.html)
 - Labs using it: [TD1](td1.html), [TD5](td5.html), [TD7](td7.html)
+- [Python, with its result](notion-python-ref.html)
 - [All notions](notions.html)

@@ -26,6 +26,7 @@ Open them when you need them: each one is a short page. The links are repeated a
 - [Lists of dictionaries](notion-lists-dicts.html)
 - [Comprehensions, min, max, sorted](notion-list-tools.html)
 - [JSON](notion-json.html)
+- **[Python, with its result](notion-python-ref.html)**
 
 **Ready-made examples:** [Set up a project](recipe-venv.html) · [Download a file](recipe-download.html) · [Filter a CSV file](recipe-clean-csv.html) · [Compute figures and save them as JSON](recipe-stats-json.html)
 

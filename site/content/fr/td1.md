@@ -26,6 +26,7 @@ Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens so
 - [Listes de dictionnaires](notion-lists-dicts.html)
 - [Compréhensions, min, max, sorted](notion-list-tools.html)
 - [JSON](notion-json.html)
+- **[Python et ses résultats](notion-python-ref.html)**
 
 **Exemples clés en main :** [Installer un projet](recipe-venv.html) · [Télécharger un fichier](recipe-download.html) · [Filtrer un fichier CSV](recipe-clean-csv.html) · [Calculer des chiffres et les enregistrer en JSON](recipe-stats-json.html)
 

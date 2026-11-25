@@ -15,3 +15,5 @@ Lisez la **dernière ligne** d'une erreur Python et la **première ligne rouge**
 | `RuntimeError … secret key` | définir `app.secret_key` |
 | Port 5000 occupé | arrêter l'autre serveur, ou `app.run(debug=True, port=5001)` |
 | Modifications invisibles | recharger avec Ctrl+Maj+R (Cmd+Maj+R) |
+
+Une erreur Python incomprise ? Voir les exemples dans [Lire un message d'erreur](notion-python-ref.html#lire-un-message-derreur).

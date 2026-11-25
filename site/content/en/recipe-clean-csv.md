@@ -42,6 +42,14 @@ print(len(rows), "rows read,", len(kept), "kept")
 python filter_books.py
 ```
 
+<details markdown="1"><summary>The output, or what the server answers</summary>
+
+```text
+3 rows read, 2 kept
+```
+
+</details>
+
 **You should see:** It prints `3 rows read, 2 kept`.
 
 ## Adapt it
