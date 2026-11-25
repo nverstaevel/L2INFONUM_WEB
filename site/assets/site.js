@@ -23,7 +23,7 @@ addEventListener("DOMContentLoaded", () => {
   // left menu: highlight the current section; folded on narrow screens
   const toc = document.querySelector(".toc details");
   if (!toc) return;
-  const narrow = matchMedia("(max-width: 900px)");
+  const narrow = matchMedia("(max-width: 640px)");
   const adapt = () => { toc.open = !narrow.matches; };
   narrow.addEventListener("change", adapt);
   adapt();

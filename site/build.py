@@ -2,6 +2,7 @@
 """Build the bilingual course site into site/_build.  Usage: python site/build.py"""
 import json
 import pathlib
+import hashlib
 import re
 import shutil
 
@@ -46,6 +47,11 @@ def deck_css(cm):
     return "\n".join(rules)
 
 
+def version(name):
+    """Short fingerprint of an asset, so that browsers reload it when it changes."""
+    return hashlib.sha1((SITE / "assets" / name).read_bytes()).hexdigest()[:8]
+
+
 def sidebar(lang, tokens):
     """Left menu listing the h2 and h3 sections of a page (none if fewer than two)."""
     def items(entries):
@@ -68,8 +74,8 @@ def page(lang, name, title, body, extra_head="", toc=""):
     return f"""<!doctype html>
 <html lang="{lang}">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{title}</title><link rel="stylesheet" href="../assets/site.css">{extra_head}
-<script src="../assets/site.js"></script></head>
+<title>{title}</title><link rel="stylesheet" href="../assets/site.css?v={version('site.css')}">{extra_head}
+<script src="../assets/site.js?v={version('site.js')}"></script></head>
 <body><a class="skip" href="#content">{ui['skip']}</a>
 <header><nav><a class="brand" href="index.html">{ui['brand']}</a>{links}
 <a href="../{other}/{name}.html" lang="{other}">{other_label}</a><button id="theme">{ui['theme']}</button></nav></header>
