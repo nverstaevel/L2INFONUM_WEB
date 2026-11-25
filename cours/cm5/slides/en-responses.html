@@ -1,0 +1,6 @@
+<section id="en-responses">
+<p class="eyebrow">RESPONSES</p>
+<h2>HTML and JSON</h2>
+<p class="code">from flask import jsonify, render_template<br><br>@app.route("/")<br>def home():<br>&nbsp; &nbsp; return render_template("index.html", title="Internet use")<br><br>@app.route("/api/info")<br>def info():<br>&nbsp; &nbsp; return jsonify(source="Eurostat", unit="%")</p>
+<p>Templates live in templates/ · static files in static/</p>
+</section>

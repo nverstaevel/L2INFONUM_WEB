@@ -34,7 +34,9 @@ python -m pip install -r requirements.txt
 
 **Check:** your prompt starts with `(.venv)` and `python -c "import requests; print(requests.__version__)"` prints a number.
 
-## Troubleshooting
+From TD5 each folder has its own `requirements.txt` (Flask): repeat part 3 in that folder. More help: [Troubleshooting](troubleshooting.html).
+
+## Common problems
 
 | Problem | What to try |
 |---|---|

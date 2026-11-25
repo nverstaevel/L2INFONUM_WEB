@@ -1,0 +1,6 @@
+<section id="fr-api">
+<p class="eyebrow">API</p>
+<h2>Une route filtrable</h2>
+<p class="code">@app.route("/api/data")<br>def api_data():<br>&nbsp; &nbsp; country = request.args.get("country", "FR").upper()<br>&nbsp; &nbsp; rows = [r for r in DATA if r["country"] == country]<br>&nbsp; &nbsp; if not rows:<br>&nbsp; &nbsp; &nbsp; &nbsp; return jsonify(error="No data"), 404<br>&nbsp; &nbsp; return jsonify(rows)</p>
+<p>/api/data?country=FR</p>
+</section>

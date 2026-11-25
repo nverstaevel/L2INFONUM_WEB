@@ -1,0 +1,12 @@
+title: Labs
+---
+- [TD1 · Python and open data](td1.html)
+- [TD2 · HTML page and form](td2.html)
+- [TD3 · Responsive CSS](td3.html)
+- [TD4 · Data visualisation](td4.html)
+- [TD5 · Routes and responses](td5.html)
+- [TD6 · Parameters, forms, sessions](td6.html)
+- [TD7 · JSON API and chart](td7.html)
+- [TD8 · Mini-project: scope and data](td8.html)
+- [TD9 · Mini-project: build](td9.html)
+- [TD10 · Mini-project: submission and demo](td10.html)

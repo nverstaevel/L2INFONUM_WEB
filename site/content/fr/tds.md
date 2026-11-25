@@ -1,0 +1,12 @@
+title: TD
+---
+- [TD1 · Python et données ouvertes](td1.html)
+- [TD2 · Page HTML et formulaire](td2.html)
+- [TD3 · CSS adaptatif](td3.html)
+- [TD4 · Visualisation de données](td4.html)
+- [TD5 · Routes et réponses](td5.html)
+- [TD6 · Paramètres, formulaires, sessions](td6.html)
+- [TD7 · API JSON et graphique](td7.html)
+- [TD8 · Mini-projet : cadrage et données](td8.html)
+- [TD9 · Mini-projet : construction](td9.html)
+- [TD10 · Mini-projet : rendu et démo](td10.html)

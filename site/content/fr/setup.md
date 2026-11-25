@@ -34,7 +34,9 @@ python -m pip install -r requirements.txt
 
 **Vérification :** l'invite commence par `(.venv)` et `python -c "import requests; print(requests.__version__)"` affiche un numéro.
 
-## Dépannage
+À partir du TD5, chaque dossier a son `requirements.txt` (Flask) : refaites la partie 3 dans ce dossier. Plus d'aide : [Dépannage](troubleshooting.html).
+
+## Problèmes fréquents
 
 | Problème | À essayer |
 |---|---|

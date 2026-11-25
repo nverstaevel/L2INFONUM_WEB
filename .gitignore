@@ -3,3 +3,5 @@ __pycache__/
 .venv/
 td*/data/*.csv
 td*/data/*.json
+!td4/data/summary.json
+project/data/

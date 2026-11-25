@@ -12,9 +12,11 @@ SITE = ROOT / "site"
 OUT = SITE / "_build"
 REPO = "https://github.com/nverstaevel/L2INFONUM_WEB"
 UI = {
-    "en": {"nav": {"index": "Home", "cm1": "CM1", "td1": "TD1", "setup": "Setup", "glossary": "Glossary"},
+    "en": {"nav": {"index": "Home", "cours": "Lectures", "tds": "Labs", "cheatsheets": "Cheat sheets",
+                   "setup": "Setup", "troubleshooting": "Troubleshooting", "glossary": "Glossary"},
            "brand": "Web & Open Data", "skip": "Skip to content", "other": ("fr", "Français"), "theme": "Light / dark"},
-    "fr": {"nav": {"index": "Accueil", "cm1": "CM1", "td1": "TD1", "setup": "Installation", "glossary": "Glossaire"},
+    "fr": {"nav": {"index": "Accueil", "cours": "Cours", "tds": "TD", "cheatsheets": "Fiches mémo",
+                   "setup": "Installation", "troubleshooting": "Dépannage", "glossary": "Glossaire"},
            "brand": "Web et données ouvertes", "skip": "Aller au contenu", "other": ("en", "English"), "theme": "Clair / sombre"},
 }
 
@@ -66,7 +68,8 @@ def page(lang, name, title, body, extra_head=""):
 def build():
     shutil.rmtree(OUT, ignore_errors=True)
     shutil.copytree(SITE / "assets", OUT / "assets")
-    (OUT / "assets" / "cm1.css").write_text(deck_css("cm1"), encoding="utf-8")
+    for deck in (ROOT / "cours").iterdir():
+        (OUT / "assets" / f"{deck.name}.css").write_text(deck_css(deck.name), encoding="utf-8")
     fonts = ('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700'
              '&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">')
     for lang in UI:

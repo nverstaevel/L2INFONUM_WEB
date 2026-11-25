@@ -1,0 +1,11 @@
+title: Lectures
+---
+- [CM1 · Web, open data, Python files](cm1.html)
+- [CM2 · HTML](cm2.html)
+- [CM3 · CSS](cm3.html)
+- [CM4 · JavaScript and Chart.js](cm4.html)
+- [CM5 · Flask 1: routes and responses](cm5.html)
+- [CM6 · Flask 2: parameters, forms, sessions](cm6.html)
+- [CM7 · Flask 3: a JSON API](cm7.html)
+- [CM8 · Review and debugging](cm8.html)
+- [CM9 · Debate: Web and AI](cm9.html)

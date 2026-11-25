@@ -1,0 +1,6 @@
+<section id="en-params">
+<p class="eyebrow">PARAMETERS</p>
+<h2>Path or query string</h2>
+<p class="code"># /country/FR<br>@app.route("/country/&lt;code&gt;")<br>def country(code): ...<br><br># /search?country=FR&amp;minimum=90<br>country = request.args.get("country", "")<br>minimum = request.args.get("minimum", 0, type=float)</p>
+<p>get never crashes when the parameter is missing.</p>
+</section>

@@ -1,0 +1,6 @@
+<section id="fr-fetch">
+<p class="eyebrow">FETCH</p>
+<h2>Demander, puis dessiner</h2>
+<p class="code">fetch("/api/data?country=" + encodeURIComponent(code))<br>&nbsp; .then(response =&gt; response.json())<br>&nbsp; .then(rows =&gt; {<br>&nbsp; &nbsp; if (rows.error) { return; }<br>&nbsp; &nbsp; const labels = rows.map(r =&gt; r.year);<br>&nbsp; &nbsp; const values = rows.map(r =&gt; r.value);<br>&nbsp; &nbsp; // chart.destroy(), then new Chart(...)<br>&nbsp; });</p>
+<p>encodeURIComponent protège l’adresse des caractères spéciaux.</p>
+</section>

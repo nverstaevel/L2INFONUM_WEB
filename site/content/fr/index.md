@@ -7,20 +7,20 @@ L2 Numérique et Management, Université Toulouse Capitole, 2026–2027.
 
 ## Votre parcours
 
-Cochez une séance une fois terminée. Les coches restent dans votre navigateur. Les liens apparaissent à la publication des supports.
+Cochez une séance une fois terminée. Les coches restent dans votre navigateur.
 
 | Fait | Sem. | Cours (mardi, 9h30–11h00) | TD (vendredi, 9h30–12h30) |
 |---|---|---|---|
 | [ ] | 1 | 5 janv. · [CM1 Web, données ouvertes, fichiers Python](cm1.html) | 8 janv. · [TD1 Python et données ouvertes](td1.html) |
-| [ ] | 2 | 12 janv. · CM2 HTML | 15 janv. · TD2 Page HTML et formulaire |
-| [ ] | 3 | 19 janv. · CM3 CSS | 22 janv. · TD3 CSS responsive |
-| [ ] | 4 | 26 janv. · CM4 JavaScript et Chart.js | 29 janv. · TD4 Visualisation de données |
-| [ ] | 5 | 2 févr. · CM5 Flask 1 | 5 févr. · TD5 Routes et réponses |
-| [ ] | 6 | 9 févr. · CM6 Flask 2 | 12 févr. · TD6 Paramètres, formulaires, sessions |
-| [ ] | 7 | 23 févr. · CM7 Flask 3 | 26 févr. · TD7 API JSON et graphique |
-| [ ] | 8 | 2 mars · CM8 Révisions et débogage | 5 mars · TD8 Mini-projet 1 |
-| [ ] | 9 | 9 mars · CM9 Débat : Web et IA | 12 mars · TD9 Mini-projet 2 |
-| [ ] | 10 | 16 mars · **CM10 Examen écrit** | 19 mars · **TD10 Rendu et démo du projet** |
+| [ ] | 2 | 12 janv. · [CM2 HTML](cm2.html) | 15 janv. · [TD2 Page HTML et formulaire](td2.html) |
+| [ ] | 3 | 19 janv. · [CM3 CSS](cm3.html) | 22 janv. · [TD3 CSS responsive](td3.html) |
+| [ ] | 4 | 26 janv. · [CM4 JavaScript et Chart.js](cm4.html) | 29 janv. · [TD4 Visualisation de données](td4.html) |
+| [ ] | 5 | 2 févr. · [CM5 Flask 1](cm5.html) | 5 févr. · [TD5 Routes et réponses](td5.html) |
+| [ ] | 6 | 9 févr. · [CM6 Flask 2](cm6.html) | 12 févr. · [TD6 Paramètres, formulaires, sessions](td6.html) |
+| [ ] | 7 | 23 févr. · [CM7 Flask 3](cm7.html) | 26 févr. · [TD7 API JSON et graphique](td7.html) |
+| [ ] | 8 | 2 mars · [CM8 Révisions et débogage](cm8.html) | 5 mars · [TD8 Mini-projet 1](td8.html) |
+| [ ] | 9 | 9 mars · [CM9 Débat : Web et IA](cm9.html) | 12 mars · [TD9 Mini-projet 2](td9.html) |
+| [ ] | 10 | 16 mars · **CM10 Examen écrit** | 19 mars · **[TD10 Rendu et démo du projet](td10.html)** |
 
 ## Évaluation
 

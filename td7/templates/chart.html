@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chart</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav>
+    <a href="/">Chart</a>
+    <a href="/api/data?country=FR">API</a>
+  </nav>
+  <main>
+    <h1>Internet use</h1>
+    <label for="country">Country code</label>
+    <input id="country" value="FR" maxlength="2">
+    <button id="load" type="button">Show</button>
+    <p id="message"></p>
+    <canvas id="chart" aria-label="Chart of internet use by year" role="img"></canvas>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.6.2/dist/chart.umd.min.js"></script>
+  <script src="/static/chart.js"></script>
+</body>
+</html>
