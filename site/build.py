@@ -171,10 +171,11 @@ def page(lang, name, title, body, extra_head="", toc=""):
 {body}
 {pager(lang, name)}</main></div>
 <a class="to-top" href="#top" hidden>↑ {ui['top']}</a>
-<footer>Nicolas Verstaevel · Université Toulouse Capitole · <a href="{REPO}">GitHub</a></footer>
+<footer>© 2026 Nicolas Verstaevel · Université Toulouse Capitole · <a href="../LICENSE.txt">{LICENCE[lang]}</a> · <a href="{REPO}">GitHub</a></footer>
 </body></html>"""
 
 
+LICENCE = {"en": "MIT licence (third-party data excepted)", "fr": "Licence MIT (hors données tierces)"}
 PREVIEW = re.compile(r"notion-flask-ref$|notion-html-|recipe-page-skeleton$|recipe-table-form$")
 LABEL = {"en": ("Result in the browser", "links and buttons are inactive here"),
          "fr": ("Résultat dans le navigateur", "liens et boutons inactifs ici")}
@@ -211,6 +212,7 @@ def starter_zips():
         with zipfile.ZipFile(OUT / "files" / f"{folder}.zip", "w", zipfile.ZIP_DEFLATED) as z:
             for name in filter(None, names):
                 z.write(ROOT / name, name)
+            z.write(ROOT / "LICENSE", f"{folder}/LICENSE")
 
 
 def download_button(lang, body):
@@ -230,6 +232,7 @@ def build():
     for deck in (ROOT / "cours").iterdir():
         (OUT / "assets" / f"{deck.name}.css").write_text(deck_css(deck.name), encoding="utf-8")
     starter_zips()
+    shutil.copy(ROOT / "LICENSE", OUT / "LICENSE.txt")
     fonts = ('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700'
              '&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">')
     for lang in UI:
