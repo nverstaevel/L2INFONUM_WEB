@@ -1,7 +1,7 @@
 title: Fiches mémo
 ---
 
-Tous les résultats et messages d'erreur : [Python et ses résultats](notion-python-ref.html) · [Flask et ses résultats](notion-flask-ref.html) · [Balises HTML](notion-html-tags.html).
+Tous les résultats et messages d'erreur : [HTML](notion-html-tags.html) · [CSS](notion-css-ref.html) · [JavaScript](notion-js-ref.html) · [Python](notion-python-ref.html) · [Flask](notion-flask-ref.html).
 
 ## Python
 

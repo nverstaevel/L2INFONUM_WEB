@@ -26,6 +26,7 @@ Open them when you need them: each one is a short page. The links are repeated a
 - [Developer tools](notion-devtools.html)
 - [Flexbox](notion-css-flexbox.html)
 - [Responsive design and media queries](notion-css-media.html)
+- **[CSS, with its result](notion-css-ref.html)**
 
 **Ready-made examples:** [Readable page and tables](recipe-clean-style.html) · [Responsive navigation bar](recipe-nav-bar.html)
 

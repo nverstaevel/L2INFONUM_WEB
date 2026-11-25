@@ -19,4 +19,5 @@ What share of the total?      pie (few parts)
 
 - Cours : [CM4](cm4.html)
 - TD qui l'utilisent : [TD4](td4.html)
+- [JavaScript et ses résultats](notion-js-ref.html)
 - [Toutes les notions](notions.html)

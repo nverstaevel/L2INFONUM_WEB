@@ -12,6 +12,12 @@ if (titles.length > 0) {
 }
 ```
 
+## What you see
+
+```text
+Emma
+```
+
 ## Common mistakes
 
 - Capital letters count: `textContent`, not `textcontent`.
@@ -22,4 +28,5 @@ if (titles.length > 0) {
 - Lecture: [CM4](cm4.html)
 - Recipes: [A chart from a JSON file](recipe-chart-from-json.html)
 - Labs using it: [TD4](td4.html)
+- [JavaScript, with its result](notion-js-ref.html)
 - [All notions](notions.html)

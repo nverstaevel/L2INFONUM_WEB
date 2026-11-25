@@ -34,6 +34,7 @@ title: Notions
 - [Modèle de boîte](notion-css-box.html)
 - [Flexbox](notion-css-flexbox.html)
 - [Mise en page adaptative et media queries](notion-css-media.html)
+- **[CSS et ses résultats](notion-css-ref.html)**
 
 ## JavaScript
 
@@ -42,6 +43,7 @@ title: Notions
 - [fetch : demander des données](notion-fetch.html)
 - [Graphiques avec Chart.js](notion-chartjs.html)
 - [Choisir et lire un graphique](notion-honest-charts.html)
+- **[JavaScript et ses résultats](notion-js-ref.html)**
 
 ## Flask et le serveur
 

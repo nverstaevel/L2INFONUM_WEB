@@ -28,6 +28,7 @@ Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens so
 - [Graphiques avec Chart.js](notion-chartjs.html)
 - [Modifier la page en JavaScript](notion-dom.html)
 - [Choisir et lire un graphique](notion-honest-charts.html)
+- **[JavaScript et ses résultats](notion-js-ref.html)**
 
 **Exemples clés en main :** [Un graphique à partir d'un fichier JSON](recipe-chart-from-json.html)
 

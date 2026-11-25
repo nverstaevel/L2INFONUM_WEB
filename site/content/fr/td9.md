@@ -27,6 +27,8 @@ Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens so
 - [Flexbox](notion-css-flexbox.html)
 - [Paramètres d'URL et chaîne de requête](notion-url-parameters.html)
 - [Formulaires](notion-html-forms.html)
+- **[JavaScript et ses résultats](notion-js-ref.html)**
+- **[CSS et ses résultats](notion-css-ref.html)**
 
 **Exemples clés en main :** [Une API JSON et son graphique](recipe-api-chart.html) · [Une application Flask avec un gabarit](recipe-flask-app.html) · [Barre de navigation adaptative](recipe-nav-bar.html) · [Un formulaire de recherche](recipe-search-form.html)
 

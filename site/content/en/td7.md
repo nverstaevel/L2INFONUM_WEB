@@ -29,6 +29,7 @@ Open them when you need them: each one is a short page. The links are repeated a
 - [Changing the page from JavaScript](notion-dom.html)
 - [Debugging](notion-debugging.html)
 - **[Flask, with its result](notion-flask-ref.html)**
+- **[JavaScript, with its result](notion-js-ref.html)**
 
 **Ready-made examples:** [A JSON API and its chart](recipe-api-chart.html)
 

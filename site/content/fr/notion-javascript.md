@@ -12,6 +12,12 @@ if (titles.length > 0) {
 }
 ```
 
+## Ce que vous voyez
+
+```text
+Emma
+```
+
 ## Erreurs fréquentes
 
 - Les majuscules comptent : `textContent` et non `textcontent`.
@@ -22,4 +28,5 @@ if (titles.length > 0) {
 - Cours : [CM4](cm4.html)
 - Recettes : [Un graphique à partir d'un fichier JSON](recipe-chart-from-json.html)
 - TD qui l'utilisent : [TD4](td4.html)
+- [JavaScript et ses résultats](notion-js-ref.html)
 - [Toutes les notions](notions.html)

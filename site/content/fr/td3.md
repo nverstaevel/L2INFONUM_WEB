@@ -26,6 +26,7 @@ Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens so
 - [Outils de développement](notion-devtools.html)
 - [Flexbox](notion-css-flexbox.html)
 - [Mise en page adaptative et media queries](notion-css-media.html)
+- **[CSS et ses résultats](notion-css-ref.html)**
 
 **Exemples clés en main :** [Page et tableaux lisibles](recipe-clean-style.html) · [Barre de navigation adaptative](recipe-nav-bar.html)
 

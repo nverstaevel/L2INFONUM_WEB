@@ -16,16 +16,16 @@ SITE = ROOT / "site"
 OUT = SITE / "_build"
 REPO = "https://github.com/nverstaevel/L2INFONUM_WEB"
 UI = {
-    "en": {"nav": {"index": "Home", "cours": "Lectures", "tds": "Labs", "notions": "Notions", "recipes": "Recipes", "cheatsheets": "Cheat sheets",
+    "en": {"nav": {"index": "Home", "cours": "Lectures", "tds": "Labs", "references": "References", "notions": "Notions", "recipes": "Recipes", "cheatsheets": "Cheat sheets",
                    "setup": "Setup", "troubleshooting": "Troubleshooting", "glossary": "Glossary"},
            "brand": "Web & Open Data", "skip": "Skip to content", "other": ("fr", "Français"), "theme": "Light / dark",
            "bored": "I'm bored", "tag": "L2 Digital Studies & Management", "menu": "Main menu", "crumbs": "You are here",
-           "prev": "Previous", "next": "Next", "top": "Back to top"},
-    "fr": {"nav": {"index": "Accueil", "cours": "Cours", "tds": "TD", "notions": "Notions", "recipes": "Recettes", "cheatsheets": "Fiches mémo",
+           "prev": "Previous", "next": "Next", "top": "Back to top", "help": "Help", "all": "All references"},
+    "fr": {"nav": {"index": "Accueil", "cours": "Cours", "tds": "TD", "references": "Références", "notions": "Notions", "recipes": "Recettes", "cheatsheets": "Fiches mémo",
                    "setup": "Installation", "troubleshooting": "Dépannage", "glossary": "Glossaire"},
            "brand": "Web et données ouvertes", "skip": "Aller au contenu", "other": ("en", "English"), "theme": "Clair / sombre",
            "bored": "Je m'ennuie", "tag": "L2 Numérique et management", "menu": "Menu principal", "crumbs": "Vous êtes ici",
-           "prev": "Précédent", "next": "Suivant", "top": "Haut de page"},
+           "prev": "Précédent", "next": "Suivant", "top": "Haut de page", "help": "Aide", "all": "Toutes les références"},
 }
 
 
@@ -75,23 +75,50 @@ def sidebar(lang, tokens):
 
 
 HELP = ("cheatsheets", "setup", "troubleshooting", "glossary")
+REFS = {"notion-html-tags": "HTML", "notion-css-ref": "CSS", "notion-js-ref": "JavaScript",
+        "notion-python-ref": "Python", "notion-flask-ref": "Flask"}
 
 
 def section(name):
     """Menu entry a page belongs to."""
+    if name in REFS:
+        return "references"
     for pattern, key in ((r"cm\d+", "cours"), (r"td\d+", "tds"), (r"notion-", "notions"), (r"recipe-", "recipes")):
         if re.match(pattern, name):
             return key
     return name
 
 
+def link(name, target, label, here=None):
+    current = ' aria-current="page"' if target == name else ' aria-current="true"' if target == here else ""
+    return f'<a href="{target}.html"{current}>{label}</a>'
+
+
+def dropdown(label, links, active, extra=""):
+    """A menu entry that opens a list of links (works without JavaScript)."""
+    current = ' class="current"' if active else ""
+    return (f'<details class="drop {extra}"><summary{current}>{label}</summary>'
+            f'<div class="panel">{"".join(links)}</div></details>')
+
+
 def menu(lang, name):
     ui, here = UI[lang], section(name)
-    out = {False: "", True: ""}
-    for key, label in ui["nav"].items():
-        current = ' aria-current="page"' if key == name else ' aria-current="true"' if key == here else ""
-        out[key in HELP] += f'<a href="{key}.html"{current}>{label}</a>'
-    return f'<div class="group">{out[False]}</div><div class="group help">{out[True]}</div>'
+    nav = ui["nav"]
+    out = [link(name, key, nav[key], here) for key in ("index", "cours", "tds")]
+    refs = [link(name, page_name, label) for page_name, label in REFS.items()]
+    refs.append(link(name, "references", ui["all"]))
+    out.append(dropdown(nav["references"], refs, here == "references"))
+    out += [link(name, key, nav[key], here) for key in ("notions", "recipes")]
+    helps = [link(name, key, nav[key]) for key in HELP]
+    return "".join(out) + dropdown(ui["help"], helps, here in HELP, "help")
+
+
+def switcher(lang, name):
+    """Go from one reference page to another."""
+    if name not in REFS:
+        return ""
+    links = "".join(link(name, page_name, label) for page_name, label in REFS.items())
+    return f'<nav class="switch" aria-label="{UI[lang]["nav"]["references"]}">{links}</nav>'
 
 
 def breadcrumbs(lang, name, title):
@@ -140,6 +167,7 @@ def page(lang, name, title, body, extra_head="", toc=""):
 <nav class="menu" aria-label="{ui['menu']}"><div class="bar">{menu(lang, name)}</div></nav>
 <div class="{'layout with-toc' if toc else 'layout'}">{toc}
 <main id="content">{breadcrumbs(lang, name, title)}<h1>{title}</h1>
+{switcher(lang, name)}
 {body}
 {pager(lang, name)}</main></div>
 <a class="to-top" href="#top" hidden>↑ {ui['top']}</a>

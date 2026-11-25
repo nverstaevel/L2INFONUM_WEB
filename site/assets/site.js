@@ -20,12 +20,13 @@ addEventListener("DOMContentLoaded", () => {
   });
   addEventListener("resize", fit);
   fit();
-  // phone: scroll the one-line menu to the current section
-  const here = document.querySelector(".menu a[aria-current]");
-  if (here) {
-    const strip = here.closest(".bar");
-    strip.scrollLeft = here.getBoundingClientRect().left - strip.getBoundingClientRect().left - 40;
-  }
+  // top menu: one list open at a time; close it with Escape or a click elsewhere
+  const drops = [...document.querySelectorAll(".drop")];
+  addEventListener("click", e => drops.forEach(d => { if (!d.contains(e.target)) d.open = false; }));
+  addEventListener("keydown", e => {
+    const open = e.key === "Escape" && drops.find(d => d.open);
+    if (open) { open.open = false; open.querySelector("summary").focus(); }
+  });
   // HTML previews: give each frame the height of its content
   const sizes = () => document.querySelectorAll(".preview iframe").forEach(f => {
     const body = f.contentDocument && f.contentDocument.body;

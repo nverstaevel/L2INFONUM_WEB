@@ -27,6 +27,8 @@ Open them when you need them: each one is a short page. The links are repeated a
 - [Flexbox](notion-css-flexbox.html)
 - [URL parameters and query strings](notion-url-parameters.html)
 - [Forms](notion-html-forms.html)
+- **[JavaScript, with its result](notion-js-ref.html)**
+- **[CSS, with its result](notion-css-ref.html)**
 
 **Ready-made examples:** [A JSON API and its chart](recipe-api-chart.html) · [A Flask app with a template](recipe-flask-app.html) · [Responsive navigation bar](recipe-nav-bar.html) · [A search form](recipe-search-form.html)
 

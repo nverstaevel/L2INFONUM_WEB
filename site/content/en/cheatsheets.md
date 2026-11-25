@@ -1,7 +1,7 @@
 title: Cheat sheets
 ---
 
-All results and error messages: [Python, with its result](notion-python-ref.html) · [Flask, with its result](notion-flask-ref.html) · [HTML tags](notion-html-tags.html).
+All results and error messages: [HTML](notion-html-tags.html) · [CSS](notion-css-ref.html) · [JavaScript](notion-js-ref.html) · [Python](notion-python-ref.html) · [Flask](notion-flask-ref.html).
 
 ## Python
 

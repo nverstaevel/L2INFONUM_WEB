@@ -19,4 +19,5 @@ What share of the total?      pie (few parts)
 
 - Lecture: [CM4](cm4.html)
 - Labs using it: [TD4](td4.html)
+- [JavaScript, with its result](notion-js-ref.html)
 - [All notions](notions.html)

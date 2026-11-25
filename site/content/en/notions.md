@@ -34,6 +34,7 @@ title: Notions
 - [Box model](notion-css-box.html)
 - [Flexbox](notion-css-flexbox.html)
 - [Responsive design and media queries](notion-css-media.html)
+- **[CSS, with its result](notion-css-ref.html)**
 
 ## JavaScript
 
@@ -42,6 +43,7 @@ title: Notions
 - [fetch: asking for data](notion-fetch.html)
 - [Charts with Chart.js](notion-chartjs.html)
 - [Choosing and reading a chart](notion-honest-charts.html)
+- **[JavaScript, with its result](notion-js-ref.html)**
 
 ## Flask and the server side
 
