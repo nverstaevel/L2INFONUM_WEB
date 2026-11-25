@@ -20,10 +20,20 @@ addEventListener("DOMContentLoaded", () => {
   });
   addEventListener("resize", fit);
   fit();
+  // phone: scroll the one-line menu to the current section
+  const here = document.querySelector(".menu a[aria-current]");
+  if (here) {
+    const strip = here.closest(".bar");
+    strip.scrollLeft = here.getBoundingClientRect().left - strip.getBoundingClientRect().left - 40;
+  }
+  const up = document.querySelector(".to-top");
+  const show = () => { up.hidden = scrollY < 600; };
+  addEventListener("scroll", show, { passive: true });
+  show();
   // left menu: highlight the current section; folded on narrow screens
   const toc = document.querySelector(".toc details");
   if (!toc) return;
-  const narrow = matchMedia("(max-width: 640px)");
+  const narrow = matchMedia("(max-width: 760px)");
   const adapt = () => { toc.open = !narrow.matches; };
   narrow.addEventListener("change", adapt);
   adapt();
@@ -32,7 +42,7 @@ addEventListener("DOMContentLoaded", () => {
   const heading = a => document.getElementById(decodeURIComponent(a.hash.slice(1)));
   const mark = () => {
     let current = links[0];
-    links.forEach(a => { if (heading(a).getBoundingClientRect().top < 120) current = a; });
+    links.forEach(a => { if (heading(a).getBoundingClientRect().top < 140) current = a; });
     links.forEach(a => a === current ? a.setAttribute("aria-current", "true") : a.removeAttribute("aria-current"));
     const box = toc.parentElement, top = current.offsetTop;  // keep the active entry visible
     if (!narrow.matches && (top < box.scrollTop || top > box.scrollTop + box.clientHeight - 40)) box.scrollTop = top - 80;

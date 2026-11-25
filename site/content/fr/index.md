@@ -5,6 +5,8 @@ L2 Numérique et Management, Université Toulouse Capitole, 2026–2027.
 
 **Fil rouge :** le jeu de données Eurostat [`tin00028`, usage d'internet par les individus](https://ec.europa.eu/eurostat/databrowser/view/tin00028/default/table?lang=fr).
 
+<div class="cards"><a href="cours.html"><strong>Cours</strong>Diapositives, plan et auto-évaluation</a><a href="tds.html"><strong>TD</strong>Étapes guidées de chaque vendredi</a><a href="recipes.html"><strong>Recettes</strong>Exemples clés en main à adapter</a><a href="glossary.html"><strong>Glossaire</strong>Le vocabulaire en anglais et français</a></div>
+
 ## Votre parcours
 
 Cochez une séance une fois terminée. Les coches restent dans votre navigateur.

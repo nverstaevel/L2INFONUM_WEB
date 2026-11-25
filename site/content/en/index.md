@@ -5,6 +5,8 @@ L2 Digital Studies & Management, Université Toulouse Capitole, 2026–2027.
 
 **Common thread:** the Eurostat dataset [`tin00028`, internet use by individuals](https://ec.europa.eu/eurostat/databrowser/view/tin00028/default/table?lang=en).
 
+<div class="cards"><a href="cours.html"><strong>Lectures</strong>Slides, plan and self-check</a><a href="tds.html"><strong>Labs</strong>Guided steps for each Friday</a><a href="recipes.html"><strong>Recipes</strong>Ready-made examples to adapt</a><a href="glossary.html"><strong>Glossary</strong>Words, in English and French</a></div>
+
 ## Your path
 
 Tick a session when you have finished it. Ticks are saved in your browser only.

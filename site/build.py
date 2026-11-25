@@ -15,10 +15,14 @@ REPO = "https://github.com/nverstaevel/L2INFONUM_WEB"
 UI = {
     "en": {"nav": {"index": "Home", "cours": "Lectures", "tds": "Labs", "notions": "Notions", "recipes": "Recipes", "cheatsheets": "Cheat sheets",
                    "setup": "Setup", "troubleshooting": "Troubleshooting", "glossary": "Glossary"},
-           "brand": "Web & Open Data", "skip": "Skip to content", "other": ("fr", "Français"), "theme": "Light / dark"},
+           "brand": "Web & Open Data", "skip": "Skip to content", "other": ("fr", "Français"), "theme": "Light / dark",
+           "bored": "I'm bored", "tag": "L2 Digital Studies & Management", "menu": "Main menu", "crumbs": "You are here",
+           "prev": "Previous", "next": "Next", "top": "Back to top"},
     "fr": {"nav": {"index": "Accueil", "cours": "Cours", "tds": "TD", "notions": "Notions", "recipes": "Recettes", "cheatsheets": "Fiches mémo",
                    "setup": "Installation", "troubleshooting": "Dépannage", "glossary": "Glossaire"},
-           "brand": "Web et données ouvertes", "skip": "Aller au contenu", "other": ("en", "English"), "theme": "Clair / sombre"},
+           "brand": "Web et données ouvertes", "skip": "Aller au contenu", "other": ("en", "English"), "theme": "Clair / sombre",
+           "bored": "Je m'ennuie", "tag": "L2 Numérique et management", "menu": "Menu principal", "crumbs": "Vous êtes ici",
+           "prev": "Précédent", "next": "Suivant", "top": "Haut de page"},
 }
 
 
@@ -67,22 +71,75 @@ def sidebar(lang, tokens):
             f'{items(tokens)}</details></nav>')
 
 
+HELP = ("cheatsheets", "setup", "troubleshooting", "glossary")
+
+
+def section(name):
+    """Menu entry a page belongs to."""
+    for pattern, key in ((r"cm\d+", "cours"), (r"td\d+", "tds"), (r"notion-", "notions"), (r"recipe-", "recipes")):
+        if re.match(pattern, name):
+            return key
+    return name
+
+
+def menu(lang, name):
+    ui, here = UI[lang], section(name)
+    out = {False: "", True: ""}
+    for key, label in ui["nav"].items():
+        current = ' aria-current="page"' if key == name else ' aria-current="true"' if key == here else ""
+        out[key in HELP] += f'<a href="{key}.html"{current}>{label}</a>'
+    return f'<div class="group">{out[False]}</div><div class="group help">{out[True]}</div>'
+
+
+def breadcrumbs(lang, name, title):
+    ui, here = UI[lang], section(name)
+    if name == "index":
+        return ""
+    trail = f'<li><a href="index.html">{ui["nav"]["index"]}</a></li>'
+    if here != name:
+        trail += f'<li><a href="{here}.html">{ui["nav"][here]}</a></li>'
+    trail += f'<li aria-current="page">{title}</li>'
+    return f'<nav class="crumbs" aria-label="{ui["crumbs"]}"><ol>{trail}</ol></nav>'
+
+
+def pager(lang, name):
+    """Previous and next session, for lectures and labs."""
+    found = re.fullmatch(r"(cm|td)(\d+)", name)
+    if not found:
+        return ""
+    kind, number = found.group(1), int(found.group(2))
+    ui, out = UI[lang], ""
+    for step, key, arrow in ((-1, "prev", "←"), (1, "next", "→")):
+        other = f"{kind}{number + step}"
+        source = SITE / "content" / lang / f"{other}.md"
+        if source.exists():
+            title = source.read_text(encoding="utf-8").split("\n", 1)[0].removeprefix("title:").strip()
+            out += f'<a class="{key}" href="{other}.html"><small>{arrow} {ui[key]}</small>{title}</a>'
+    return f'<nav class="pager">{out}</nav>'
+
+
 def page(lang, name, title, body, extra_head="", toc=""):
     ui = UI[lang]
-    links = "".join(f'<a href="{key}.html">{label}</a>' for key, label in ui["nav"].items())
     other, other_label = ui["other"]
+    fonts = ('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?'
+             'family=Nunito+Sans:wght@400;600;700;800&display=swap">')
     return f"""<!doctype html>
 <html lang="{lang}">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{title}</title><link rel="stylesheet" href="../assets/site.css?v={version('site.css')}">{extra_head}
+<title>{title}</title>{fonts}<link rel="stylesheet" href="../assets/site.css?v={version('site.css')}">{extra_head}
 <script src="../assets/site.js?v={version('site.js')}"></script></head>
-<body><a class="skip" href="#content">{ui['skip']}</a>
-<header><nav><a class="brand" href="index.html">{ui['brand']}</a>{links}
-<a href="../{other}/{name}.html" lang="{other}">{other_label}</a><button id="theme">{ui['theme']}</button></nav></header>
+<body class="page-{section(name)}" id="top"><a class="skip" href="#content">{ui['skip']}</a>
+<header class="masthead"><div class="bar">
+<a class="brand" href="index.html">{ui['brand']}<small>{ui['tag']}</small></a>
+<div class="actions"><a class="bored" href="bored.html"><span aria-hidden="true">🥱</span> {ui['bored']}</a>
+<a href="../{other}/{name}.html" lang="{other}">{other_label}</a><button type="button" id="theme">{ui['theme']}</button></div>
+</div></header>
+<nav class="menu" aria-label="{ui['menu']}"><div class="bar">{menu(lang, name)}</div></nav>
 <div class="{'layout with-toc' if toc else 'layout'}">{toc}
-<main id="content"><h1>{title}</h1>
+<main id="content">{breadcrumbs(lang, name, title)}<h1>{title}</h1>
 {body}
-</main></div>
+{pager(lang, name)}</main></div>
+<a class="to-top" href="#top" hidden>↑ {ui['top']}</a>
 <footer>Nicolas Verstaevel · Université Toulouse Capitole · <a href="{REPO}">GitHub</a></footer>
 </body></html>"""
 
@@ -110,6 +167,8 @@ def build():
                 cm, slide_lang = found.groups()
                 body = body.replace(found.group(0), slides(cm, slide_lang))
                 extra = fonts + f'<link rel="stylesheet" href="../assets/{cm}.css">'
+            if source.stem == "bored":
+                extra = f'<script src="../assets/game.js?v={version("game.js")}"></script>'
             (OUT / lang / f"{source.stem}.html").write_text(page(lang, source.stem, title, body, extra, sidebar(lang, md.toc_tokens)), encoding="utf-8")
         for pdf in (ROOT / "cours").glob(f"*/*-{lang}.pdf"):
             shutil.copy(pdf, OUT / lang / pdf.name)
