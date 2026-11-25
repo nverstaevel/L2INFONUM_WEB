@@ -13,10 +13,10 @@ SITE = ROOT / "site"
 OUT = SITE / "_build"
 REPO = "https://github.com/nverstaevel/L2INFONUM_WEB"
 UI = {
-    "en": {"nav": {"index": "Home", "cours": "Lectures", "tds": "Labs", "cheatsheets": "Cheat sheets",
+    "en": {"nav": {"index": "Home", "cours": "Lectures", "tds": "Labs", "notions": "Notions", "recipes": "Recipes", "cheatsheets": "Cheat sheets",
                    "setup": "Setup", "troubleshooting": "Troubleshooting", "glossary": "Glossary"},
            "brand": "Web & Open Data", "skip": "Skip to content", "other": ("fr", "Français"), "theme": "Light / dark"},
-    "fr": {"nav": {"index": "Accueil", "cours": "Cours", "tds": "TD", "cheatsheets": "Fiches mémo",
+    "fr": {"nav": {"index": "Accueil", "cours": "Cours", "tds": "TD", "notions": "Notions", "recipes": "Recettes", "cheatsheets": "Fiches mémo",
                    "setup": "Installation", "troubleshooting": "Dépannage", "glossary": "Glossaire"},
            "brand": "Web et données ouvertes", "skip": "Aller au contenu", "other": ("en", "English"), "theme": "Clair / sombre"},
 }

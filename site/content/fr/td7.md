@@ -16,6 +16,21 @@ Votre application envoie des données filtrées en JSON, et la page les trace sa
 | 4 | Gérer les erreurs | 45 min |
 | 5 | Déboguer | 40 min |
 
+## Notions mobilisées dans ce TD
+
+Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens sont rappelés à l'étape concernée.
+
+- [API JSON](notion-api.html)
+- [fetch : demander des données](notion-fetch.html)
+- [Outils de développement](notion-devtools.html)
+- [Compréhensions, min, max, sorted](notion-list-tools.html)
+- [Paramètres d'URL et chaîne de requête](notion-url-parameters.html)
+- [HTTP : requêtes, réponses, codes d'état](notion-http.html)
+- [Modifier la page en JavaScript](notion-dom.html)
+- [Déboguer](notion-debugging.html)
+
+**Exemples clés en main :** [Une API JSON et son graphique](recipe-api-chart.html)
+
 ## Avant la séance
 
 - [ ] J'ai relu le [CM7](cm7.html).
@@ -34,6 +49,8 @@ python check.py
 Sur macOS ou Linux, hors environnement virtuel, tapez `python3`. `[OK]` : la partie fonctionne ; `[  ]` : pas encore. Le vérificateur ne remplace pas un coup d'œil à votre page dans le navigateur.
 
 ## Étape 1 · Installer et observer (35 min)
+
+<p class="refs" markdown="1">**Notion :** [API JSON](notion-api.html), [fetch : demander des données](notion-fetch.html), [Outils de développement](notion-devtools.html) · **Recette :** [Une API JSON et son graphique](recipe-api-chart.html)</p>
 
 1. Ouvrez le dossier `td7` dans VS Code et un terminal.
 2. Créez l'environnement (voir le [guide d'installation](setup.html) en cas d'échec).
@@ -56,7 +73,7 @@ python -m pip install -r requirements.txt
 
 Copiez ensuite **votre** `internet_use_clean.csv` (créé au TD1) dans le dossier `data`. Pas de fichier ? Copiez celui du dossier `sample` : il ne contient que la France.
 
-Puis lancez l'application :
+Lancez l'application :
 
 ```text
 python app.py
@@ -69,6 +86,8 @@ Dans le navigateur, appuyez sur `F12`, ouvrez l'onglet **Réseau** et rechargez.
 **Vérification.** Vous savez dire qui envoie cette requête (la page ou Python ?). Le graphique mélange tous les pays : c'est l'étape suivante.
 
 ## Étape 2 · Filtrer par pays (30 min)
+
+<p class="refs" markdown="1">**Notion :** [API JSON](notion-api.html), [Compréhensions, min, max, sorted](notion-list-tools.html) · **Recette :** [Une API JSON et son graphique](recipe-api-chart.html)</p>
 
 **Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
 
@@ -86,6 +105,8 @@ return jsonify(found)
 
 ## Étape 3 · Filtrer par année (30 min)
 
+<p class="refs" markdown="1">**Notion :** [Paramètres d'URL et chaîne de requête](notion-url-parameters.html)</p>
+
 **Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
 
 ```python
@@ -102,6 +123,8 @@ if pages is not None:
 
 ## Étape 4 · Gérer les erreurs (45 min)
 
+<p class="refs" markdown="1">**Notion :** [HTTP : requêtes, réponses, codes d'état](notion-http.html), [API JSON](notion-api.html)</p>
+
 ### 4A · En Python
 
 **Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
@@ -114,6 +137,8 @@ if not found:
 **À vous.** Renvoyez une erreur JSON avec le code 404 quand il n'y a aucune ligne. La clé doit être `error`.
 
 ### 4B · En JavaScript
+
+<p class="refs" markdown="1">**Notion :** [Modifier la page en JavaScript](notion-dom.html), [fetch : demander des données](notion-fetch.html) · **Recette :** [Une API JSON et son graphique](recipe-api-chart.html)</p>
 
 **Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
 
@@ -136,6 +161,8 @@ Le navigateur peut garder l'ancien JavaScript : rechargez avec `Ctrl+F5` (`Cmd+S
 </details>
 
 ## Étape 5 · Déboguer (40 min)
+
+<p class="refs" markdown="1">**Notion :** [Déboguer](notion-debugging.html), [Outils de développement](notion-devtools.html)</p>
 
 **Déboguer**, c'est trouver et corriger une erreur. Entraînez-vous exprès :
 

@@ -15,6 +15,20 @@ Alone or in pairs: choose a question and a dataset, clean the data, plan the pag
 | 3 | Plan the pages | 30 min |
 | 4 | First route and review | 35 min |
 
+## Notions used in this lab
+
+Open them when you need them: each one is a short page. The links are repeated at the step where you need them.
+
+- [Open data and licences](notion-open-data.html)
+- [CSV files](notion-csv.html)
+- [Reading and writing files](notion-python-files.html)
+- [README and project folder](notion-readme.html)
+- [Flask and routes](notion-flask-routes.html)
+- [Templates and static files](notion-templates.html)
+- [Lists of dictionaries](notion-lists-dicts.html)
+
+**Ready-made examples:** [Download a file](recipe-download.html) · [Filter a CSV file](recipe-clean-csv.html) · [A project README](recipe-readme.html) · [A Flask app with a template](recipe-flask-app.html)
+
 ## Before the session
 
 - [ ] I have thought of two possible topics.
@@ -24,6 +38,8 @@ Alone or in pairs: choose a question and a dataset, clean the data, plan the pag
 Tick each box when it is done (your browser remembers it). Do not start the next part before reaching the **milestone**. Make a copy of your folder after each milestone.
 
 ## Step 1 · Question and dataset (40 min)
+
+<p class="refs" markdown="1">**Notion:** [Open data and licences](notion-open-data.html)</p>
 
 A good question compares or follows something over time. Example: *How has the share of renewable energy changed in my country and in two others?*
 
@@ -46,12 +62,14 @@ Reuse is allowed with attribution ([notice](https://ec.europa.eu/eurostat/help/c
 
 ## Step 2 · Load and clean (75 min)
 
-Reuse your three TD1 scripts. For a Eurostat dataset, only the address changes (replace `tin00028` by your code), then the filters.
+<p class="refs" markdown="1">**Notion:** [CSV files](notion-csv.html), [Reading and writing files](notion-python-files.html) · **Recipe:** [Download a file](recipe-download.html), [Filter a CSV file](recipe-clean-csv.html)</p>
+
+Reuse your TD1 scripts. For a Eurostat dataset, only the address changes (replace `tin00028` by your code), then the filters.
 
 - [ ] Copy `download.py` and `clean.py` into your project; change the address and file names.
 - [ ] Run the download and open the file: read the column names.
 - [ ] Remove the test on `indic_is` if your file has no such column.
-- [ ] Add your filter (table above).
+- [ ] Add your filter (table above). Other columns may also need one.
 - [ ] Check: only one row per country and year.
 
 **Example** (another subject: adapt it, do not copy it as it is).
@@ -71,6 +89,8 @@ Print the different values of a column: `print(set(row["age"] for row in rows))`
 
 ## Step 3 · Plan the pages (30 min)
 
+<p class="refs" markdown="1">**Notion:** [README and project folder](notion-readme.html), [Flask and routes](notion-flask-routes.html) · **Recipe:** [A project README](recipe-readme.html)</p>
+
 - [ ] Draw each page on paper.
 - [ ] Fill the table of routes of the README (at least 3, one JSON with a parameter).
 - [ ] Decide who does what.
@@ -88,7 +108,9 @@ Print the different values of a column: `print(set(row["age"] for row in rows))`
 
 ## Step 4 · First route and review (35 min)
 
-- [ ] Copy `load_data` from TD6 and show the number of rows on the home page.
+<p class="refs" markdown="1">**Notion:** [Templates and static files](notion-templates.html), [Lists of dictionaries](notion-lists-dicts.html) · **Recipe:** [A Flask app with a template](recipe-flask-app.html)</p>
+
+- [ ] Copy `load_data` from TD6 (add `import csv` at the top) and show the number of rows on the home page.
 - [ ] **Checkpoint 1** (short review, not graded): show your data and your routes.
 - [ ] Write the teacher's remarks.
 

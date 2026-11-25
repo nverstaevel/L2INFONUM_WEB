@@ -17,6 +17,23 @@ Faire tourner votre première application avec Flask, un paquet Python qui répo
 | 5 | Une valeur dans l'adresse | 35 min |
 | 6 | Codes d'état | 20 min |
 
+## Notions mobilisées dans ce TD
+
+Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens sont rappelés à l'étape concernée.
+
+- [Terminal et environnement virtuel](notion-terminal-venv.html)
+- [Serveur local](notion-local-server.html)
+- [Flask et les routes](notion-flask-routes.html)
+- [JSON](notion-json.html)
+- [API JSON](notion-api.html)
+- [Gabarits et fichiers statiques](notion-templates.html)
+- [Paramètres d'URL et chaîne de requête](notion-url-parameters.html)
+- [Contrôle des saisies et échappement](notion-safety.html)
+- [HTTP : requêtes, réponses, codes d'état](notion-http.html)
+- [Outils de développement](notion-devtools.html)
+
+**Exemples clés en main :** [Installer un projet](recipe-venv.html) · [Une application Flask avec un gabarit](recipe-flask-app.html)
+
 ## Avant la séance
 
 - [ ] J'ai relu le [CM5](cm5.html).
@@ -34,6 +51,8 @@ python check.py
 Sur macOS ou Linux, hors environnement virtuel, tapez `python3`. `[OK]` : la partie fonctionne ; `[  ]` : pas encore. Le vérificateur ne remplace pas un coup d'œil à votre page dans le navigateur.
 
 ## Étape 1 · Installer et lancer (30 min)
+
+<p class="refs" markdown="1">**Notion :** [Terminal et environnement virtuel](notion-terminal-venv.html), [Serveur local](notion-local-server.html) · **Recette :** [Installer un projet](recipe-venv.html)</p>
 
 1. Ouvrez le dossier `td5` dans VS Code et un terminal.
 2. Créez l'environnement (voir le [guide d'installation](setup.html) en cas d'échec).
@@ -54,7 +73,7 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-Puis lancez l'application :
+Lancez l'application :
 
 ```text
 python app.py
@@ -65,6 +84,8 @@ Ouvrez `http://127.0.0.1:5000/` (`127.0.0.1` signifie « cet ordinateur »). Lai
 **Vérification.** Le navigateur dit `Hello, web!` et `check.py` montre sept `[  ]`.
 
 ## Étape 2 · Une première route (25 min)
+
+<p class="refs" markdown="1">**Notion :** [Flask et les routes](notion-flask-routes.html) · **Recette :** [Une application Flask avec un gabarit](recipe-flask-app.html)</p>
 
 Une **route** relie une adresse à une fonction Python. La ligne qui commence par `@` est un **décorateur** : il s'applique à la fonction juste en dessous. Ce que la fonction renvoie est envoyé au navigateur. Lisez la route `/` dans `app.py`.
 
@@ -84,6 +105,8 @@ def contact():
 
 ## Étape 3 · Renvoyer du JSON (25 min)
 
+<p class="refs" markdown="1">**Notion :** [JSON](notion-json.html), [API JSON](notion-api.html)</p>
+
 Le **JSON** est de la donnée écrite en texte. Les programmes le lisent plus facilement que du HTML. `jsonify` le fabrique.
 
 **Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
@@ -101,6 +124,8 @@ def library():
 **Vérification.** Le navigateur affiche les trois clés ; `3A` est `[OK]`.
 
 ## Étape 4 · Un gabarit (45 min)
+
+<p class="refs" markdown="1">**Notion :** [Gabarits et fichiers statiques](notion-templates.html) · **Recette :** [Une application Flask avec un gabarit](recipe-flask-app.html)</p>
 
 Écrire une page entière dans Python est pénible. Un **gabarit** (*template*) est un fichier HTML, dans le dossier `templates`, avec des trous écrits `{{ nom }}`. `render_template` les remplit.
 
@@ -135,6 +160,8 @@ return render_template("shop.html", city="Toulouse", number=3)
 
 ## Étape 5 · Une valeur dans l'adresse (35 min)
 
+<p class="refs" markdown="1">**Notion :** [Paramètres d'URL et chaîne de requête](notion-url-parameters.html), [Contrôle des saisies et échappement](notion-safety.html)</p>
+
 Une partie de l'adresse écrite `<nom>` est donnée à la fonction comme argument.
 
 **Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
@@ -158,6 +185,8 @@ def book(title):
 Pourquoi un gabarit et pas `return code` ? `{{ }}` affiche ce qu'a saisi le visiteur comme du simple texte : personne ne peut glisser de code dans votre page.
 
 ## Étape 6 · Codes d'état (20 min)
+
+<p class="refs" markdown="1">**Notion :** [HTTP : requêtes, réponses, codes d'état](notion-http.html), [Outils de développement](notion-devtools.html)</p>
 
 Toute réponse a un numéro : 200 succès, 404 introuvable, 500 erreur dans votre code. On peut le choisir en renvoyant deux valeurs.
 
@@ -184,5 +213,5 @@ return "This book is gone", 410
 
 ## Si vous avez fini (facultatif)
 
-1. Ajoutez `/count` : le nombre de lignes de votre fichier nettoyé.
+1. Ajoutez `/count` : le nombre de lignes de votre fichier nettoyé (copiez-le dans `td5/data`).
 2. Personnalisez la page 404 avec `@app.errorhandler(404)`.

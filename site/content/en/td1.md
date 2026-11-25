@@ -14,6 +14,21 @@ You will download real data from Eurostat (the statistics office of the European
 | 4 | `clean.py` | `data/internet_use_clean.csv` | 55 min |
 | 5 | `stats.py` | `data/summary.json` | 45 min |
 
+## Notions used in this lab
+
+Open them when you need them: each one is a short page. The links are repeated at the step where you need them.
+
+- [Terminal and virtual environment](notion-terminal-venv.html)
+- [HTTP: requests, responses, status codes](notion-http.html)
+- [Reading and writing files](notion-python-files.html)
+- [CSV files](notion-csv.html)
+- [Open data and licences](notion-open-data.html)
+- [Lists of dictionaries](notion-lists-dicts.html)
+- [Comprehensions, min, max, sorted](notion-list-tools.html)
+- [JSON](notion-json.html)
+
+**Ready-made examples:** [Set up a project](recipe-venv.html) · [Download a file](recipe-download.html) · [Filter a CSV file](recipe-clean-csv.html) · [Compute figures and save them as JSON](recipe-stats-json.html)
+
 ## How to work
 
 1. Do the steps **in order**. Each one needs the previous one.
@@ -37,6 +52,8 @@ for row in rows:
         print(row["city"])             # Paris
 ```
 ## Step 1 · Set up (25 min)
+
+<p class="refs" markdown="1">**Notion:** [Terminal and virtual environment](notion-terminal-venv.html) · **Recipe:** [Set up a project](recipe-venv.html)</p>
 
 A **terminal** is a window where you type commands. A **virtual environment** is a private set of Python packages (code written by other people) for one project.
 
@@ -64,11 +81,13 @@ python -m pip install -r requirements.txt
 **Check.** The line where you type starts with `(.venv)`, and `python check.py` shows eight lines with `[  ]`.
 <details markdown="1"><summary>Stuck?</summary>
 
-See the table of common problems in the [setup guide](setup.html).
+See the table of common problems in the [setup guide](setup.html#common-problems).
 
 </details>
 
 ## Step 2 · Download (25 min)
+
+<p class="refs" markdown="1">**Notion:** [HTTP: requests, responses, status codes](notion-http.html) · **Recipe:** [Download a file](recipe-download.html)</p>
 
 `requests` is a package that asks a web server for a page or a file, like a browser does. Open `download.py`.
 
@@ -102,6 +121,8 @@ Two lines. The first starts with `if response.` and ends with `:`. The second is
 
 ### 2C · Save the file
 
+<p class="refs" markdown="1">**Notion:** [Reading and writing files](notion-python-files.html) · **Recipe:** [Download a file](recipe-download.html)</p>
+
 **Example** (another subject: do not copy it as it is).
 ```python
 from pathlib import Path
@@ -125,6 +146,8 @@ python check.py
 
 ## Step 3 · Read the data (20 min)
 
+<p class="refs" markdown="1">**Notion:** [CSV files](notion-csv.html), [Open data and licences](notion-open-data.html)</p>
+
 A **CSV** file is a table written as text: one row per line, columns separated by commas. The first line gives the column names. Open `data/internet_use.csv` in VS Code, create a file `notes.txt` and answer:
 
 1. Copy the first line. How many columns are there?
@@ -138,6 +161,8 @@ A **CSV** file is a table written as text: one row per line, columns separated b
 **Cleaning** means keeping only what we need, with the right types. Open `clean.py`. It has three **functions** (named blocks of code). A function gives its result back with `return`.
 
 ### 4A · Read the file · `load_rows`
+
+<p class="refs" markdown="1">**Notion:** [CSV files](notion-csv.html), [Lists of dictionaries](notion-lists-dicts.html), [Reading and writing files](notion-python-files.html) · **Recipe:** [Filter a CSV file](recipe-clean-csv.html)</p>
 
 **Example** (another subject: do not copy it as it is).
 ```python
@@ -226,6 +251,8 @@ Open `stats.py`.
 
 ### 5A · Read the clean file · `load_clean`
 
+<p class="refs" markdown="1">**Notion:** [Comprehensions, min, max, sorted](notion-list-tools.html)</p>
+
 As in 4A, but a CSV file only contains text: convert `year` to `int` and `value` to `float`. This short form builds a list in one go (a **list comprehension**):
 ```python
 rows = [{"name": r["name"], "people": int(r["people"])}
@@ -235,6 +262,8 @@ rows = [{"name": r["name"], "people": int(r["people"])}
 **Your turn.** The dictionaries must have the keys `country`, `year`, `value`. **Check:** `Step 5A` `[OK]`.
 
 ### 5B · Latest year · `summarise`
+
+<p class="refs" markdown="1">**Notion:** [Comprehensions, min, max, sorted](notion-list-tools.html) · **Recipe:** [Compute figures and save them as JSON](recipe-stats-json.html)</p>
 
 **Example** (another subject: do not copy it as it is).
 ```python
@@ -279,6 +308,8 @@ points = sorted(points, key=lambda p: p["year"])   # oldest first
 </details>
 
 ### 5D · Save as JSON
+
+<p class="refs" markdown="1">**Notion:** [JSON](notion-json.html) · **Recipe:** [Compute figures and save them as JSON](recipe-stats-json.html)</p>
 
 **JSON** is a text format for lists and dictionaries, used a lot on the web.
 

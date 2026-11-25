@@ -16,6 +16,21 @@ Turn your TD1 results into a chart, with a few lines of JavaScript (the programm
 | 4 | Adapt the chart | 55 min |
 | 5 | Read it critically | 30 min |
 
+## Notions used in this lab
+
+Open them when you need them: each one is a short page. The links are repeated at the step where you need them.
+
+- [Local server](notion-local-server.html)
+- [JavaScript basics](notion-javascript.html)
+- [Developer tools](notion-devtools.html)
+- [fetch: asking for data](notion-fetch.html)
+- [JSON](notion-json.html)
+- [Charts with Chart.js](notion-chartjs.html)
+- [Changing the page from JavaScript](notion-dom.html)
+- [Choosing and reading a chart](notion-honest-charts.html)
+
+**Ready-made examples:** [A chart from a JSON file](recipe-chart-from-json.html)
+
 ## Before the session
 
 - [ ] I have read [CM4](cm4.html).
@@ -35,9 +50,11 @@ On macOS or Linux, outside a virtual environment, type `python3`. `[OK]` means t
 
 ## Step 1 · Start a local server (25 min)
 
+<p class="refs" markdown="1">**Notion:** [Local server](notion-local-server.html)</p>
+
 A page opened by double-click is not allowed to read other files. A **server** is a program that sends files to the browser. Python has a small one.
 
-Open the folder `td4` in VS Code, open a terminal and run:
+Open the folder `td4` in VS Code, open a terminal and run (`python3` on macOS or Linux):
 
 ```text
 python -m http.server
@@ -54,6 +71,8 @@ Leave this terminal open. In the browser, go to `http://localhost:8000/chart.htm
 </details>
 
 ## Step 2 · Try JavaScript (35 min)
+
+<p class="refs" markdown="1">**Notion:** [JavaScript basics](notion-javascript.html), [Developer tools](notion-devtools.html)</p>
 
 The **console** is a place to type JavaScript: press `F12`, tab **Console**. Type each block, press Enter, and **guess the result before**.
 
@@ -97,11 +116,15 @@ Same line as above, with `b.title`.
 
 ## Step 3 · Use your data (25 min)
 
+<p class="refs" markdown="1">**Notion:** [fetch: asking for data](notion-fetch.html), [JSON](notion-json.html) · **Recipe:** [A chart from a JSON file](recipe-chart-from-json.html)</p>
+
 **Your turn.** Copy **your** `summary.json` (made in TD1, folder `td1/data`) over `td4/data/summary.json`. Reload the page with `Ctrl+F5` (`Cmd+Shift+R` on a Mac). Then read `chart.js` and its comments, line by line.
 
 **Check.** `3` is `[OK]`. In the **Network** tab (`F12`), reload: `summary.json` has the status 200.
 
 ## Step 4 · Adapt the chart (55 min)
+
+<p class="refs" markdown="1">**Notion:** [Charts with Chart.js](notion-chartjs.html) · **Recipe:** [A chart from a JSON file](recipe-chart-from-json.html)</p>
 
 Change one thing, save, reload, look. If the chart disappears, read the red message in the console.
 
@@ -110,6 +133,8 @@ Change one thing, save, reload, look. If the chart disappears, read the red mess
 **Your turn.** Change the type of chart from `line` to `bar`.
 
 ### 4B · A title with the country
+
+<p class="refs" markdown="1">**Notion:** [Changing the page from JavaScript](notion-dom.html)</p>
 
 **Example** (another subject: adapt it, do not copy it as it is).
 
@@ -143,6 +168,8 @@ Blank page after 4C? The console says `Unexpected identifier` when a comma is mi
 </details>
 
 ## Step 5 · Read the chart critically (30 min)
+
+<p class="refs" markdown="1">**Notion:** [Choosing and reading a chart](notion-honest-charts.html)</p>
 
 **Your turn.** Create `notes.txt` in `td4` and write at least 30 words:
 

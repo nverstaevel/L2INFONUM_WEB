@@ -15,6 +15,20 @@ Seul ou en binôme : choisir une question et un jeu de données, nettoyer, prév
 | 3 | Prévoir les pages | 30 min |
 | 4 | Première route et revue | 35 min |
 
+## Notions mobilisées dans ce TD
+
+Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens sont rappelés à l'étape concernée.
+
+- [Données ouvertes et licences](notion-open-data.html)
+- [Fichiers CSV](notion-csv.html)
+- [Lire et écrire des fichiers](notion-python-files.html)
+- [README et dossier de projet](notion-readme.html)
+- [Flask et les routes](notion-flask-routes.html)
+- [Gabarits et fichiers statiques](notion-templates.html)
+- [Listes de dictionnaires](notion-lists-dicts.html)
+
+**Exemples clés en main :** [Télécharger un fichier](recipe-download.html) · [Filtrer un fichier CSV](recipe-clean-csv.html) · [Un README de projet](recipe-readme.html) · [Une application Flask avec un gabarit](recipe-flask-app.html)
+
 ## Avant la séance
 
 - [ ] J'ai réfléchi à deux sujets possibles.
@@ -24,6 +38,8 @@ Seul ou en binôme : choisir une question et un jeu de données, nettoyer, prév
 Cochez chaque case quand c'est fait (le navigateur s'en souvient). Ne commencez pas la partie suivante avant d'avoir atteint le **jalon**. Faites une copie de votre dossier après chaque jalon.
 
 ## Étape 1 · Question et jeu de données (40 min)
+
+<p class="refs" markdown="1">**Notion :** [Données ouvertes et licences](notion-open-data.html)</p>
 
 Une bonne question compare ou suit quelque chose dans le temps. Exemple : *Comment la part des énergies renouvelables a-t-elle évolué dans mon pays et dans deux autres ?*
 
@@ -46,12 +62,14 @@ Réutilisation avec attribution ([notice](https://ec.europa.eu/eurostat/fr/help/
 
 ## Étape 2 · Charger et nettoyer (75 min)
 
-Réutilisez vos trois scripts du TD1. Pour un jeu Eurostat, seule l'adresse change (remplacez `tin00028` par votre code), puis les filtres.
+<p class="refs" markdown="1">**Notion :** [Fichiers CSV](notion-csv.html), [Lire et écrire des fichiers](notion-python-files.html) · **Recette :** [Télécharger un fichier](recipe-download.html), [Filtrer un fichier CSV](recipe-clean-csv.html)</p>
+
+Réutilisez vos scripts du TD1. Pour un jeu Eurostat, seule l'adresse change (remplacez `tin00028` par votre code), puis les filtres.
 
 - [ ] Copier `download.py` et `clean.py` dans le projet ; changer l'adresse et les noms de fichiers.
 - [ ] Lancer le téléchargement et ouvrir le fichier : lire les noms des colonnes.
 - [ ] Supprimer le test sur `indic_is` si votre fichier n'a pas cette colonne.
-- [ ] Ajouter votre filtre (tableau ci-dessus).
+- [ ] Ajouter votre filtre (tableau ci-dessus). D'autres colonnes peuvent aussi en demander un.
 - [ ] Vérifier : une seule ligne par pays et par année.
 
 **Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
@@ -71,6 +89,8 @@ Affichez les valeurs différentes d'une colonne : `print(set(row["age"] for row 
 
 ## Étape 3 · Prévoir les pages (30 min)
 
+<p class="refs" markdown="1">**Notion :** [README et dossier de projet](notion-readme.html), [Flask et les routes](notion-flask-routes.html) · **Recette :** [Un README de projet](recipe-readme.html)</p>
+
 - [ ] Dessiner chaque page sur papier.
 - [ ] Remplir le tableau des routes du README (au moins 3, dont une JSON avec paramètre).
 - [ ] Se répartir le travail.
@@ -88,7 +108,9 @@ Affichez les valeurs différentes d'une colonne : `print(set(row["age"] for row 
 
 ## Étape 4 · Première route et revue (35 min)
 
-- [ ] Copier `load_data` du TD6 et afficher le nombre de lignes sur l'accueil.
+<p class="refs" markdown="1">**Notion :** [Gabarits et fichiers statiques](notion-templates.html), [Listes de dictionnaires](notion-lists-dicts.html) · **Recette :** [Une application Flask avec un gabarit](recipe-flask-app.html)</p>
+
+- [ ] Copier `load_data` du TD6 (ajouter `import csv` en haut) et afficher le nombre de lignes sur l'accueil.
 - [ ] **Point d'étape 1** (courte revue, non notée) : montrer les données et les routes.
 - [ ] Noter les remarques de l'enseignant.
 

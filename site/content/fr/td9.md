@@ -15,6 +15,21 @@ Construire les pages, le filtre et le premier graphique.
 | 3 | Route JSON et graphique | 60 min |
 | 4 | Revue | 30 min |
 
+## Notions mobilisées dans ce TD
+
+Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens sont rappelés à l'étape concernée.
+
+- [Gabarits et fichiers statiques](notion-templates.html)
+- [Flexbox](notion-css-flexbox.html)
+- [Paramètres d'URL et chaîne de requête](notion-url-parameters.html)
+- [Formulaires](notion-html-forms.html)
+- [API JSON](notion-api.html)
+- [fetch : demander des données](notion-fetch.html)
+- [Graphiques avec Chart.js](notion-chartjs.html)
+- [Déboguer](notion-debugging.html)
+
+**Exemples clés en main :** [Une application Flask avec un gabarit](recipe-flask-app.html) · [Barre de navigation adaptative](recipe-nav-bar.html) · [Un formulaire de recherche](recipe-search-form.html) · [Une API JSON et son graphique](recipe-api-chart.html)
+
 ## Avant la séance
 
 - [ ] Les remarques du point d'étape 1 sont traitées.
@@ -25,6 +40,8 @@ Cochez chaque case quand c'est fait (le navigateur s'en souvient). Ne commencez 
 
 ## Étape 1 · Pages (45 min)
 
+<p class="refs" markdown="1">**Notion :** [Gabarits et fichiers statiques](notion-templates.html), [Flexbox](notion-css-flexbox.html) · **Recette :** [Une application Flask avec un gabarit](recipe-flask-app.html), [Barre de navigation adaptative](recipe-nav-bar.html)</p>
+
 - [ ] Pour chaque page : copier `base.html`, le renommer, changer les titres.
 - [ ] Écrire une route par page (TD5, étape 4).
 - [ ] Mettre à jour les liens du menu **dans chaque fichier**.
@@ -34,7 +51,10 @@ Cochez chaque case quand c'est fait (le navigateur s'en souvient). Ne commencez 
 
 ## Étape 2 · Formulaire ou filtre (45 min)
 
+<p class="refs" markdown="1">**Notion :** [Paramètres d'URL et chaîne de requête](notion-url-parameters.html), [Formulaires](notion-html-forms.html) · **Recette :** [Un formulaire de recherche](recipe-search-form.html)</p>
+
 - [ ] Reprendre la route et le gabarit de recherche du TD6.
+- [ ] Ajouter `request` à la ligne `from flask import ...`.
 - [ ] Adapter les noms des champs et le test de la boucle.
 - [ ] Tester une valeur normale, une valeur inconnue et un champ vide.
 
@@ -42,7 +62,10 @@ Cochez chaque case quand c'est fait (le navigateur s'en souvient). Ne commencez 
 
 ## Étape 3 · Route JSON et graphique (60 min)
 
+<p class="refs" markdown="1">**Notion :** [API JSON](notion-api.html), [fetch : demander des données](notion-fetch.html), [Graphiques avec Chart.js](notion-chartjs.html), [Déboguer](notion-debugging.html) · **Recette :** [Une API JSON et son graphique](recipe-api-chart.html)</p>
+
 - [ ] Reprendre `api_data` du TD7.
+- [ ] Ajouter `jsonify` à la ligne `from flask import ...`.
 - [ ] Tester l'adresse JSON **seule** dans le navigateur.
 - [ ] Copier `chart.html` dans `templates` et `chart.js` dans `static` ; ajouter la route de la page.
 - [ ] Changer le titre, l'étiquette et le type de graphique.

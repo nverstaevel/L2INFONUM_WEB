@@ -16,6 +16,20 @@ Construire des pages qui réagissent à la saisie : une recherche, un filtre et 
 | 4 | Favoris | 50 min |
 | 5 | Vérifier la saisie | 25 min |
 
+## Notions mobilisées dans ce TD
+
+Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens sont rappelés à l'étape concernée.
+
+- [Listes de dictionnaires](notion-lists-dicts.html)
+- [Gabarits et fichiers statiques](notion-templates.html)
+- [Paramètres d'URL et chaîne de requête](notion-url-parameters.html)
+- [Formulaires](notion-html-forms.html)
+- [GET et POST](notion-get-post.html)
+- [Sessions et cookies](notion-sessions.html)
+- [Contrôle des saisies et échappement](notion-safety.html)
+
+**Exemples clés en main :** [Installer un projet](recipe-venv.html) · [Un formulaire de recherche](recipe-search-form.html) · [Mémoriser une liste avec une session](recipe-session-list.html)
+
 ## Avant la séance
 
 - [ ] J'ai relu le [CM6](cm6.html).
@@ -39,6 +53,8 @@ Sur macOS ou Linux, hors environnement virtuel, tapez `python3`. `[OK]` : la par
 
 ## Étape 1 · Installer et observer (20 min)
 
+<p class="refs" markdown="1">**Notion :** [Listes de dictionnaires](notion-lists-dicts.html), [Gabarits et fichiers statiques](notion-templates.html) · **Recette :** [Installer un projet](recipe-venv.html)</p>
+
 1. Ouvrez le dossier `td6` dans VS Code et un terminal.
 2. Créez l'environnement (voir le [guide d'installation](setup.html) en cas d'échec).
 
@@ -60,7 +76,7 @@ python -m pip install -r requirements.txt
 
 Copiez ensuite **votre** `internet_use_clean.csv` (créé au TD1) dans le dossier `data`. Pas de fichier ? Copiez celui du dossier `sample` : il ne contient que la France.
 
-Puis lancez l'application :
+Lancez l'application :
 
 ```text
 python app.py
@@ -71,6 +87,8 @@ Ouvrez `http://127.0.0.1:5000/` (`127.0.0.1` signifie « cet ordinateur »). Lai
 **Vérification.** La page d'accueil indique le nombre de lignes chargées.
 
 ## Étape 2 · Chercher par pays (45 min)
+
+<p class="refs" markdown="1">**Notion :** [Paramètres d'URL et chaîne de requête](notion-url-parameters.html) · **Recette :** [Un formulaire de recherche](recipe-search-form.html)</p>
 
 ### 2A · Le gabarit
 
@@ -121,6 +139,8 @@ Dans un texte `f"..."`, utilisez des apostrophes : `{row['year']}`. Le `return` 
 
 ## Étape 3 · Formulaire et filtre (40 min)
 
+<p class="refs" markdown="1">**Notion :** [Formulaires](notion-html-forms.html), [Paramètres d'URL et chaîne de requête](notion-url-parameters.html) · **Recette :** [Un formulaire de recherche](recipe-search-form.html)</p>
+
 ### 3A · Le formulaire
 
 **Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
@@ -159,6 +179,8 @@ maximum = request.args.get("pages", 1000, type=int)   # converted to a number
 </details>
 
 ## Étape 4 · Favoris (50 min)
+
+<p class="refs" markdown="1">**Notion :** [GET et POST](notion-get-post.html), [Sessions et cookies](notion-sessions.html) · **Recette :** [Mémoriser une liste avec une session](recipe-session-list.html)</p>
 
 **GET** demande une page. **POST** envoie des données qui modifient quelque chose. Une **session** mémorise des données pour un visiteur d'une page à l'autre, dans un **cookie** (petit texte conservé par le navigateur).
 
@@ -200,6 +222,8 @@ text = ", ".join(items) if items else "none"
 **Vérification.** Ajoutez `FR`, allez sur une autre page, revenez : il est toujours là. `4A` à `4C` `[OK]`.
 
 ## Étape 5 · Vérifier la saisie (25 min)
+
+<p class="refs" markdown="1">**Notion :** [Contrôle des saisies et échappement](notion-safety.html) · **Recette :** [Mémoriser une liste avec une session](recipe-session-list.html)</p>
 
 Un visiteur peut saisir n'importe quoi. Vérifiez toujours.
 

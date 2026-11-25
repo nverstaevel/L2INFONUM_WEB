@@ -17,6 +17,18 @@ Style your TD2 page so that it is comfortable on a phone and on a computer.
 | 5 | Table and form | 40 min |
 | 6 | Phone screens | 30 min |
 
+## Notions used in this lab
+
+Open them when you need them: each one is a short page. The links are repeated at the step where you need them.
+
+- [CSS rules and selectors](notion-css-rules.html)
+- [Box model](notion-css-box.html)
+- [Flexbox](notion-css-flexbox.html)
+- [Responsive design and media queries](notion-css-media.html)
+- [Developer tools](notion-devtools.html)
+
+**Ready-made examples:** [Readable page and tables](recipe-clean-style.html) · [Responsive navigation bar](recipe-nav-bar.html)
+
 ## Before the session
 
 - [ ] I have read [CM3](cm3.html).
@@ -47,6 +59,8 @@ th, td { }        /* th and td together */
 ```
 
 ## Step 1 · Link the stylesheet (20 min)
+
+<p class="refs" markdown="1">**Notion:** [CSS rules and selectors](notion-css-rules.html) · **Recipe:** [Readable page and tables](recipe-clean-style.html)</p>
 
 1. Copy `index.html` and the folder `images` from `td2` into `td3`.
 2. Open the folder `td3` in VS Code and the page in your browser.
@@ -88,6 +102,8 @@ Nothing changes in the browser? Check that you saved both files and that the `li
 
 ## Step 3 · Boxes and spacing (30 min)
 
+<p class="refs" markdown="1">**Notion:** [Box model](notion-css-box.html) · **Recipe:** [Readable page and tables](recipe-clean-style.html)</p>
+
 Every element is a box: the content, then **padding** (space inside), the **border**, then **margin** (space outside).
 
 ### 3A · Centre the content
@@ -112,6 +128,8 @@ Every element is a box: the content, then **padding** (space inside), the **bord
 
 ## Step 4 · Navigation with Flexbox (30 min)
 
+<p class="refs" markdown="1">**Notion:** [Flexbox](notion-css-flexbox.html) · **Recipe:** [Responsive navigation bar](recipe-nav-bar.html)</p>
+
 **Flexbox** places the children of a box in a row. You write it on the **parent**.
 
 ### 4A · The list in a row
@@ -134,6 +152,8 @@ Every element is a box: the content, then **padding** (space inside), the **bord
 **Check.** The three links are on one line, without bullets.
 
 ## Step 5 · Table and form (40 min)
+
+<p class="refs" markdown="1">**Notion:** [Box model](notion-css-box.html), [CSS rules and selectors](notion-css-rules.html) · **Recipe:** [Readable page and tables](recipe-clean-style.html)</p>
 
 ### 5A · One border, not two
 
@@ -160,6 +180,8 @@ Every element is a box: the content, then **padding** (space inside), the **bord
 **Check.** `5A` to `5C` `[OK]`: simple borders, a visible header row, spaced fields.
 
 ## Step 6 · Phone screens (30 min)
+
+<p class="refs" markdown="1">**Notion:** [Responsive design and media queries](notion-css-media.html), [Developer tools](notion-devtools.html) · **Recipe:** [Responsive navigation bar](recipe-nav-bar.html)</p>
 
 A **media query** applies rules only if a condition is true, here a narrow screen.
 

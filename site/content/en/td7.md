@@ -16,6 +16,21 @@ Your application sends filtered data as JSON, and the page draws it without relo
 | 4 | Handle errors | 45 min |
 | 5 | Debug | 40 min |
 
+## Notions used in this lab
+
+Open them when you need them: each one is a short page. The links are repeated at the step where you need them.
+
+- [JSON API](notion-api.html)
+- [fetch: asking for data](notion-fetch.html)
+- [Developer tools](notion-devtools.html)
+- [Comprehensions, min, max, sorted](notion-list-tools.html)
+- [URL parameters and query strings](notion-url-parameters.html)
+- [HTTP: requests, responses, status codes](notion-http.html)
+- [Changing the page from JavaScript](notion-dom.html)
+- [Debugging](notion-debugging.html)
+
+**Ready-made examples:** [A JSON API and its chart](recipe-api-chart.html)
+
 ## Before the session
 
 - [ ] I have read [CM7](cm7.html).
@@ -34,6 +49,8 @@ python check.py
 On macOS or Linux, outside a virtual environment, type `python3`. `[OK]` means the part works, `[  ]` means not yet. The checker does not replace looking at your page in the browser.
 
 ## Step 1 · Install and observe (35 min)
+
+<p class="refs" markdown="1">**Notion:** [JSON API](notion-api.html), [fetch: asking for data](notion-fetch.html), [Developer tools](notion-devtools.html) · **Recipe:** [A JSON API and its chart](recipe-api-chart.html)</p>
 
 1. Open the folder `td7` in VS Code and a terminal.
 2. Create the environment (see the [setup guide](setup.html) if it fails).
@@ -56,7 +73,7 @@ python -m pip install -r requirements.txt
 
 Then copy **your** `internet_use_clean.csv` (made in TD1) into the folder `data`. No file? Copy the one in the folder `sample`: it only contains France.
 
-Then start the application:
+Start the application:
 
 ```text
 python app.py
@@ -69,6 +86,8 @@ In the browser press `F12`, open the **Network** tab and reload. Click the line 
 **Check.** You can say who sends this request (the page or Python?). The chart mixes all countries: that is the next step.
 
 ## Step 2 · Filter by country (30 min)
+
+<p class="refs" markdown="1">**Notion:** [JSON API](notion-api.html), [Comprehensions, min, max, sorted](notion-list-tools.html) · **Recipe:** [A JSON API and its chart](recipe-api-chart.html)</p>
 
 **Example** (another subject: adapt it, do not copy it as it is).
 
@@ -86,6 +105,8 @@ return jsonify(found)
 
 ## Step 3 · Filter by year (30 min)
 
+<p class="refs" markdown="1">**Notion:** [URL parameters and query strings](notion-url-parameters.html)</p>
+
 **Example** (another subject: adapt it, do not copy it as it is).
 
 ```python
@@ -102,6 +123,8 @@ if pages is not None:
 
 ## Step 4 · Handle errors (45 min)
 
+<p class="refs" markdown="1">**Notion:** [HTTP: requests, responses, status codes](notion-http.html), [JSON API](notion-api.html)</p>
+
 ### 4A · In Python
 
 **Example** (another subject: adapt it, do not copy it as it is).
@@ -114,6 +137,8 @@ if not found:
 **Your turn.** Return a JSON error with the code 404 when there is no row. The key must be `error`.
 
 ### 4B · In JavaScript
+
+<p class="refs" markdown="1">**Notion:** [Changing the page from JavaScript](notion-dom.html), [fetch: asking for data](notion-fetch.html) · **Recipe:** [A JSON API and its chart](recipe-api-chart.html)</p>
 
 **Example** (another subject: adapt it, do not copy it as it is).
 
@@ -136,6 +161,8 @@ The old JavaScript may be kept by the browser: reload with `Ctrl+F5` (`Cmd+Shift
 </details>
 
 ## Step 5 · Debug (40 min)
+
+<p class="refs" markdown="1">**Notion:** [Debugging](notion-debugging.html), [Developer tools](notion-devtools.html)</p>
 
 **Debugging** is finding and fixing a mistake. Practise on purpose:
 

@@ -24,3 +24,4 @@ li input,td input{width:18px;height:18px}
 @media (max-width:640px){.layout.with-toc{display:block}
 .toc{z-index:2;max-height:70vh;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 16px}
 .toc summary{margin:0}h2,h3{scroll-margin-top:52px}}
+.refs{border-left:3px solid var(--accent);background:var(--panel);border-radius:0 8px 8px 0;padding:6px 12px;font-size:15px}.refs code{background:none}

@@ -15,6 +15,21 @@ Build the pages, the filter and the first chart.
 | 3 | JSON route and chart | 60 min |
 | 4 | Review | 30 min |
 
+## Notions used in this lab
+
+Open them when you need them: each one is a short page. The links are repeated at the step where you need them.
+
+- [Templates and static files](notion-templates.html)
+- [Flexbox](notion-css-flexbox.html)
+- [URL parameters and query strings](notion-url-parameters.html)
+- [Forms](notion-html-forms.html)
+- [JSON API](notion-api.html)
+- [fetch: asking for data](notion-fetch.html)
+- [Charts with Chart.js](notion-chartjs.html)
+- [Debugging](notion-debugging.html)
+
+**Ready-made examples:** [A Flask app with a template](recipe-flask-app.html) · [Responsive navigation bar](recipe-nav-bar.html) · [A search form](recipe-search-form.html) · [A JSON API and its chart](recipe-api-chart.html)
+
 ## Before the session
 
 - [ ] The remarks of checkpoint 1 are dealt with.
@@ -25,6 +40,8 @@ Tick each box when it is done (your browser remembers it). Do not start the next
 
 ## Step 1 · Pages (45 min)
 
+<p class="refs" markdown="1">**Notion:** [Templates and static files](notion-templates.html), [Flexbox](notion-css-flexbox.html) · **Recipe:** [A Flask app with a template](recipe-flask-app.html), [Responsive navigation bar](recipe-nav-bar.html)</p>
+
 - [ ] For each page: copy `base.html`, rename it, change the titles.
 - [ ] Write one route per page (TD5, step 4).
 - [ ] Update the links of the menu **in every file**.
@@ -34,7 +51,10 @@ Tick each box when it is done (your browser remembers it). Do not start the next
 
 ## Step 2 · Form or filter (45 min)
 
+<p class="refs" markdown="1">**Notion:** [URL parameters and query strings](notion-url-parameters.html), [Forms](notion-html-forms.html) · **Recipe:** [A search form](recipe-search-form.html)</p>
+
 - [ ] Copy the search route and template of TD6.
+- [ ] Add `request` to the line `from flask import ...`.
 - [ ] Adapt the field names and the test of the loop.
 - [ ] Test a normal value, an unknown value and an empty field.
 
@@ -42,7 +62,10 @@ Tick each box when it is done (your browser remembers it). Do not start the next
 
 ## Step 3 · JSON route and chart (60 min)
 
+<p class="refs" markdown="1">**Notion:** [JSON API](notion-api.html), [fetch: asking for data](notion-fetch.html), [Charts with Chart.js](notion-chartjs.html), [Debugging](notion-debugging.html) · **Recipe:** [A JSON API and its chart](recipe-api-chart.html)</p>
+
 - [ ] Copy `api_data` from TD7.
+- [ ] Add `jsonify` to the line `from flask import ...`.
 - [ ] Test the JSON address **alone** in the browser.
 - [ ] Copy `chart.html` to `templates` and `chart.js` to `static`; add the route of the page.
 - [ ] Change the title, the label and the type of chart.

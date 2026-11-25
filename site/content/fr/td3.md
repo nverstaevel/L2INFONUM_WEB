@@ -17,6 +17,18 @@ Mettre en forme la page du TD2 pour qu'elle soit confortable sur téléphone et 
 | 5 | Tableau et formulaire | 40 min |
 | 6 | Écrans de téléphone | 30 min |
 
+## Notions mobilisées dans ce TD
+
+Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens sont rappelés à l'étape concernée.
+
+- [Règles et sélecteurs CSS](notion-css-rules.html)
+- [Modèle de boîte](notion-css-box.html)
+- [Flexbox](notion-css-flexbox.html)
+- [Mise en page adaptative et media queries](notion-css-media.html)
+- [Outils de développement](notion-devtools.html)
+
+**Exemples clés en main :** [Page et tableaux lisibles](recipe-clean-style.html) · [Barre de navigation adaptative](recipe-nav-bar.html)
+
 ## Avant la séance
 
 - [ ] J'ai relu le [CM3](cm3.html).
@@ -47,6 +59,8 @@ th, td { }        /* th and td together */
 ```
 
 ## Étape 1 · Lier la feuille de style (20 min)
+
+<p class="refs" markdown="1">**Notion :** [Règles et sélecteurs CSS](notion-css-rules.html) · **Recette :** [Page et tableaux lisibles](recipe-clean-style.html)</p>
 
 1. Copiez `index.html` et le dossier `images` de `td2` dans `td3`.
 2. Ouvrez le dossier `td3` dans VS Code et la page dans le navigateur.
@@ -88,6 +102,8 @@ Rien ne change dans le navigateur ? Vérifiez que les deux fichiers sont enregis
 
 ## Étape 3 · Boîtes et espacements (30 min)
 
+<p class="refs" markdown="1">**Notion :** [Modèle de boîte](notion-css-box.html) · **Recette :** [Page et tableaux lisibles](recipe-clean-style.html)</p>
+
 Chaque élément est une boîte : le contenu, puis le **padding** (espace intérieur), la **border** (bordure), puis la **margin** (espace extérieur).
 
 ### 3A · Centrer le contenu
@@ -112,6 +128,8 @@ Chaque élément est une boîte : le contenu, puis le **padding** (espace intér
 
 ## Étape 4 · Navigation avec Flexbox (30 min)
 
+<p class="refs" markdown="1">**Notion :** [Flexbox](notion-css-flexbox.html) · **Recette :** [Barre de navigation adaptative](recipe-nav-bar.html)</p>
+
 **Flexbox** place les enfants d'une boîte en ligne. On l'écrit sur le **parent**.
 
 ### 4A · La liste en ligne
@@ -134,6 +152,8 @@ Chaque élément est une boîte : le contenu, puis le **padding** (espace intér
 **Vérification.** Les trois liens sont sur une ligne, sans puces.
 
 ## Étape 5 · Tableau et formulaire (40 min)
+
+<p class="refs" markdown="1">**Notion :** [Modèle de boîte](notion-css-box.html), [Règles et sélecteurs CSS](notion-css-rules.html) · **Recette :** [Page et tableaux lisibles](recipe-clean-style.html)</p>
 
 ### 5A · Une bordure, pas deux
 
@@ -160,6 +180,8 @@ Chaque élément est une boîte : le contenu, puis le **padding** (espace intér
 **Vérification.** `5A` à `5C` `[OK]` : bordures simples, en-tête visible, champs espacés.
 
 ## Étape 6 · Écrans de téléphone (30 min)
+
+<p class="refs" markdown="1">**Notion :** [Mise en page adaptative et media queries](notion-css-media.html), [Outils de développement](notion-devtools.html) · **Recette :** [Barre de navigation adaptative](recipe-nav-bar.html)</p>
 
 Une **media query** applique des règles seulement si une condition est vraie, ici un écran étroit.
 

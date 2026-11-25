@@ -16,6 +16,20 @@ Build pages that react to what the visitor types: a search, a filter and a list 
 | 4 | Favourites | 50 min |
 | 5 | Check the input | 25 min |
 
+## Notions used in this lab
+
+Open them when you need them: each one is a short page. The links are repeated at the step where you need them.
+
+- [Lists of dictionaries](notion-lists-dicts.html)
+- [Templates and static files](notion-templates.html)
+- [URL parameters and query strings](notion-url-parameters.html)
+- [Forms](notion-html-forms.html)
+- [GET and POST](notion-get-post.html)
+- [Sessions and cookies](notion-sessions.html)
+- [Input checking and escaping](notion-safety.html)
+
+**Ready-made examples:** [Set up a project](recipe-venv.html) · [A search form](recipe-search-form.html) · [Remember a list with a session](recipe-session-list.html)
+
 ## Before the session
 
 - [ ] I have read [CM6](cm6.html).
@@ -39,6 +53,8 @@ On macOS or Linux, outside a virtual environment, type `python3`. `[OK]` means t
 
 ## Step 1 · Install and look (20 min)
 
+<p class="refs" markdown="1">**Notion:** [Lists of dictionaries](notion-lists-dicts.html), [Templates and static files](notion-templates.html) · **Recipe:** [Set up a project](recipe-venv.html)</p>
+
 1. Open the folder `td6` in VS Code and a terminal.
 2. Create the environment (see the [setup guide](setup.html) if it fails).
 
@@ -60,7 +76,7 @@ python -m pip install -r requirements.txt
 
 Then copy **your** `internet_use_clean.csv` (made in TD1) into the folder `data`. No file? Copy the one in the folder `sample`: it only contains France.
 
-Then start the application:
+Start the application:
 
 ```text
 python app.py
@@ -71,6 +87,8 @@ Open `http://127.0.0.1:5000/` (`127.0.0.1` means "this computer"). Leave this te
 **Check.** The home page says how many rows are loaded.
 
 ## Step 2 · Search by country (45 min)
+
+<p class="refs" markdown="1">**Notion:** [URL parameters and query strings](notion-url-parameters.html) · **Recipe:** [A search form](recipe-search-form.html)</p>
 
 ### 2A · The template
 
@@ -121,6 +139,8 @@ Inside an `f"..."` text use single quotes: `{row['year']}`. The `return` must be
 
 ## Step 3 · Form and filter (40 min)
 
+<p class="refs" markdown="1">**Notion:** [Forms](notion-html-forms.html), [URL parameters and query strings](notion-url-parameters.html) · **Recipe:** [A search form](recipe-search-form.html)</p>
+
 ### 3A · The form
 
 **Example** (another subject: adapt it, do not copy it as it is).
@@ -159,6 +179,8 @@ maximum = request.args.get("pages", 1000, type=int)   # converted to a number
 </details>
 
 ## Step 4 · Favourites (50 min)
+
+<p class="refs" markdown="1">**Notion:** [GET and POST](notion-get-post.html), [Sessions and cookies](notion-sessions.html) · **Recipe:** [Remember a list with a session](recipe-session-list.html)</p>
 
 **GET** asks for a page. **POST** sends data that changes something. A **session** remembers data for one visitor between pages, in a **cookie** (a small text kept by the browser).
 
@@ -200,6 +222,8 @@ text = ", ".join(items) if items else "none"
 **Check.** Add `FR`, go to another page, come back: it is still there. `4A` to `4C` `[OK]`.
 
 ## Step 5 · Check the input (25 min)
+
+<p class="refs" markdown="1">**Notion:** [Input checking and escaping](notion-safety.html) · **Recipe:** [Remember a list with a session](recipe-session-list.html)</p>
 
 A visitor can type anything. Always check.
 

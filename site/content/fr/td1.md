@@ -14,6 +14,21 @@ Vous allez télécharger de vraies données d'Eurostat (l'office statistique de 
 | 4 | `clean.py` | `data/internet_use_clean.csv` | 55 min |
 | 5 | `stats.py` | `data/summary.json` | 45 min |
 
+## Notions mobilisées dans ce TD
+
+Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens sont rappelés à l'étape concernée.
+
+- [Terminal et environnement virtuel](notion-terminal-venv.html)
+- [HTTP : requêtes, réponses, codes d'état](notion-http.html)
+- [Lire et écrire des fichiers](notion-python-files.html)
+- [Fichiers CSV](notion-csv.html)
+- [Données ouvertes et licences](notion-open-data.html)
+- [Listes de dictionnaires](notion-lists-dicts.html)
+- [Compréhensions, min, max, sorted](notion-list-tools.html)
+- [JSON](notion-json.html)
+
+**Exemples clés en main :** [Installer un projet](recipe-venv.html) · [Télécharger un fichier](recipe-download.html) · [Filtrer un fichier CSV](recipe-clean-csv.html) · [Calculer des chiffres et les enregistrer en JSON](recipe-stats-json.html)
+
 ## Comment travailler
 
 1. Faites les étapes **dans l'ordre**. Chacune a besoin de la précédente.
@@ -37,6 +52,8 @@ for row in rows:
         print(row["city"])             # Paris
 ```
 ## Étape 1 · Installation (25 min)
+
+<p class="refs" markdown="1">**Notion :** [Terminal et environnement virtuel](notion-terminal-venv.html) · **Recette :** [Installer un projet](recipe-venv.html)</p>
 
 Un **terminal** est une fenêtre où l'on tape des commandes. Un **environnement virtuel** est un ensemble de paquets Python (du code écrit par d'autres) réservé à un projet.
 
@@ -70,6 +87,8 @@ Voir le tableau des problèmes fréquents du [guide d'installation](setup.html).
 
 ## Étape 2 · Télécharger (25 min)
 
+<p class="refs" markdown="1">**Notion :** [HTTP : requêtes, réponses, codes d'état](notion-http.html) · **Recette :** [Télécharger un fichier](recipe-download.html)</p>
+
 `requests` est un paquet qui demande une page ou un fichier à un serveur web, comme le fait un navigateur. Ouvrez `download.py`.
 
 ### 2A · L’adresse
@@ -102,6 +121,8 @@ Deux lignes. La première commence par `if response.` et finit par `:`. La secon
 
 ### 2C · Enregistrer le fichier
 
+<p class="refs" markdown="1">**Notion :** [Lire et écrire des fichiers](notion-python-files.html) · **Recette :** [Télécharger un fichier](recipe-download.html)</p>
+
 **Exemple** (sur un autre sujet : ne le recopiez pas tel quel).
 ```python
 from pathlib import Path
@@ -125,6 +146,8 @@ python check.py
 
 ## Étape 3 · Lire les données (20 min)
 
+<p class="refs" markdown="1">**Notion :** [Fichiers CSV](notion-csv.html), [Données ouvertes et licences](notion-open-data.html)</p>
+
 Un fichier **CSV** est un tableau écrit en texte : une ligne du tableau par ligne, les colonnes séparées par des virgules. La première ligne donne les noms des colonnes. Ouvrez `data/internet_use.csv` dans VS Code, créez un fichier `notes.txt` et répondez :
 
 1. Recopiez la première ligne. Combien y a-t-il de colonnes ?
@@ -138,6 +161,8 @@ Un fichier **CSV** est un tableau écrit en texte : une ligne du tableau par lig
 **Nettoyer**, c'est ne garder que ce qui est utile, avec les bons types. Ouvrez `clean.py`. Il contient trois **fonctions** (des blocs de code qui ont un nom). Une fonction rend son résultat avec `return`.
 
 ### 4A · Lire le fichier · `load_rows`
+
+<p class="refs" markdown="1">**Notion :** [Fichiers CSV](notion-csv.html), [Listes de dictionnaires](notion-lists-dicts.html), [Lire et écrire des fichiers](notion-python-files.html) · **Recette :** [Filtrer un fichier CSV](recipe-clean-csv.html)</p>
 
 **Exemple** (sur un autre sujet : ne le recopiez pas tel quel).
 ```python
@@ -226,6 +251,8 @@ Ouvrez `stats.py`.
 
 ### 5A · Lire le fichier propre · `load_clean`
 
+<p class="refs" markdown="1">**Notion :** [Compréhensions, min, max, sorted](notion-list-tools.html)</p>
+
 Comme en 4A, mais un CSV ne contient que du texte : convertissez `year` en `int` et `value` en `float`. Cette écriture courte construit une liste d'un coup (une **liste en compréhension**) :
 ```python
 rows = [{"name": r["name"], "people": int(r["people"])}
@@ -235,6 +262,8 @@ rows = [{"name": r["name"], "people": int(r["people"])}
 **À vous.** Les dictionnaires doivent avoir les clés `country`, `year`, `value`. **Vérification :** `Step 5A` `[OK]`.
 
 ### 5B · Dernière année · `summarise`
+
+<p class="refs" markdown="1">**Notion :** [Compréhensions, min, max, sorted](notion-list-tools.html) · **Recette :** [Calculer des chiffres et les enregistrer en JSON](recipe-stats-json.html)</p>
 
 **Exemple** (sur un autre sujet : ne le recopiez pas tel quel).
 ```python
@@ -279,6 +308,8 @@ points = sorted(points, key=lambda p: p["year"])   # oldest first
 </details>
 
 ### 5D · Enregistrer en JSON
+
+<p class="refs" markdown="1">**Notion :** [JSON](notion-json.html) · **Recette :** [Calculer des chiffres et les enregistrer en JSON](recipe-stats-json.html)</p>
 
 **JSON** est un format texte pour les listes et dictionnaires, très utilisé sur le web.
 

@@ -17,6 +17,23 @@ Run your first application with Flask, a Python package that answers web request
 | 5 | A value in the address | 35 min |
 | 6 | Status codes | 20 min |
 
+## Notions used in this lab
+
+Open them when you need them: each one is a short page. The links are repeated at the step where you need them.
+
+- [Terminal and virtual environment](notion-terminal-venv.html)
+- [Local server](notion-local-server.html)
+- [Flask and routes](notion-flask-routes.html)
+- [JSON](notion-json.html)
+- [JSON API](notion-api.html)
+- [Templates and static files](notion-templates.html)
+- [URL parameters and query strings](notion-url-parameters.html)
+- [Input checking and escaping](notion-safety.html)
+- [HTTP: requests, responses, status codes](notion-http.html)
+- [Developer tools](notion-devtools.html)
+
+**Ready-made examples:** [Set up a project](recipe-venv.html) · [A Flask app with a template](recipe-flask-app.html)
+
 ## Before the session
 
 - [ ] I have read [CM5](cm5.html).
@@ -34,6 +51,8 @@ python check.py
 On macOS or Linux, outside a virtual environment, type `python3`. `[OK]` means the part works, `[  ]` means not yet. The checker does not replace looking at your page in the browser.
 
 ## Step 1 · Install and run (30 min)
+
+<p class="refs" markdown="1">**Notion:** [Terminal and virtual environment](notion-terminal-venv.html), [Local server](notion-local-server.html) · **Recipe:** [Set up a project](recipe-venv.html)</p>
 
 1. Open the folder `td5` in VS Code and a terminal.
 2. Create the environment (see the [setup guide](setup.html) if it fails).
@@ -54,7 +73,7 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-Then start the application:
+Start the application:
 
 ```text
 python app.py
@@ -65,6 +84,8 @@ Open `http://127.0.0.1:5000/` (`127.0.0.1` means "this computer"). Leave this te
 **Check.** The browser says `Hello, web!` and `check.py` shows seven `[  ]`.
 
 ## Step 2 · A first route (25 min)
+
+<p class="refs" markdown="1">**Notion:** [Flask and routes](notion-flask-routes.html) · **Recipe:** [A Flask app with a template](recipe-flask-app.html)</p>
 
 A **route** links an address to a Python function. The line starting with `@` is a **decorator**: it applies to the function just below. What the function returns is sent to the browser. Read the route `/` in `app.py`.
 
@@ -84,6 +105,8 @@ def contact():
 
 ## Step 3 · Return JSON (25 min)
 
+<p class="refs" markdown="1">**Notion:** [JSON](notion-json.html), [JSON API](notion-api.html)</p>
+
 **JSON** is data written as text. Programs read it more easily than HTML. `jsonify` makes it.
 
 **Example** (another subject: adapt it, do not copy it as it is).
@@ -101,6 +124,8 @@ def library():
 **Check.** The browser shows the three keys; `3A` is `[OK]`.
 
 ## Step 4 · A template (45 min)
+
+<p class="refs" markdown="1">**Notion:** [Templates and static files](notion-templates.html) · **Recipe:** [A Flask app with a template](recipe-flask-app.html)</p>
 
 Writing a whole page inside Python is painful. A **template** is an HTML file, in the folder `templates`, with holes written `{{ name }}`. `render_template` fills them.
 
@@ -135,6 +160,8 @@ return render_template("shop.html", city="Toulouse", number=3)
 
 ## Step 5 · A value in the address (35 min)
 
+<p class="refs" markdown="1">**Notion:** [URL parameters and query strings](notion-url-parameters.html), [Input checking and escaping](notion-safety.html)</p>
+
 A part of the address written `<name>` is given to the function as an argument.
 
 **Example** (another subject: adapt it, do not copy it as it is).
@@ -158,6 +185,8 @@ def book(title):
 Why a template and not `return code`? `{{ }}` shows what the visitor typed as plain text, so nobody can slip code into your page.
 
 ## Step 6 · Status codes (20 min)
+
+<p class="refs" markdown="1">**Notion:** [HTTP: requests, responses, status codes](notion-http.html), [Developer tools](notion-devtools.html)</p>
 
 Every answer has a number: 200 success, 404 not found, 500 error in your code. You can choose it by returning two values.
 
@@ -184,5 +213,5 @@ return "This book is gone", 410
 
 ## If you finish early (optional)
 
-1. Add `/count`: the number of lines of your clean file.
+1. Add `/count`: the number of lines of your clean file (copy it into `td5/data`).
 2. Customise the 404 page with `@app.errorhandler(404)`.

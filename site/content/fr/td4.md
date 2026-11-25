@@ -16,6 +16,21 @@ Transformer les résultats du TD1 en graphique avec quelques lignes de JavaScrip
 | 4 | Adapter le graphique | 55 min |
 | 5 | Le lire avec esprit critique | 30 min |
 
+## Notions mobilisées dans ce TD
+
+Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens sont rappelés à l'étape concernée.
+
+- [Serveur local](notion-local-server.html)
+- [Bases de JavaScript](notion-javascript.html)
+- [Outils de développement](notion-devtools.html)
+- [fetch : demander des données](notion-fetch.html)
+- [JSON](notion-json.html)
+- [Graphiques avec Chart.js](notion-chartjs.html)
+- [Modifier la page en JavaScript](notion-dom.html)
+- [Choisir et lire un graphique](notion-honest-charts.html)
+
+**Exemples clés en main :** [Un graphique à partir d'un fichier JSON](recipe-chart-from-json.html)
+
 ## Avant la séance
 
 - [ ] J'ai relu le [CM4](cm4.html).
@@ -35,9 +50,11 @@ Sur macOS ou Linux, hors environnement virtuel, tapez `python3`. `[OK]` : la par
 
 ## Étape 1 · Lancer un serveur local (25 min)
 
+<p class="refs" markdown="1">**Notion :** [Serveur local](notion-local-server.html)</p>
+
 Une page ouverte par double-clic n'a pas le droit de lire d'autres fichiers. Un **serveur** est un programme qui envoie des fichiers au navigateur. Python en a un petit.
 
-Ouvrez le dossier `td4` dans VS Code, ouvrez un terminal et lancez :
+Ouvrez le dossier `td4` dans VS Code, ouvrez un terminal et lancez (`python3` sur macOS ou Linux) :
 
 ```text
 python -m http.server
@@ -54,6 +71,8 @@ Laissez ce terminal ouvert. Dans le navigateur, allez sur `http://localhost:8000
 </details>
 
 ## Étape 2 · Essayer JavaScript (35 min)
+
+<p class="refs" markdown="1">**Notion :** [Bases de JavaScript](notion-javascript.html), [Outils de développement](notion-devtools.html)</p>
 
 La **console** permet de taper du JavaScript : `F12`, onglet **Console**. Tapez chaque bloc, validez, et **devinez le résultat avant**.
 
@@ -97,11 +116,15 @@ La même ligne que ci-dessus, avec `b.title`.
 
 ## Étape 3 · Utiliser vos données (25 min)
 
+<p class="refs" markdown="1">**Notion :** [fetch : demander des données](notion-fetch.html), [JSON](notion-json.html) · **Recette :** [Un graphique à partir d'un fichier JSON](recipe-chart-from-json.html)</p>
+
 **À vous.** Copiez **votre** `summary.json` (créé au TD1, dossier `td1/data`) à la place de `td4/data/summary.json`. Rechargez avec `Ctrl+F5` (`Cmd+Shift+R` sur Mac). Puis lisez `chart.js` et ses commentaires, ligne par ligne.
 
 **Vérification.** `3` est `[OK]`. Dans l'onglet **Réseau** (`F12`), rechargez : `summary.json` a le code 200.
 
 ## Étape 4 · Adapter le graphique (55 min)
+
+<p class="refs" markdown="1">**Notion :** [Graphiques avec Chart.js](notion-chartjs.html) · **Recette :** [Un graphique à partir d'un fichier JSON](recipe-chart-from-json.html)</p>
 
 Changez une chose, enregistrez, rechargez, regardez. Si le graphique disparaît, lisez le message rouge dans la console.
 
@@ -110,6 +133,8 @@ Changez une chose, enregistrez, rechargez, regardez. Si le graphique disparaît,
 **À vous.** Changez le type de graphique de `line` à `bar`.
 
 ### 4B · Un titre avec le pays
+
+<p class="refs" markdown="1">**Notion :** [Modifier la page en JavaScript](notion-dom.html)</p>
 
 **Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
 
@@ -143,6 +168,8 @@ Page vide après 4C ? La console dit `Unexpected identifier` quand il manque une
 </details>
 
 ## Étape 5 · Lire le graphique avec esprit critique (30 min)
+
+<p class="refs" markdown="1">**Notion :** [Choisir et lire un graphique](notion-honest-charts.html)</p>
 
 **À vous.** Créez `notes.txt` dans `td4` et écrivez au moins 30 mots :
 

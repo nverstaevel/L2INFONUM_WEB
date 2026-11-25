@@ -17,6 +17,18 @@ title: TD2 · Une page statique présentant un jeu de données
 | 5 | Faire un formulaire | 35 min |
 | 6 | Pied de page et validation | 25 min |
 
+## Notions mobilisées dans ce TD
+
+Ouvrez-les quand vous en avez besoin : chacune est une page courte. Les liens sont rappelés à l'étape concernée.
+
+- [Éléments et attributs HTML](notion-html-elements.html)
+- [Structure, balises sémantiques, validation](notion-html-structure.html)
+- [Listes, liens, images, accessibilité](notion-html-links-images.html)
+- [Tableaux](notion-html-tables.html)
+- [Formulaires](notion-html-forms.html)
+
+**Exemples clés en main :** [Une page HTML complète](recipe-page-skeleton.html) · [Un tableau et un formulaire](recipe-table-form.html)
+
 ## Avant la séance
 
 - [ ] J'ai relu le [CM2](cm2.html).
@@ -45,6 +57,8 @@ HTML décrit une page avec des **éléments**. Un élément a une **balise** ouv
 
 ## Étape 1 · Ouvrir les fichiers (15 min)
 
+<p class="refs" markdown="1">**Notion :** [Éléments et attributs HTML](notion-html-elements.html)</p>
+
 1. Ouvrez le dossier `td2` dans VS Code (**File → Open Folder**).
 2. Ouvrez aussi `index.html` dans le navigateur : double-cliquez dessus dans l'explorateur de fichiers.
 3. Dans le terminal de VS Code, lancez `python check.py`.
@@ -54,6 +68,8 @@ Ensuite : modifiez dans VS Code, **enregistrez**, puis **rechargez** le navigate
 **Vérification.** La page est vide et le vérificateur montre beaucoup de `[  ]`. C'est normal.
 
 ## Étape 2 · Construire la structure (30 min)
+
+<p class="refs" markdown="1">**Notion :** [Structure, balises sémantiques, validation](notion-html-structure.html) · **Recette :** [Une page HTML complète](recipe-page-skeleton.html)</p>
 
 ### 2A · Le titre de l'onglet
 
@@ -75,6 +91,8 @@ Ensuite : modifiez dans VS Code, **enregistrez**, puis **rechargez** le navigate
 
 ### 2C · La navigation
 
+<p class="refs" markdown="1">**Notion :** [Listes, liens, images, accessibilité](notion-html-links-images.html) · **Recette :** [Une page HTML complète](recipe-page-skeleton.html)</p>
+
 `nav` contient le menu. `ul` est une liste et `li` un élément de liste. Un lien vers `#books` saute à l'élément qui porte `id="books"` dans la même page.
 
 **Exemple** (sur un autre sujet : adaptez-le, ne le recopiez pas tel quel).
@@ -93,6 +111,8 @@ Ensuite : modifiez dans VS Code, **enregistrez**, puis **rechargez** le navigate
 **Vérification.** `2A`, `2B`, `2C` sont `[OK]`. Les liens ne font rien encore : leurs cibles n'existent pas.
 
 ## Étape 3 · Texte, lien et image (35 min)
+
+<p class="refs" markdown="1">**Notion :** [Listes, liens, images, accessibilité](notion-html-links-images.html) · **Recette :** [Une page HTML complète](recipe-page-skeleton.html)</p>
 
 ### 3A · Une section
 
@@ -147,6 +167,8 @@ Pas d'image ? Le chemin doit être exactement `images/network.svg`. `[  ] 3B` ? 
 
 ## Étape 4 · Un tableau (40 min)
 
+<p class="refs" markdown="1">**Notion :** [Tableaux](notion-html-tables.html) · **Recette :** [Un tableau et un formulaire](recipe-table-form.html)</p>
+
 | Balise | Sens |
 |---|---|
 | `table` | le tableau |
@@ -188,6 +210,8 @@ Pas d'image ? Le chemin doit être exactement `images/network.svg`. `[  ] 3B` ? 
 **Vérification.** `4A` à `4C` sont `[OK]`. Le tableau n'a pas de bordures : le CSS les ajoutera au TD3.
 
 ## Étape 5 · Un formulaire (35 min)
+
+<p class="refs" markdown="1">**Notion :** [Formulaires](notion-html-forms.html) · **Recette :** [Un tableau et un formulaire](recipe-table-form.html)</p>
 
 Un **formulaire** recueille ce que saisit le visiteur. `name` est le nom sous lequel la valeur est envoyée. Un `label` est le texte d'un champ : son `for` est égal à l'`id` du champ.
 
@@ -239,6 +263,8 @@ Un **formulaire** recueille ce que saisit le visiteur. `name` est le nom sous le
 **À vous.** Ajoutez un `footer` avec un paragraphe citant la source (Eurostat, tin00028).
 
 ### 6B · Valider
+
+<p class="refs" markdown="1">**Notion :** [Structure, balises sémantiques, validation](notion-html-structure.html)</p>
 
 Un **validateur** cherche les erreurs dans votre HTML. Ouvrez le [validateur du W3C](https://validator.w3.org/#validate_by_input), collez tout votre fichier, cliquez sur **Check**. Corrigez la **première** erreur, relancez.
 

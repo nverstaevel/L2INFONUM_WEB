@@ -17,6 +17,18 @@ Write a web page that presents your Eurostat data, with a form. **Keep this page
 | 5 | Make a form | 35 min |
 | 6 | Footer and validation | 25 min |
 
+## Notions used in this lab
+
+Open them when you need them: each one is a short page. The links are repeated at the step where you need them.
+
+- [HTML elements and attributes](notion-html-elements.html)
+- [Page structure, semantic tags, validation](notion-html-structure.html)
+- [Lists, links, images, accessibility](notion-html-links-images.html)
+- [Tables](notion-html-tables.html)
+- [Forms](notion-html-forms.html)
+
+**Ready-made examples:** [A complete HTML page](recipe-page-skeleton.html) · [A table and a form](recipe-table-form.html)
+
 ## Before the session
 
 - [ ] I have read [CM2](cm2.html).
@@ -45,6 +57,8 @@ HTML describes a page with **elements**. An element has an opening **tag**, some
 
 ## Step 1 · Open the files (15 min)
 
+<p class="refs" markdown="1">**Notion:** [HTML elements and attributes](notion-html-elements.html)</p>
+
 1. Open the folder `td2` in VS Code (**File → Open Folder**).
 2. Open `index.html` in your browser too: double-click it in your file explorer.
 3. In the VS Code terminal, run `python check.py`.
@@ -54,6 +68,8 @@ From now on: edit in VS Code, **save**, then **reload** the browser (`F5`).
 **Check.** The page is empty and the checker shows many `[  ]`. That is normal.
 
 ## Step 2 · Build the structure (30 min)
+
+<p class="refs" markdown="1">**Notion:** [Page structure, semantic tags, validation](notion-html-structure.html) · **Recipe:** [A complete HTML page](recipe-page-skeleton.html)</p>
 
 ### 2A · The page title
 
@@ -75,6 +91,8 @@ From now on: edit in VS Code, **save**, then **reload** the browser (`F5`).
 
 ### 2C · The navigation
 
+<p class="refs" markdown="1">**Notion:** [Lists, links, images, accessibility](notion-html-links-images.html) · **Recipe:** [A complete HTML page](recipe-page-skeleton.html)</p>
+
 `nav` holds the menu. `ul` is a list and `li` one item. A link to `#books` jumps to the element with `id="books"` in the same page.
 
 **Example** (another subject: adapt it, do not copy it as it is).
@@ -93,6 +111,8 @@ From now on: edit in VS Code, **save**, then **reload** the browser (`F5`).
 **Check.** `2A`, `2B`, `2C` are `[OK]`. The links do nothing yet: their targets do not exist.
 
 ## Step 3 · Text, link and image (35 min)
+
+<p class="refs" markdown="1">**Notion:** [Lists, links, images, accessibility](notion-html-links-images.html) · **Recipe:** [A complete HTML page](recipe-page-skeleton.html)</p>
 
 ### 3A · A section
 
@@ -147,6 +167,8 @@ No picture? The path must be exactly `images/network.svg`. `[  ] 3B`? Your list 
 
 ## Step 4 · A table (40 min)
 
+<p class="refs" markdown="1">**Notion:** [Tables](notion-html-tables.html) · **Recipe:** [A table and a form](recipe-table-form.html)</p>
+
 | Tag | Meaning |
 |---|---|
 | `table` | the table |
@@ -188,6 +210,8 @@ No picture? The path must be exactly `images/network.svg`. `[  ] 3B`? Your list 
 **Check.** `4A` to `4C` are `[OK]`. The table has no borders: CSS adds them in TD3.
 
 ## Step 5 · A form (35 min)
+
+<p class="refs" markdown="1">**Notion:** [Forms](notion-html-forms.html) · **Recipe:** [A table and a form](recipe-table-form.html)</p>
 
 A **form** collects what the visitor types. `name` is the name under which the value is sent. A `label` is the text of a field: its `for` equals the field's `id`.
 
@@ -239,6 +263,8 @@ A **form** collects what the visitor types. `name` is the name under which the v
 **Your turn.** Add a `footer` with a paragraph naming the source (Eurostat, tin00028).
 
 ### 6B · Validate
+
+<p class="refs" markdown="1">**Notion:** [Page structure, semantic tags, validation](notion-html-structure.html)</p>
 
 A **validator** looks for mistakes in your HTML. Open the [W3C validator](https://validator.w3.org/#validate_by_input), paste your whole file, click **Check**. Fix the **first** error, check again.
 
