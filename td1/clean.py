@@ -9,7 +9,7 @@ AGGREGATES = ["EA", "EU"]      # two-letter codes that are not countries
 
 def load_rows(path):
     """Return the CSV file as a list of dictionaries."""
-    # TODO 1
+    # TODO 4A (then delete the line "return []")
     return []
 
 
@@ -17,17 +17,17 @@ def clean_rows(rows):
     """Return a list of {"country": str, "year": int, "value": float}."""
     cleaned = []
     for row in rows:
-        # TODO 2: skip the row if indic_is is not INDICATOR
-        # TODO 3: skip it if geo is not a country (length is not 2, or in AGGREGATES)
-        # TODO 4: skip it if OBS_VALUE is empty
-        # TODO 5: append a dictionary with the right types
-        pass
+        # TODO 4B-1: skip the row if indic_is is not INDICATOR
+        # TODO 4B-2: skip it if geo is not a country (length is not 2, or in AGGREGATES)
+        # TODO 4B-3: skip it if OBS_VALUE is empty
+        # TODO 4B-4: append a dictionary with the right types
+        pass  # delete this line when you add your code
     return cleaned
 
 
 def save_rows(rows, path):
     """Write the cleaned rows, with the header country,year,value."""
-    # TODO 6: use csv.DictWriter
+    # TODO 4C: use csv.DictWriter
     pass
 
 

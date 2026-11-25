@@ -9,19 +9,19 @@ MY_COUNTRY = "FR"              # choose your country code
 
 def load_clean(path):
     """Return the clean file with year as int and value as float."""
-    # TODO 1
+    # TODO 5A (then delete the line "return []")
     return []
 
 
 def summarise(rows):
     """Return the latest year, and the average, lowest and highest value that year."""
-    # TODO 2
+    # TODO 5B (then delete the line "return {}")
     return {}
 
 
 def history(rows, country):
     """Return the list of {"year", "value"} for one country, oldest first."""
-    # TODO 3
+    # TODO 5C (then delete the line "return []")
     return []
 
 
@@ -30,5 +30,5 @@ if __name__ == "__main__":
     result = summarise(data)
     result["country"] = MY_COUNTRY
     result["history"] = history(data, MY_COUNTRY)
-    # TODO 4: write `result` into OUTPUT as JSON
+    # TODO 5D: write `result` into OUTPUT as JSON
     print(result)
