@@ -20,4 +20,23 @@ addEventListener("DOMContentLoaded", () => {
   });
   addEventListener("resize", fit);
   fit();
+  // left menu: highlight the current section; folded on narrow screens
+  const toc = document.querySelector(".toc details");
+  if (!toc) return;
+  const narrow = matchMedia("(max-width: 900px)");
+  const adapt = () => { toc.open = !narrow.matches; };
+  narrow.addEventListener("change", adapt);
+  adapt();
+  const links = [...toc.querySelectorAll("a")];
+  links.forEach(a => a.addEventListener("click", () => { if (narrow.matches) toc.open = false; }));
+  const heading = a => document.getElementById(decodeURIComponent(a.hash.slice(1)));
+  const mark = () => {
+    let current = links[0];
+    links.forEach(a => { if (heading(a).getBoundingClientRect().top < 120) current = a; });
+    links.forEach(a => a === current ? a.setAttribute("aria-current", "true") : a.removeAttribute("aria-current"));
+    const box = toc.parentElement, top = current.offsetTop;  // keep the active entry visible
+    if (!narrow.matches && (top < box.scrollTop || top > box.scrollTop + box.clientHeight - 40)) box.scrollTop = top - 80;
+  };
+  addEventListener("scroll", mark, { passive: true });
+  mark();
 });

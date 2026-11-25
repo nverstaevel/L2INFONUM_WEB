@@ -46,7 +46,22 @@ def deck_css(cm):
     return "\n".join(rules)
 
 
-def page(lang, name, title, body, extra_head=""):
+def sidebar(lang, tokens):
+    """Left menu listing the h2 and h3 sections of a page (none if fewer than two)."""
+    def items(entries):
+        out = ""
+        for e in entries:
+            below = items(e["children"]) if e["children"] else ""
+            out += f'<li><a href="#{e["id"]}">{e["name"]}</a>{below}</li>'
+        return f"<ul>{out}</ul>"
+    if len(tokens) < 2:
+        return ""
+    label = {"en": "On this page", "fr": "Sur cette page"}[lang]
+    return (f'<nav class="toc" aria-label="{label}"><details open><summary>{label}</summary>'
+            f'{items(tokens)}</details></nav>')
+
+
+def page(lang, name, title, body, extra_head="", toc=""):
     ui = UI[lang]
     links = "".join(f'<a href="{key}.html">{label}</a>' for key, label in ui["nav"].items())
     other, other_label = ui["other"]
@@ -58,9 +73,10 @@ def page(lang, name, title, body, extra_head=""):
 <body><a class="skip" href="#content">{ui['skip']}</a>
 <header><nav><a class="brand" href="index.html">{ui['brand']}</a>{links}
 <a href="../{other}/{name}.html" lang="{other}">{other_label}</a><button id="theme">{ui['theme']}</button></nav></header>
+<div class="{'layout with-toc' if toc else 'layout'}">{toc}
 <main id="content"><h1>{title}</h1>
 {body}
-</main>
+</main></div>
 <footer>Nicolas Verstaevel · Université Toulouse Capitole · <a href="{REPO}">GitHub</a></footer>
 </body></html>"""
 
@@ -77,7 +93,9 @@ def build():
         for source in sorted((SITE / "content" / lang).glob("*.md")):
             head, text = source.read_text(encoding="utf-8").split("\n---\n", 1)
             title = head.removeprefix("title:").strip()
-            body = markdown.markdown(text, extensions=["tables", "fenced_code", "md_in_html"])
+            md = markdown.Markdown(extensions=["tables", "fenced_code", "md_in_html", "toc"],
+                                   extension_configs={"toc": {"toc_depth": "2-3"}})
+            body = md.convert(text)
             body = body.replace("[ ]", '<input type="checkbox" aria-label="done">')
             body = body.replace("<table>", '<div class="table"><table>').replace("</table>", "</table></div>")
             extra = ""
@@ -86,7 +104,7 @@ def build():
                 cm, slide_lang = found.groups()
                 body = body.replace(found.group(0), slides(cm, slide_lang))
                 extra = fonts + f'<link rel="stylesheet" href="../assets/{cm}.css">'
-            (OUT / lang / f"{source.stem}.html").write_text(page(lang, source.stem, title, body, extra), encoding="utf-8")
+            (OUT / lang / f"{source.stem}.html").write_text(page(lang, source.stem, title, body, extra, sidebar(lang, md.toc_tokens)), encoding="utf-8")
         for pdf in (ROOT / "cours").glob(f"*/*-{lang}.pdf"):
             shutil.copy(pdf, OUT / lang / pdf.name)
     (OUT / "index.html").write_text(
