@@ -171,11 +171,14 @@ def page(lang, name, title, body, extra_head="", toc=""):
 {body}
 {pager(lang, name)}</main></div>
 <a class="to-top" href="#top" hidden>↑ {ui['top']}</a>
-<footer>© 2026 Nicolas Verstaevel · Université Toulouse Capitole · <a href="../LICENSE.txt">{LICENCE[lang]}</a> · <a href="{REPO}">GitHub</a></footer>
+<footer>© 2026 Nicolas Verstaevel · Université Toulouse Capitole · {LICENCE[lang]} · <a href="{REPO}">GitHub</a></footer>
 </body></html>"""
 
 
-LICENCE = {"en": "MIT licence (third-party data excepted)", "fr": "Licence MIT (hors données tierces)"}
+CCBY = '<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>'
+MIT = '<a href="../LICENSE.txt">MIT</a>'
+LICENCE = {"en": f"Content: {CCBY} · Code: {MIT} · third-party data excepted",
+           "fr": f"Contenus : {CCBY} · Code : {MIT} · hors données tierces"}
 PREVIEW = re.compile(r"notion-flask-ref$|notion-html-|recipe-page-skeleton$|recipe-table-form$")
 LABEL = {"en": ("Result in the browser", "links and buttons are inactive here"),
          "fr": ("Résultat dans le navigateur", "liens et boutons inactifs ici")}
@@ -213,6 +216,7 @@ def starter_zips():
             for name in filter(None, names):
                 z.write(ROOT / name, name)
             z.write(ROOT / "LICENSE", f"{folder}/LICENSE")
+            z.write(ROOT / "LICENSE-CONTENT", f"{folder}/LICENSE-CONTENT")
 
 
 def download_button(lang, body):

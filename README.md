@@ -13,8 +13,12 @@ Site: <https://nverstaevel.github.io/L2INFONUM_WEB/>
 
 ## Licence
 
-All course content in this repository (code, texts, slides, lab sheets, images) is under the [MIT licence](LICENSE), © 2026 Nicolas Verstaevel.
-Tout le contenu du cours présent dans ce dépôt (code, textes, diapositives, sujets de TD, images) est sous [licence MIT](LICENSE).
+© 2026 Nicolas Verstaevel.
+
+- **Course content** (texts, slides, lab sheets, images): [CC BY 4.0](LICENSE-CONTENT). Reuse and adapt it, cite the author and say what you changed.
+  **Contenus du cours** (textes, diapositives, sujets de TD, images) : réutilisables et modifiables en citant l'auteur et en indiquant les modifications.
+- **Code** (programs, starter files, code examples): [MIT](LICENSE).
+  **Code** (programmes, fichiers de départ, exemples de code) : licence MIT.
 
 Not covered: third-party data keeps its own terms. / Exception : les données tierces gardent leurs propres conditions.
 
