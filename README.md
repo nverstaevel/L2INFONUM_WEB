@@ -11,6 +11,11 @@ Site: <https://nverstaevel.github.io/L2INFONUM_WEB/>
 | `cours/` | Lecture slides / diapositives (HTML, PDF) |
 | `site/` | Site sources (`python site/build.py`, needs `markdown`; PDF: `python site/make_pdf.py`) |
 
+## Credits / Crédits
+
+Generated with an AI assistant, Claude Sonnet 5.5 by Anthropic, following the author's instructions. Token figures and details: [credits page](https://nverstaevel.github.io/L2INFONUM_WEB/en/credits.html).
+Généré avec un assistant d'IA, Claude Sonnet 5.5 d'Anthropic, selon les consignes de l'auteur. Tokens et détails : [page des crédits](https://nverstaevel.github.io/L2INFONUM_WEB/fr/credits.html).
+
 ## Licence
 
 © 2026 Nicolas Verstaevel.

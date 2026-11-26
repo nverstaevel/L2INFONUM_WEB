@@ -171,7 +171,7 @@ def page(lang, name, title, body, extra_head="", toc=""):
 {body}
 {pager(lang, name)}</main></div>
 <a class="to-top" href="#top" hidden>↑ {ui['top']}</a>
-<footer>© 2026 Nicolas Verstaevel · Université Toulouse Capitole · {LICENCE[lang]} · <a href="{REPO}">GitHub</a></footer>
+<footer>© 2026 Nicolas Verstaevel · Université Toulouse Capitole · <a href="credits.html">{CREDITS[lang]}</a> · {LICENCE[lang]} · <a href="{REPO}">GitHub</a></footer>
 </body></html>"""
 
 
@@ -179,6 +179,7 @@ CCBY = '<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC 
 MIT = '<a href="../LICENSE.txt">MIT</a>'
 LICENCE = {"en": f"Content: {CCBY} · Code: {MIT} · third-party data excepted",
            "fr": f"Contenus : {CCBY} · Code : {MIT} · hors données tierces"}
+CREDITS = {"en": "Credits: generated with AI (Claude, Anthropic)", "fr": "Crédits : généré avec une IA (Claude, Anthropic)"}
 PREVIEW = re.compile(r"notion-flask-ref$|notion-html-|recipe-page-skeleton$|recipe-table-form$")
 LABEL = {"en": ("Result in the browser", "links and buttons are inactive here"),
          "fr": ("Résultat dans le navigateur", "liens et boutons inactifs ici")}
